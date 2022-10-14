@@ -4,10 +4,13 @@ export const SectionStyle = css`
   display: flex;
   align-items: center;
   flex-direction: column;
+  h1 {
+    font-size: ${p => p.isMobile ? 50 : 100}px;
+  }
 `
 
 export const ListWrapperStyle = css`
-  margin-top: 100px;
+  margin-top: ${p => p.isMobile ? 20 : 100}px;
 `
 
 export const StreamerLinkStyle = css`

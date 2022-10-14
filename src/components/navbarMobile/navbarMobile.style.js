@@ -60,10 +60,16 @@ export const NavBarUlStyle = css`
 `
 
 export const NavLinkStyle = css`
+  display: flex;
+  align-items: center;
   font-size: 50px;
   font-family: Montserrat;
   color: white;
   text-decoration: none;
+
+  & > * {
+    margin-right: 8px;
+  }
 
   ${p => {
     if (p.isCurrent) {
@@ -74,7 +80,16 @@ export const NavLinkStyle = css`
     }
   }};
 
-  &:hover {
+  ${p => {
+    if (p.disabled) {
+      return css`
+        color: rgba(100, 100, 100, .4);
+        cursor: not-allowed;
+      `
+    }
+  }};
+
+  &:hover:enabled {
     color: #642d5a;
   }
 `

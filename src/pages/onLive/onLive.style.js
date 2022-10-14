@@ -2,7 +2,7 @@ import { css } from 'styled-components';
 import { NAVBAR_HEIGHT } from 'components/navbar/navbar.style'
 
 export const SectionStyle = css`
-  padding: 20px 100px;
+  padding: ${p => p.isMobile ? '10px 30px' : '20px 100px'};
   padding-bottom: ${NAVBAR_HEIGHT}px;
 `
 
@@ -24,6 +24,7 @@ export const DescriptionWrapperStyle = css`
 
 export const LiveWrapperStyle = css`
   display: flex;
+  flex-direction: ${p => p.isMobile ? 'column' : 'row'};
   & > * {
     margin-right: 10px;
   }

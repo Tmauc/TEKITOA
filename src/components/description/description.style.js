@@ -2,7 +2,7 @@ import { css } from 'styled-components';
 
 export const WrapperStyle = css`
   display: flex;
-  font-size: 20px;
+  font-size: ${p => p.isMobile ? 12 : 20}px;
   font-family: Montserrat;
   color: white;
 
@@ -16,6 +16,7 @@ export const TitleStyle = css`
 `
 
 export const SeparatorStyle = css`
+  white-space: nowrap;
   color: #F05183;
 `
 

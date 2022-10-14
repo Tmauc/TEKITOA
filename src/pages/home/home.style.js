@@ -5,11 +5,6 @@ export const SectionStyle = css`
   justify-content: center;
   align-items: center;
   h1 {
-    font-size: 250px;
-    @media (max-width: 1024px)
-    {
-      font-size: 100px;
-    }
+    font-size: ${p => p.isMobile ? 90 : 250}px;
   }
-
 `

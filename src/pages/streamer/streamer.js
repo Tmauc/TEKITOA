@@ -5,6 +5,7 @@ import HeaderStreamer from 'components/headerStreamer/headerStreamer.js';
 import Description from 'components/description/description.js';
 import FakeWindow from 'components/fakeWindow/fakeWindow.js';
 import ImageStreamer from 'components/imageStreamer/imageStreamer'
+import { useDevice } from 'hooks/useDevice'
 
 import { StreamerConsumerHook } from 'stores/streamerStore';
 
@@ -13,7 +14,7 @@ import { getUser } from 'core/twitchAPI.js';
 import { SectionStyle, MainStyle, LeftWrapperStyle, RediffWrapperStyle, ImgWrapperStyle, StreamerImgStyle } from './streamer.style.js'
 
 function Streamer() {
-
+  const { isMobile } = useDevice();
   const [{ streamer, OAuth }, dispatch] = StreamerConsumerHook();
 
   useEffect(() => {
@@ -21,21 +22,22 @@ function Streamer() {
   }, []);
 
   return (
-    <Section className='Streamer'>
+    <Section className='Streamer' isMobile={isMobile}>
       <HeaderStreamer title={streamer?.pseudo} />
       <Main>
-        {<LeftWrapper>
+        {<LeftWrapper small={isMobile}>
           <Description title={'Début'} label={streamer?.start} />
           <Description title={'Langue'} label={streamer?.language} />
           <Description title={'Hobbies'} label={streamer?.hobbies} />
           <Description title={'Catégories'} label={streamer?.categories} />
           <Description title={'Objectifs'} label={streamer?.objectifs} />
-          <RediffWrapper>
+          <RediffWrapper isMobile={isMobile}>
             <FakeWindow
               type="Rediff.exe"
               title={'TKT ' + streamer?.pseudo + ' - ' + streamer?.dateTKT}
               youtubeUrl={streamer?.rediffTKT}
-              size={{ width: 440, height: 250 }}
+              size={isMobile ? { width: 300, height: 170 } : { width: 440, height: 250 }}
+              isMobile={isMobile}
             />
           </RediffWrapper>
         </LeftWrapper>}

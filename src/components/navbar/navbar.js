@@ -13,7 +13,7 @@ import { NavLinkStyle, WrapperBorderStyle, WrapperStyle, NavBarUlStyle, PhraseBu
 function Navbar() {
   const location = useLocation()
   const navigate = useNavigate();
-  const isStreamer = location?.state?.streamer;
+  const isStreamer = location?.state?.isStreamer;
   const [{ streamer, stream }] = StreamerConsumerHook();
   var audio = streamer && new Audio(streamer?.thePhrase);
 
@@ -35,7 +35,7 @@ function Navbar() {
             <li>
               <NavLink
                 to={'/' + streamer?.pseudo}
-                state={{ streamer: true }}
+                state={{ isStreamer: true }}
                 isCurrent={'/' + streamer?.pseudo === location.pathname}
               >
                 {streamer?.pseudo}
@@ -44,7 +44,7 @@ function Navbar() {
             <li>
               <NavLink
                 to={'/' + streamer?.pseudo + '/twitch'}
-                state={{ streamer: true }}
+                state={{ isStreamer: true }}
                 isCurrent={'/' + streamer?.pseudo + '/twitch' === location.pathname}
               >
                 Twitch
@@ -53,8 +53,9 @@ function Navbar() {
             <li>
               <NavLink
                 to={'/' + streamer?.pseudo + '/reseaux'}
-                state={{ streamer: true }}
+                state={{ isStreamer: true }}
                 isCurrent={'/' + streamer?.pseudo + '/reseaux' === location.pathname}
+                disabled
               >
                 Réseaux
               </NavLink>
@@ -63,7 +64,7 @@ function Navbar() {
               <li>
                 <NavLink
                   to={'/' + streamer?.pseudo + '/onlive'}
-                  state={{ streamer: true }}
+                  state={{ isStreamer: true }}
                   isCurrent={'/' + streamer?.pseudo + '/onlive' === location.pathname}
                 >
                   <OnLiveDot small />
@@ -81,10 +82,10 @@ function Navbar() {
         <WrapperBorder>
           <NavBarUl className='navbar'>
             <img onClick={handleClick} className='logo' src={Logo} />
-            <li><NavLink to='/about' isCurrent={'/about' === location.pathname}>À Propos</NavLink></li>
+            <li><NavLink to='/about' isCurrent={'/about' === location.pathname} disabled >À Propos</NavLink></li>
             <li><NavLink to='/streamers' isCurrent={'/streamers' === location.pathname}>Streamers</NavLink></li>
-            <li><NavLink to='/rediffs' isCurrent={'/rediffs' === location.pathname}>Rediffs</NavLink></li>
-            <li><NavLink to='/podcast' isCurrent={'/podcast' === location.pathname}>Podcast</NavLink></li>
+            <li><NavLink to='/rediffs' isCurrent={'/rediffs' === location.pathname} disabled>Rediffs</NavLink></li>
+            <li><NavLink to='/podcast' isCurrent={'/podcast' === location.pathname} disabled>Podcast</NavLink></li>
           </NavBarUl>
         </WrapperBorder>
       }

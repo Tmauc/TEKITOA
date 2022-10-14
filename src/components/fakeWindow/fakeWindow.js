@@ -1,15 +1,20 @@
 import React from 'react'
 import styled from 'styled-components';
 import { TwitchClip, TwitchPlayer, TwitchChat } from 'react-twitch-embed';
+
 import SquareIconSvg from 'assets/icons/SquarePoint.svg'
 import CrossIcon from 'assets/icons/Cross.svg'
+
+import { useDevice } from 'hooks/useDevice'
 
 import { WrapperStyle, HeaderStyle, HeaderLeftStyle, SquareIconStyle, TypeStyle, HeaderMiddleStyle, TitleStyle, HeaderRightStyle, CloseIconStyle, MainStyle, IframeStyle } from './fakeWindow.style'
 
 function FakeWindow({ type: type, title: title, youtubeUrl: youtubeUrl, size: size, twitchInfos: twitchInfos }) {
+  const { isMobile } = useDevice();
+
   return (
     <Wrapper width={size.width} height={size.height}>
-      <Header width={size.width}>
+      <Header width={size.width} isMobile={isMobile}>
         <HeaderLeft>
           <SquareIcon src={SquareIconSvg} />
           <p>-</p>

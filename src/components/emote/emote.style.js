@@ -13,8 +13,8 @@ const float = keyframes`
 `
 
 export const EmoteStyle = css`
-  width: 80px;
-  height: 80px;
+  width: ${p => p.small ? 40 : 80}px;
+  height: ${p => p.small ? 40 : 80}px;
   filter: drop-shadow(0px 0px 10px #000000);
   transform: translatey(0px);
   animation-name: ${float};

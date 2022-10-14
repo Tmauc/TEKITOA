@@ -2,7 +2,7 @@ import { css } from 'styled-components';
 import { NAVBAR_HEIGHT } from 'components/navbar/navbar.style'
 
 export const SectionStyle = css`
-  padding: 20px 100px;
+  padding: ${p => p.isMobile ? '10px 30px' : '20px 100px'};
   padding-bottom: ${NAVBAR_HEIGHT}px;
 `
 
@@ -13,11 +13,29 @@ export const MainWrapperStyle = css`
 
 export const EmotesWrapperStyle = css`
   display: flex;
+  & > * {
+    margin-right: 8px;
+  }
 `
 
 export const EmbedWrapperStyle = css`
   display: flex;
-  & > * {
-    margin-right: 10px;
-  }
+  flex-direction: ${p => p.isMobile ? 'column' : 'row'};
+
+  ${p => {
+    if (p.isMobile) {
+      return css`
+        align-items: center;
+        & > * {
+          margin-bottom: 10px;
+        }
+      `
+    } else {
+      return css`
+        & > * {
+          margin-right: 10px;
+        }
+      `
+    }
+  }};
 `

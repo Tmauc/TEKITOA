@@ -4,24 +4,25 @@ import { useNavigate } from "react-router-dom";
 
 import ArrowIcon from 'assets/icons/Arrow.svg'
 import OnLiveDot from 'components/onLiveDot/onLiveDot';
+import { useDevice } from 'hooks/useDevice'
 
 import { HeaderStyle, HeaderLeftWrapperStyle, HeaderRightWrapperStyle, BackIconStyle } from './headerStreamer.style'
 
 function HeaderStreamer({ title }) {
   const navigate = useNavigate();
+  const { isMobile } = useDevice();
 
   function backStreamers() {
     navigate('/streamers');
   }
 
   return (
-    <Header>
-      <HeaderLeftWrapper>
+    <Header isMobile={isMobile}>
+      <HeaderLeftWrapper isMobile={isMobile}>
         <h1 className='title'>{title}</h1>
-        <OnLiveDot />
       </HeaderLeftWrapper>
       <HeaderRightWrapper>
-        <BackIcon onClick={backStreamers} src={ArrowIcon} />
+        <BackIcon small={isMobile} onClick={backStreamers} src={ArrowIcon} />
       </HeaderRightWrapper>
     </Header>
   )

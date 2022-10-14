@@ -3,9 +3,9 @@ import styled from 'styled-components';
 
 import { EmoteStyle } from './emote.style.js'
 
-function Emote({ path }) {
+function Emote({ path, small }) {
   return (
-    <EmoteImg src={path} />
+    <EmoteImg src={path} small={small} />
   )
 }
 

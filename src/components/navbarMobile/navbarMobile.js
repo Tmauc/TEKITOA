@@ -1,30 +1,37 @@
-import React, { useState, useCallback } from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components';
 import { useNavigate, useLocation, Link } from "react-router-dom";
-import { NavLinkStyle, WrapperBorderStyle, LogoStyle, CloseImgStyle, MenuIconStyle, MenuWrapperStyle, WrapperStyle, NavBarUlStyle, PhraseButtonStyle, PlayIconStyle } from './navbarMobile.style.js'
+
 import Logo from 'assets/logo.png'
 import Play from 'assets/icons/Play.svg'
 import Menu from 'assets/icons/Menu.svg'
 import Close from 'assets/icons/Cross.svg'
+import OnLiveDot from 'components/onLiveDot/onLiveDot';
 
+import { StreamerConsumerHook } from 'stores/streamerStore';
 
-const MenuItems = (location, streamer, onClickMenu) => {
+import { NavLinkStyle, WrapperBorderStyle, LogoStyle, CloseImgStyle, MenuIconStyle, MenuWrapperStyle, WrapperStyle, NavBarUlStyle, PhraseButtonStyle, PlayIconStyle } from './navbarMobile.style.js'
+
+const MenuItems = ({ location, isStreamer, streamer, stream, closeMenu }) => {
   const navigate = useNavigate();
 
   function handleClick() {
     navigate('/home');
+    closeMenu();
   }
+
 
   return (
     <MenuWrapper>
-      {streamer ?
+      {isStreamer ?
         <NavBarUl className='navbar'>
           <LogoImg onClick={handleClick} className='logo' src={Logo} />
           <li>
             <NavLink
               to={'/' + streamer.pseudo}
-              state={{ streamer: streamer }}
+              state={{ isStreamer: true }}
               isCurrent={'/' + streamer.pseudo === location.pathname}
+              onClick={closeMenu}
             >
               {streamer.pseudo}
             </NavLink>
@@ -32,8 +39,9 @@ const MenuItems = (location, streamer, onClickMenu) => {
           <li>
             <NavLink
               to={'/' + streamer.pseudo + '/twitch'}
-              state={{ streamer: streamer }}
+              state={{ isStreamer: true }}
               isCurrent={'/' + streamer.pseudo + '/twitch' === location.pathname}
+              onClick={closeMenu}
             >
               Twitch
             </NavLink>
@@ -41,22 +49,37 @@ const MenuItems = (location, streamer, onClickMenu) => {
           <li>
             <NavLink
               to={'/' + streamer.pseudo + '/reseaux'}
-              state={{ streamer: streamer }}
+              state={{ isStreamer: true }}
               isCurrent={'/' + streamer.pseudo + '/reseaux' === location.pathname}
+              onClick={closeMenu}
+              disabled
             >
               Réseaux
             </NavLink>
           </li>
-          <CloseImg onClick={onClickMenu} className='logo' src={Close} />
+          {stream &&
+            <li>
+              <NavLink
+                to={'/' + streamer?.pseudo + '/onlive'}
+                state={{ isStreamer: true }}
+                isCurrent={'/' + streamer?.pseudo + '/onlive' === location.pathname}
+                onClick={closeMenu}
+              >
+                <OnLiveDot small />
+                On Live
+              </NavLink>
+            </li>
+          }
+          <CloseImg onClick={closeMenu} className='logo' src={Close} />
         </NavBarUl>
         :
         <NavBarUl className='navbar'>
           <LogoImg onClick={handleClick} className='logo' src={Logo} />
-          <li><NavLink to='/about' isCurrent={'/about' === location.pathname}>À Propos</NavLink></li>
-          <li><NavLink to='/streamers' isCurrent={'/streamers' === location.pathname}>Streamers</NavLink></li>
-          <li><NavLink to='/rediffs' isCurrent={'/rediffs' === location.pathname}>Rediffs</NavLink></li>
-          <li><NavLink to='/podcast' isCurrent={'/podcast' === location.pathname}>Podcast</NavLink></li>
-          <CloseImg onClick={onClickMenu} className='logo' src={Close} />
+          <li><NavLink to='/about' isCurrent={'/about' === location.pathname} onClick={closeMenu} disabled>À Propos</NavLink></li>
+          <li><NavLink to='/streamers' isCurrent={'/streamers' === location.pathname} onClick={closeMenu}>Streamers</NavLink></li>
+          <li><NavLink to='/rediffs' isCurrent={'/rediffs' === location.pathname} onClick={closeMenu} disabled>Rediffs</NavLink></li>
+          <li><NavLink to='/podcast' isCurrent={'/podcast' === location.pathname} onClick={closeMenu} disabled>Podcast</NavLink></li>
+          <CloseImg onClick={closeMenu} className='logo' src={Close} />
         </NavBarUl>
       }
     </MenuWrapper>
@@ -66,32 +89,37 @@ const MenuItems = (location, streamer, onClickMenu) => {
 
 function NavbarMobile() {
   const location = useLocation()
-  const [menuOpen, isMenuOpen] = useState(false);
-  const streamer = location?.state?.streamer;
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const isStreamer = location?.state?.isStreamer;
+  const [{ streamer, stream }] = StreamerConsumerHook();
   var audio = streamer && new Audio(streamer?.thePhrase);
 
   const onClickAudio = () => {
     audio.play()
   };
 
-  const onClickMenu = useCallback(() => {
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
 
-  }, [isMenuOpen, menuOpen]);
+  const openMenu = () => {
+    setIsMenuOpen(true);
+  };
 
   return (
     <Wrapper>
 
       <WrapperBorder>
-        <MenuIcon onClick={onClickMenu} className='logo' src={Menu} />
-        {streamer &&
+        <MenuIcon onClick={openMenu} className='logo' src={Menu} />
+        {isStreamer &&
           <PhraseButton onClick={onClickAudio}>
             <PlayIcon src={Play} />
             LA PHRASE
           </PhraseButton>
         }
       </WrapperBorder>
-      {menuOpen &&
-        MenuItems(location, streamer, onClickMenu)
+      {isMenuOpen &&
+        <MenuItems location={location} isStreamer={isStreamer} streamer={streamer} stream={stream} closeMenu={closeMenu} />
       }
     </Wrapper>
   )

@@ -12,6 +12,16 @@ const initialState = {
 
 const reducer = (state, action) => {
   switch (action.type) {
+    case 'cleanStreamer':
+      return {
+        ...state,
+        id: null,
+        streamer: null,
+        stream: false,
+        popularClip: null,
+        lastRediff: null,
+        emotes: null
+      };
     case 'changeId':
       return {
         ...state,

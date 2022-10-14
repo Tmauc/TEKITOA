@@ -12,6 +12,7 @@ export const HeaderStyle = css`
   padding: 0px 10px;
   background-color: rgba(217, 217, 217, .5);
   color: rgba(255, 255, 255, .5);
+  font-size: ${p => p.isMobile ? 10 : 16}px;
 `
 
 export const HeaderLeftStyle = css`
@@ -28,15 +29,15 @@ export const SquareIconStyle = css`
 `
 
 export const TypeStyle = css`
-
 `
 
 export const HeaderMiddleStyle = css`
-
+  display: flex;
+  text-align: center;
+  white-space: nowrap;
 `
 
 export const TitleStyle = css`
-
 `
 
 export const HeaderRightStyle = css`

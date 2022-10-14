@@ -1,14 +1,23 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { generatePath, useNavigate } from "react-router";
 import StreamersJson from 'assets/streamers.json';
 import styled from 'styled-components';
-import { SectionStyle, ListWrapperStyle, StreamerLinkStyle } from './streamers.style'
 
+import { useDevice } from 'hooks/useDevice'
 import { StreamerConsumerHook } from 'stores/streamerStore';
+
+import { SectionStyle, ListWrapperStyle, StreamerLinkStyle } from './streamers.style'
 
 function Streamers() {
   const navigate = useNavigate();
-  const [{ OAuth }, dispatch] = StreamerConsumerHook();
+  const { isMobile } = useDevice();
+  const [{ }, dispatch] = StreamerConsumerHook();
+
+  useEffect(() => {
+    dispatch({
+      type: 'cleanStreamer',
+    });
+  }, []);
 
   const onClick = (streamer) => {
     var generateStreamerPath = generatePath("/:streamer", {
@@ -18,13 +27,13 @@ function Streamers() {
       type: 'changeStreamer',
       newStreamer: streamer
     });
-    navigate(generateStreamerPath, { state: { streamer: true } });
+    navigate(generateStreamerPath, { state: { isStreamer: true } });
   }
 
   return (
-    <Section className='streamers'>
+    <Section className='streamers' isMobile={isMobile}>
       <h1 className='title'>STREAMERS</h1>
-      <ListWrapper className='list-wrapper'>
+      <ListWrapper className='list-wrapper' isMobile={isMobile}>
         <ul>
           {StreamersJson.streamers.map((streamer, index) => (
             <li key={streamer + index}><StreamerLink onClick={() => onClick(streamer)}>{streamer.pseudo}</StreamerLink></li>

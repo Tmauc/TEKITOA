@@ -1,10 +1,14 @@
 import React, { useEffect } from 'react'
 import styled from 'styled-components';
-import { SectionStyle } from './home.style'
+
 import { OAuthTwitch } from 'core/twitchAPI.js';
+import { useDevice } from 'hooks/useDevice'
 import { StreamerConsumerHook } from 'stores/streamerStore';
 
+import { SectionStyle } from './home.style'
+
 function Home() {
+  const { isMobile } = useDevice();
   const [{ }, dispatch] = StreamerConsumerHook();
 
   useEffect(() => {
@@ -12,7 +16,7 @@ function Home() {
   }, []);
 
   return (
-    <Section className='home'>
+    <Section className='home' isMobile={isMobile}>
       <h1 className='title'>TE KI TOA</h1>
     </Section>
   )

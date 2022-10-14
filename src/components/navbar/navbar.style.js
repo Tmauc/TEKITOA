@@ -48,14 +48,23 @@ export const NavLinkStyle = css`
 
   ${p => {
     if (p.isCurrent) {
-      return `
+      return css`
         text-shadow: 2px 2px 0px #642D5A;
         color: #F05183;
       `
     }
   }};
 
-  &:hover {
+${p => {
+    if (p.disabled) {
+      return css`
+        color: rgba(100, 100, 100, .4);
+        cursor: not-allowed;
+      `
+    }
+  }};
+
+  &:hover:enabled {
     color: #642d5a;
   }
 `

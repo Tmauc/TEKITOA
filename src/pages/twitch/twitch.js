@@ -5,6 +5,7 @@ import HeaderStreamer from 'components/headerStreamer/headerStreamer.js';
 import Emote from 'components/emote/emote'
 import FakeWindow from 'components/fakeWindow/fakeWindow'
 import ImageStreamer from 'components/imageStreamer/imageStreamer'
+import { useDevice } from 'hooks/useDevice'
 
 import { getClips, getEmote, getRediff } from 'core/twitchAPI.js';
 import { StreamerConsumerHook } from 'stores/streamerStore';
@@ -13,6 +14,7 @@ import { getRandomArray } from 'utils/getRandomItem.js';
 import { SectionStyle, MainWrapperStyle, EmotesWrapperStyle, EmbedWrapperStyle } from './twitch.style.js'
 
 function Twitch() {
+  const { isMobile } = useDevice();
   const [{ OAuth, id, streamer, popularClip, lastRediff, emotes }, dispatch] = StreamerConsumerHook();
   const [randomEmotes, setRandomEmotes] = useState([])
 
@@ -37,27 +39,27 @@ function Twitch() {
   }, [emotes])
 
   return (
-    <Section className='twitch'>
+    <Section className='twitch' isMobile={isMobile}>
       <HeaderStreamer title={'Twitch : ' + streamer?.pseudo} />
       <MainWrapper>
         <EmotesWrapper>
           {randomEmotes && randomEmotes?.map((emote, index) => (
             <div key={emote?.id + index + 'div'}>
-              <Emote key={emote?.id + index} path={emote?.images.url_4x} />
+              <Emote key={emote?.id + index} path={emote?.images.url_4x} small={isMobile} />
             </div>
           ))}
         </EmotesWrapper>
-        <EmbedWrapper>
+        <EmbedWrapper isMobile={isMobile}>
           <FakeWindow
             type="CLIP.exe"
             title={'TKT ' + streamer?.pseudo + ' - CLIP'}
-            size={{ width: 440, height: 250 }}
+            size={isMobile ? { width: 250, height: 150 } : { width: 440, height: 250 }}
             twitchInfos={{ clip: true, id: popularClip?.id }}
           />
           <FakeWindow
             type="Rediff.exe"
             title={'TKT ' + streamer?.pseudo + ' - Rediff'}
-            size={{ width: 440, height: 250 }}
+            size={isMobile ? { width: 250, height: 150 } : { width: 440, height: 250 }}
             twitchInfos={{ vod: true, id: lastRediff?.id }}
           />
         </EmbedWrapper>

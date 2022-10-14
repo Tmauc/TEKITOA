@@ -1,24 +1,20 @@
 import React, { useEffect } from 'react'
-import { useNavigate } from "react-router-dom";
 import styled from 'styled-components';
 
+import HeaderStreamer from 'components/headerStreamer/headerStreamer.js';
 import Description from 'components/description/description.js';
 import FakeWindow from 'components/fakeWindow/fakeWindow.js';
-import ArrowIcon from 'assets/icons/Arrow.svg'
+import ImageStreamer from 'components/imageStreamer/imageStreamer'
 
 import { StreamerConsumerHook } from 'stores/streamerStore';
 
 import { getUser } from 'core/twitchAPI.js';
 
-import { SectionStyle, HeaderStyle, HeaderLeftWrapperStyle, HeaderRightWrapperStyle, BackIconStyle, StatusStyle, MainStyle, LeftWrapperStyle, RediffWrapperStyle, ImgWrapperStyle, StreamerImgStyle } from './streamer.style.js'
+import { SectionStyle, MainStyle, LeftWrapperStyle, RediffWrapperStyle, ImgWrapperStyle, StreamerImgStyle } from './streamer.style.js'
 
 function Streamer() {
-  const navigate = useNavigate();
-  const [{ streamer, OAuth, id, stream }, dispatch] = StreamerConsumerHook();
 
-  function backStreamers() {
-    navigate('/streamers');
-  }
+  const [{ streamer, OAuth }, dispatch] = StreamerConsumerHook();
 
   useEffect(() => {
     getUser(dispatch, OAuth, streamer?.pseudoTwitch);
@@ -26,15 +22,7 @@ function Streamer() {
 
   return (
     <Section className='Streamer'>
-      <Header>
-        <HeaderLeftWrapper>
-          <h1 className='title'>{streamer?.pseudo}</h1>
-          <Status onlive={stream} />
-        </HeaderLeftWrapper>
-        <HeaderRightWrapper>
-          <BackIcon onClick={backStreamers} src={ArrowIcon} />
-        </HeaderRightWrapper>
-      </Header>
+      <HeaderStreamer title={streamer?.pseudo} />
       <Main>
         {<LeftWrapper>
           <Description title={'Début'} label={streamer?.start} />
@@ -43,12 +31,15 @@ function Streamer() {
           <Description title={'Catégories'} label={streamer?.categories} />
           <Description title={'Objectifs'} label={streamer?.objectifs} />
           <RediffWrapper>
-            <FakeWindow type="Rediff.exe" title={'TKT ' + streamer?.pseudo + ' - ' + streamer?.dateTKT} url={streamer?.rediffTKT} size={[440, 250]} />
+            <FakeWindow
+              type="Rediff.exe"
+              title={'TKT ' + streamer?.pseudo + ' - ' + streamer?.dateTKT}
+              youtubeUrl={streamer?.rediffTKT}
+              size={{ width: 440, height: 250 }}
+            />
           </RediffWrapper>
         </LeftWrapper>}
-        <ImgWrapper>
-          <StreamerImg src={streamer?.imgPath} />
-        </ImgWrapper>
+        <ImageStreamer />
       </Main>
     </Section >
   )
@@ -58,25 +49,6 @@ const Section = styled.section`
   ${SectionStyle};
 `
 
-const Header = styled.header`
-  ${HeaderStyle};
-`
-
-const HeaderLeftWrapper = styled.div`
-  ${HeaderLeftWrapperStyle};
-`
-
-const HeaderRightWrapper = styled.div`
-  ${HeaderRightWrapperStyle};
-`
-
-const BackIcon = styled.img`
-  ${BackIconStyle};
-`
-
-const Status = styled.div`
-  ${StatusStyle};
-`
 
 const Main = styled.div`
   ${MainStyle};
@@ -88,14 +60,6 @@ const LeftWrapper = styled.div`
 
 const RediffWrapper = styled.div`
   ${RediffWrapperStyle};
-`
-
-const ImgWrapper = styled.div`
-  ${ImgWrapperStyle};
-`
-
-const StreamerImg = styled.img`
-  ${StreamerImgStyle};
 `
 
 export default Streamer

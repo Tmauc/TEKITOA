@@ -1,16 +1,20 @@
 import React from 'react'
 import styled from 'styled-components';
 import { useNavigate, useLocation, Link } from "react-router-dom";
-import { StreamerConsumerHook } from 'stores/streamerStore';
-import { NavLinkStyle, WrapperBorderStyle, WrapperStyle, NavBarUlStyle, PhraseButtonStyle, PlayIconStyle } from './navbar.style.js'
+
+import OnLiveDot from 'components/onLiveDot/onLiveDot';
 import Logo from 'assets/logo.png'
 import Play from 'assets/icons/Play.svg'
+
+import { StreamerConsumerHook } from 'stores/streamerStore';
+
+import { NavLinkStyle, WrapperBorderStyle, WrapperStyle, NavBarUlStyle, PhraseButtonStyle, PlayIconStyle } from './navbar.style.js'
 
 function Navbar() {
   const location = useLocation()
   const navigate = useNavigate();
   const isStreamer = location?.state?.streamer;
-  const [{ streamer }] = StreamerConsumerHook();
+  const [{ streamer, stream }] = StreamerConsumerHook();
   var audio = streamer && new Audio(streamer?.thePhrase);
 
   function handleClick() {
@@ -55,6 +59,18 @@ function Navbar() {
                 Réseaux
               </NavLink>
             </li>
+            {stream &&
+              <li>
+                <NavLink
+                  to={'/' + streamer?.pseudo + '/onlive'}
+                  state={{ streamer: true }}
+                  isCurrent={'/' + streamer?.pseudo + '/onlive' === location.pathname}
+                >
+                  <OnLiveDot small />
+                  On Live
+                </NavLink>
+              </li>
+            }
           </NavBarUl>
           <PhraseButton onClick={onClickAudio}>
             <PlayIcon src={Play} />

@@ -35,10 +35,16 @@ export const NavBarUlStyle = css`
 `
 
 export const NavLinkStyle = css`
+  display: flex;
+  align-items: center;
   font-size: 20px;
   font-family: Montserrat;
   color: white;
   text-decoration: none;
+
+  & > * {
+    margin-right: 8px;
+  }
 
   ${p => {
     if (p.isCurrent) {
@@ -61,7 +67,7 @@ export const PhraseButtonStyle = css`
 
   width: 200px;
   height: 50px;
-  margin-left: 10%;
+  margin-left: 2%;
 
   background-color: transparent;
   border: 2px solid white;

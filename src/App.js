@@ -15,6 +15,7 @@ import Rediffs from 'pages/rediffs/rediffs';
 import Podcast from 'pages/podcast/podcast';
 import Networks from 'pages/networks/networks';
 import Twitch from 'pages/twitch/twitch';
+import OnLive from 'pages/onLive/onLive';
 
 import Navbar from 'components/navbar/navbar'
 import NavbarMobile from 'components/navbarMobile/navbarMobile'
@@ -39,6 +40,7 @@ function App() {
                 <Route key={streamer + index} path={'/' + streamer.pseudo} element={<Streamer />} />
                 <Route key={streamer + 'twitch' + index} path={'/' + streamer.pseudo + '/' + 'twitch'} element={<Twitch />} />
                 <Route key={streamer + 'reseaux' + index} path={'/' + streamer.pseudo + '/' + 'reseaux'} element={<Networks />} />
+                <Route key={streamer + 'onlive' + index} path={'/' + streamer.pseudo + '/' + 'onlive'} element={<OnLive />} />
               </>
             ))}
             <Route path="*" element={<Navigate to="/home" />} />

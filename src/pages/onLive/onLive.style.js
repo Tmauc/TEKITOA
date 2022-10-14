@@ -9,13 +9,20 @@ export const SectionStyle = css`
 export const MainWrapperStyle = css`
   display: flex;
   flex-direction: column;
+  & > *:not(:last-child) {
+    margin-bottom: 50px;
+  }
 `
 
-export const EmotesWrapperStyle = css`
+export const DescriptionWrapperStyle = css`
   display: flex;
+  flex-direction: column;
+  & > *:not(:last-child) {
+    margin-bottom: 10px;
+  }
 `
 
-export const EmbedWrapperStyle = css`
+export const LiveWrapperStyle = css`
   display: flex;
   & > * {
     margin-right: 10px;

@@ -6,13 +6,17 @@ export const WrapperStyle = css`
   left: 0;
 
   width: 100%;
-  padding: 15px 50px;
+  padding: 0px 50px 15px 50px;
+  border-top: 2px solid #FFFF;
+
+  background: linear-gradient(117.13deg, #051439 0.44%, #3B2570 53.85%, #383572 85.16%);
   `
 
 export const WrapperBorderStyle = css`
-  border-top: 2px solid #FFFF;
   display: flex;
-
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
   align-items: center;
 `
 
@@ -30,11 +34,26 @@ export const CloseImgStyle = css`
 
 `
 
+export const MenuleftStyle = css`
+  display: flex;
+  align-items: center;
+  & > *:not(:last-child) {
+    margin-right: 5px;
+  }
+`
+
 export const MenuIconStyle = css`
   width: 32px;
   height: 32px;
   cursor: pointer;
-  margin-top: 15px;
+  margin-top: 10px;
+`
+
+export const MenuLogoStyle = css`
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  margin-top: 10px;
 `
 
 export const MenuWrapperStyle = css`
@@ -73,7 +92,7 @@ export const NavLinkStyle = css`
 
   ${p => {
     if (p.isCurrent) {
-      return `
+      return css`
         text-shadow: 2px 2px 0px #642D5A;
         color: #F05183;
       `
@@ -100,7 +119,7 @@ export const PhraseButtonStyle = css`
   align-items: center;
 
   width: 150px;
-  height: 50px;
+  height: 60px;
   margin-left: 5%;
 
   background-color: transparent;

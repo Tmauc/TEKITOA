@@ -13,7 +13,8 @@ section {
   width: 100vw;
   height: 100vh;
   background: linear-gradient(117.13deg, #051439 0.44%, #3B2570 53.85%, #383572 85.16%);
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: scroll;
 
   h1 {
     font-family: Norwester;

@@ -4,6 +4,7 @@ export const WrapperStyle = css`
   display: flex;
   font-size: ${p => p.isMobile ? 12 : 20}px;
   font-family: Montserrat;
+  
   color: white;
 
   & > *:not(:last-child) {

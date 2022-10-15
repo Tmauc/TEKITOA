@@ -3,12 +3,11 @@ import styled from 'styled-components';
 import { useNavigate } from "react-router-dom";
 
 import ArrowIcon from 'assets/icons/Arrow.svg'
-import OnLiveDot from 'components/onLiveDot/onLiveDot';
 import { useDevice } from 'hooks/useDevice'
 
-import { HeaderStyle, HeaderLeftWrapperStyle, HeaderRightWrapperStyle, BackIconStyle } from './headerStreamer.style'
+import { HeaderStyle, HeaderLeftWrapperStyle, TitleLinkStyle, HeaderRightWrapperStyle, BackIconStyle } from './headerStreamer.style'
 
-function HeaderStreamer({ title }) {
+function HeaderStreamer({ title, pseudoTwitch }) {
   const navigate = useNavigate();
   const { isMobile } = useDevice();
 
@@ -16,10 +15,14 @@ function HeaderStreamer({ title }) {
     navigate('/streamers');
   }
 
+  const goToTwitch = () => {
+    window.open('https://twitch.tv/' + pseudoTwitch, '_blank').focus();
+  }
+
   return (
     <Header isMobile={isMobile}>
       <HeaderLeftWrapper isMobile={isMobile}>
-        <h1 className='title'>{title}</h1>
+        <TitleLink onClick={goToTwitch} isMobile={isMobile}>{title}</TitleLink>
       </HeaderLeftWrapper>
       <HeaderRightWrapper>
         <BackIcon small={isMobile} onClick={backStreamers} src={ArrowIcon} />
@@ -34,6 +37,10 @@ const Header = styled.header`
 
 const HeaderLeftWrapper = styled.div`
   ${HeaderLeftWrapperStyle};
+`
+
+const TitleLink = styled.h1`
+  ${TitleLinkStyle};
 `
 
 const HeaderRightWrapper = styled.div`

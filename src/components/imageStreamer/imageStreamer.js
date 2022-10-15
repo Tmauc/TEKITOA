@@ -1,14 +1,16 @@
 import React from 'react'
 import styled from 'styled-components';
 
-import { ImgWrapperStyle, StreamerImgStyle } from './imageStreamer.style'
-
+import { useDevice } from 'hooks/useDevice'
 import { StreamerConsumerHook } from 'stores/streamerStore';
 
+import { ImgWrapperStyle, StreamerImgStyle } from './imageStreamer.style'
+
 function ImageStreamer() {
+  const { isMobile } = useDevice();
   const [{ streamer }] = StreamerConsumerHook();
   return (
-    <ImgWrapper>
+    <ImgWrapper isMobile={isMobile}>
       <StreamerImg src={streamer?.imgPath} />
     </ImgWrapper>
   )

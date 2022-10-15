@@ -2,16 +2,18 @@ import React from 'react'
 import styled from 'styled-components';
 
 import { useDevice } from 'hooks/useDevice'
+import { capitalize } from 'utils/capitalize';
 
 import { WrapperStyle, TitleStyle, SeparatorStyle, LabelStyle } from './description.style'
 
 function Description({ title, label }) {
   const { isMobile } = useDevice();
+  console.log('lab', label)
   return (
     <Wrapper isMobile={isMobile}>
       <Title>{title}</Title>
       <Separator>$ ~</Separator>
-      <Label>{label}</Label>
+      <Label>{capitalize(label)}</Label>
     </Wrapper>
   )
 }

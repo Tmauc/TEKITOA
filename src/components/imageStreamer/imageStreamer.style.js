@@ -1,12 +1,14 @@
 import { css, keyframes } from 'styled-components';
+import { NAVBAR_HEIGHT } from 'components/navbar/navbar.style'
 
 export const ImgWrapperStyle = css`
   position: fixed;
   bottom: 0px;
+	bottom: ${p => p.isMobile ? 60 : 0}px;
   right: 0;
   width: 40%;
   height: 80%;
-  z-index: 1;
+	z-index: ${p => p.isMobile ? 0 : 1};
 `
 
 const breatheAnimation = keyframes`

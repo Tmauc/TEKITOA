@@ -18,6 +18,6 @@ export const EmoteStyle = css`
   filter: drop-shadow(0px 0px 10px #000000);
   transform: translatey(0px);
   animation-name: ${float};
-  animation-duration: 6s;
+  animation-duration: ${p => p.duration}s;
   animation-iteration-count: infinite;
 `

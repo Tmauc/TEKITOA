@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components';
 
 import HeaderStreamer from 'components/headerStreamer/headerStreamer.js';
@@ -11,26 +11,37 @@ import { StreamerConsumerHook } from 'stores/streamerStore';
 
 import { getUser } from 'core/twitchAPI.js';
 
-import { SectionStyle, MainStyle, LeftWrapperStyle, RediffWrapperStyle, ImgWrapperStyle, StreamerImgStyle } from './streamer.style.js'
+import { SectionStyle, MainStyle, LeftWrapperStyle, RediffWrapperStyle } from './streamer.style.js'
 
 function Streamer() {
   const { isMobile } = useDevice();
-  const [{ streamer, OAuth }, dispatch] = StreamerConsumerHook();
+  const [{ streamer, user, OAuth }, dispatch] = StreamerConsumerHook();
+  const [createdDate, setCreatedDate] = useState(null);
+  const [userDesc, setUserDesc] = useState(null);
 
   useEffect(() => {
     getUser(dispatch, OAuth, streamer?.pseudoTwitch);
   }, []);
 
+  useEffect(() => {
+    const tmpDate = user?.created_at && new Date(user?.created_at).toLocaleDateString();
+    setCreatedDate(tmpDate)
+  }, [setCreatedDate, user?.created_at]);
+
+  useEffect(() => {
+    user?.description && setUserDesc(user?.description);
+  }, [setUserDesc, user?.description]);
+
   return (
     <Section className='Streamer' isMobile={isMobile}>
-      <HeaderStreamer title={streamer?.pseudo} />
+      <HeaderStreamer title={streamer?.pseudo} pseudoTwitch={streamer?.pseudoTwitch} />
       <Main>
         {<LeftWrapper small={isMobile}>
-          <Description title={'Début'} label={streamer?.start} />
-          <Description title={'Langue'} label={streamer?.language} />
-          <Description title={'Hobbies'} label={streamer?.hobbies} />
+          <p></p>
+          <Description title={'Création'} label={createdDate} />
+          <Description title={'Pseudo'} label={streamer?.pseudoHistory} />
+          <Description title={'Description'} label={userDesc} />
           <Description title={'Catégories'} label={streamer?.categories} />
-          <Description title={'Objectifs'} label={streamer?.objectifs} />
           <RediffWrapper isMobile={isMobile}>
             <FakeWindow
               type="Rediff.exe"
@@ -50,7 +61,6 @@ function Streamer() {
 const Section = styled.section`
   ${SectionStyle};
 `
-
 
 const Main = styled.div`
   ${MainStyle};

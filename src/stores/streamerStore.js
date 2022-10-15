@@ -1,12 +1,12 @@
 import React, { createContext, useContext, useReducer } from 'react';
 
 const initialState = {
-  id: null,
+  user: null,
   OAuth: null,
   streamer: null,
   stream: false,
   popularClip: null,
-  lastRediff: null,
+  rediffs: null,
   emotes: null
 };
 
@@ -15,17 +15,17 @@ const reducer = (state, action) => {
     case 'cleanStreamer':
       return {
         ...state,
-        id: null,
+        user: null,
         streamer: null,
         stream: false,
         popularClip: null,
-        lastRediff: null,
+        rediffs: null,
         emotes: null
       };
-    case 'changeId':
+    case 'changeUser':
       return {
         ...state,
-        id: action.newId,
+        user: action.newUser,
       };
     case 'changeOAuth':
       return {
@@ -47,10 +47,10 @@ const reducer = (state, action) => {
         ...state,
         popularClip: action.newPopularClip,
       };
-    case 'changeLastRediff':
+    case 'changeRediffs':
       return {
         ...state,
-        lastRediff: action.newLastRediff,
+        rediffs: action.newRediffs,
       };
     case 'changeEmotes':
       return {

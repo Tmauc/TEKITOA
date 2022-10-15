@@ -15,6 +15,13 @@ export const WrapperStyle = css`
 export const WrapperBorderStyle = css`
   border-top: 2px solid #FFFF;
   display: flex;
+  ${p => {
+    if (p.homePage) {
+      return css`
+          justify-content: space-between;
+      `
+    }
+  }};
 `
 
 export const NavBarUlStyle = css`
@@ -64,7 +71,7 @@ ${p => {
     }
   }};
 
-  &:hover:enabled {
+  &:hover {
     color: #642d5a;
   }
 `

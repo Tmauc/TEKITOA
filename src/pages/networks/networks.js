@@ -12,7 +12,7 @@ function Networks() {
   const [{ streamer }] = StreamerConsumerHook();
   return (
     <Section className='networks'>
-      <HeaderStreamer title={'Reseaux : ' + streamer?.pseudo} />
+      <HeaderStreamer title={'Reseaux : ' + streamer?.pseudo} pseudoTwitch={streamer?.pseudoTwitch} />
       <ImageStreamer />
     </Section>
   )

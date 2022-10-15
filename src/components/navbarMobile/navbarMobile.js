@@ -7,10 +7,11 @@ import Play from 'assets/icons/Play.svg'
 import Menu from 'assets/icons/Menu.svg'
 import Close from 'assets/icons/Cross.svg'
 import OnLiveDot from 'components/onLiveDot/onLiveDot';
+import TEKITOASound from 'assets/TEKITOA.mp3'
 
 import { StreamerConsumerHook } from 'stores/streamerStore';
 
-import { NavLinkStyle, WrapperBorderStyle, LogoStyle, CloseImgStyle, MenuIconStyle, MenuWrapperStyle, WrapperStyle, NavBarUlStyle, PhraseButtonStyle, PlayIconStyle } from './navbarMobile.style.js'
+import { NavLinkStyle, WrapperBorderStyle, LogoStyle, CloseImgStyle, MenuleftStyle, MenuLogoStyle, MenuIconStyle, MenuWrapperStyle, WrapperStyle, NavBarUlStyle, PhraseButtonStyle, PlayIconStyle } from './navbarMobile.style.js'
 
 const MenuItems = ({ location, isStreamer, streamer, stream, closeMenu }) => {
   const navigate = useNavigate();
@@ -89,14 +90,25 @@ const MenuItems = ({ location, isStreamer, streamer, stream, closeMenu }) => {
 
 function NavbarMobile() {
   const location = useLocation()
+  const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const isStreamer = location?.state?.isStreamer;
   const [{ streamer, stream }] = StreamerConsumerHook();
+  const homePage = '/home' === location.pathname;
   var audio = streamer && new Audio(streamer?.thePhrase);
+  var audioTEKITOA = TEKITOASound && new Audio(TEKITOASound);
 
   const onClickAudio = () => {
-    audio.play()
-  };
+    if (homePage) {
+      audioTEKITOA.play();
+    } else {
+      audio.play();
+    };
+  }
+
+  function handleClick() {
+    navigate('/home');
+  }
 
   const closeMenu = () => {
     setIsMenuOpen(false);
@@ -108,10 +120,12 @@ function NavbarMobile() {
 
   return (
     <Wrapper>
-
-      <WrapperBorder>
-        <MenuIcon onClick={openMenu} className='logo' src={Menu} />
-        {isStreamer &&
+      <WrapperBorder homePage={homePage}>
+        <Menuleft>
+          <MenuLogo onClick={handleClick} className='logo' src={Logo} />
+          <MenuIcon onClick={openMenu} className='logo' src={Menu} />
+        </Menuleft>
+        {(isStreamer || homePage) &&
           <PhraseButton onClick={onClickAudio}>
             <PlayIcon src={Play} />
             LA PHRASE
@@ -139,6 +153,14 @@ const LogoImg = styled.img`
 
 const CloseImg = styled.img`
   ${CloseImgStyle};
+`
+
+const Menuleft = styled.div`
+  ${MenuleftStyle};
+`
+
+const MenuLogo = styled.img`
+  ${MenuLogoStyle};
 `
 
 const MenuIcon = styled.img`

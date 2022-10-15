@@ -24,7 +24,7 @@ function OnLive() {
 
   return (
     <Section className='onLive' isMobile={isMobile}>
-      <HeaderStreamer title={'OnLive : ' + streamer?.pseudo} />
+      <HeaderStreamer title={'OnLive : ' + streamer?.pseudo} pseudoTwitch={streamer?.pseudoTwitch} />
       <MainWrapper isMobile={isMobile}>
         <DescriptionWrapper>
           <Description title={'Game'} label={stream?.game_name} />
@@ -39,14 +39,12 @@ function OnLive() {
             size={isMobile ? { width: 300, height: 170 } : { width: 440, height: 250 }}
             twitchInfos={{ live: true, channel: streamer?.pseudoTwitch }}
           />
-          {!isMobile &&
-            <FakeWindow
-              type="Tchat.exe"
-              title={streamer?.pseudo + ' - TCHAT'}
-              size={{ width: 300, height: 400 }}
-              twitchInfos={{ chat: true, channel: streamer?.pseudoTwitch }}
-            />
-          }
+          <FakeWindow
+            type="Tchat.exe"
+            title={streamer?.pseudo + ' - TCHAT'}
+            size={{ width: 300, height: 400 }}
+            twitchInfos={{ chat: true, channel: streamer?.pseudoTwitch }}
+          />
         </LiveWrapper>
       </MainWrapper>
       <ImageStreamer />

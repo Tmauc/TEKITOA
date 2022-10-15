@@ -3,7 +3,7 @@ import { NAVBAR_HEIGHT } from 'components/navbar/navbar.style'
 
 export const SectionStyle = css`
   padding: ${p => p.isMobile ? '10px 30px' : '20px 100px'};
-  padding-bottom: ${NAVBAR_HEIGHT}px;
+  padding-bottom: ${p => p.isMobile ? NAVBAR_HEIGHT : 0}px;
 `
 
 export const MainWrapperStyle = css`
@@ -25,7 +25,20 @@ export const DescriptionWrapperStyle = css`
 export const LiveWrapperStyle = css`
   display: flex;
   flex-direction: ${p => p.isMobile ? 'column' : 'row'};
-  & > * {
-    margin-right: 10px;
-  }
+
+  ${p => {
+    if (p.isMobile) {
+      return css`
+        & > * {
+          margin-bottom: 10px;
+        }
+      `
+    } else {
+      return css`
+        & > * {
+          margin-right: 10px;
+        }
+      `
+    }
+  }}
 `

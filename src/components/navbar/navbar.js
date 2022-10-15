@@ -5,6 +5,7 @@ import { useNavigate, useLocation, Link } from "react-router-dom";
 import OnLiveDot from 'components/onLiveDot/onLiveDot';
 import Logo from 'assets/logo.png'
 import Play from 'assets/icons/Play.svg'
+import TEKITOASound from 'assets/TEKITOA.mp3'
 
 import { StreamerConsumerHook } from 'stores/streamerStore';
 
@@ -15,19 +16,24 @@ function Navbar() {
   const navigate = useNavigate();
   const isStreamer = location?.state?.isStreamer;
   const [{ streamer, stream }] = StreamerConsumerHook();
+  const homePage = '/home' === location.pathname;
   var audio = streamer && new Audio(streamer?.thePhrase);
+  var audioTEKITOA = TEKITOASound && new Audio(TEKITOASound);
 
   function handleClick() {
     navigate('/home');
   }
 
   const onClickAudio = () => {
-    audio.play()
-  };
+    if (homePage) {
+      audioTEKITOA.play();
+    } else {
+      audio.play();
+    };
+  }
 
   return (
     <Wrapper>
-
       {isStreamer ?
         <WrapperBorder>
           <NavBarUl className='navbar'>
@@ -79,7 +85,7 @@ function Navbar() {
           </PhraseButton>
         </WrapperBorder>
         :
-        <WrapperBorder>
+        <WrapperBorder homePage={homePage}>
           <NavBarUl className='navbar'>
             <img onClick={handleClick} className='logo' src={Logo} />
             <li><NavLink to='/about' isCurrent={'/about' === location.pathname} disabled >À Propos</NavLink></li>
@@ -87,6 +93,12 @@ function Navbar() {
             <li><NavLink to='/rediffs' isCurrent={'/rediffs' === location.pathname} disabled>Rediffs</NavLink></li>
             <li><NavLink to='/podcast' isCurrent={'/podcast' === location.pathname} disabled>Podcast</NavLink></li>
           </NavBarUl>
+          {homePage &&
+            <PhraseButton onClick={onClickAudio}>
+              <PlayIcon src={Play} />
+              LE SON
+            </PhraseButton>
+          }
         </WrapperBorder>
       }
     </Wrapper>

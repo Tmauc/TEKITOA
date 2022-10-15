@@ -7,7 +7,7 @@ import FakeWindow from 'components/fakeWindow/fakeWindow'
 import ImageStreamer from 'components/imageStreamer/imageStreamer'
 import { useDevice } from 'hooks/useDevice'
 
-import { getClips, getEmote, getRediff } from 'core/twitchAPI.js';
+import { getClips, getEmote, getRediffs } from 'core/twitchAPI.js';
 import { StreamerConsumerHook } from 'stores/streamerStore';
 import { getRandomArray } from 'utils/getRandomItem.js';
 
@@ -15,13 +15,13 @@ import { SectionStyle, MainWrapperStyle, EmotesWrapperStyle, EmbedWrapperStyle }
 
 function Twitch() {
   const { isMobile } = useDevice();
-  const [{ OAuth, id, streamer, popularClip, lastRediff, emotes }, dispatch] = StreamerConsumerHook();
+  const [{ OAuth, user, streamer, popularClip, rediffs, emotes }, dispatch] = StreamerConsumerHook();
   const [randomEmotes, setRandomEmotes] = useState([])
 
   useEffect(() => {
-    getEmote(dispatch, OAuth, id);
-    getClips(dispatch, OAuth, id);
-    getRediff(dispatch, OAuth, id);
+    getEmote(dispatch, OAuth, user?.id);
+    getClips(dispatch, OAuth, user?.id);
+    getRediffs(dispatch, OAuth, user?.id);
   }, []);
 
   useEffect(() => {
@@ -40,7 +40,7 @@ function Twitch() {
 
   return (
     <Section className='twitch' isMobile={isMobile}>
-      <HeaderStreamer title={'Twitch : ' + streamer?.pseudo} />
+      <HeaderStreamer title={'Twitch : ' + streamer?.pseudo} label={streamer} pseudoTwitch={streamer?.pseudoTwitch} />
       <MainWrapper>
         <EmotesWrapper>
           {randomEmotes && randomEmotes?.map((emote, index) => (
@@ -60,7 +60,7 @@ function Twitch() {
             type="Rediff.exe"
             title={'TKT ' + streamer?.pseudo + ' - Rediff'}
             size={isMobile ? { width: 250, height: 150 } : { width: 440, height: 250 }}
-            twitchInfos={{ vod: true, id: lastRediff?.id }}
+            twitchInfos={{ vod: true, id: rediffs && rediffs[0]?.id }}
           />
         </EmbedWrapper>
         <ImageStreamer />

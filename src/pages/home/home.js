@@ -5,7 +5,7 @@ import { OAuthTwitch } from 'core/twitchAPI.js';
 import { useDevice } from 'hooks/useDevice'
 import { StreamerConsumerHook } from 'stores/streamerStore';
 
-import { SectionStyle } from './home.style'
+import { SectionStyle, TitleStyle, LabelStyle } from './home.style'
 
 function Home() {
   const { isMobile } = useDevice();
@@ -17,13 +17,22 @@ function Home() {
 
   return (
     <Section className='home' isMobile={isMobile}>
-      <h1 className='title'>TE KI TOA</h1>
+      <Title isMobile={isMobile}>TE KI TOA</Title>
+      <Label isMobile={isMobile}>À la découverte des streamer⸱euses !</Label>
     </Section>
   )
 }
 
 const Section = styled.section`
   ${SectionStyle};
+`
+
+const Title = styled.h1`
+  ${TitleStyle};
+`
+
+const Label = styled.p`
+  ${LabelStyle};
 `
 
 export default Home

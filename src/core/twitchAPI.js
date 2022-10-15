@@ -34,8 +34,8 @@ export async function getUser(dispatch, OAuth, streamerPseudo) {
     })
     .then((response) => {
       dispatch({
-        type: 'changeId',
-        newId: response?.data?.data[0]?.id
+        type: 'changeUser',
+        newUser: response?.data?.data[0]
       });
       getStream(dispatch, OAuth, response?.data?.data[0]?.id)
     })
@@ -105,7 +105,7 @@ export async function getClips(dispatch, OAuth, streamerId) {
     });
 }
 
-export async function getRediff(dispatch, OAuth, streamerId) {
+export async function getRediffs(dispatch, OAuth, streamerId) {
   const twitchApi = "https://api.twitch.tv/helix/videos?user_id=" + streamerId;
   axios
     .get(twitchApi, {
@@ -116,8 +116,8 @@ export async function getRediff(dispatch, OAuth, streamerId) {
     })
     .then((response) => {
       dispatch({
-        type: 'changeLastRediff',
-        newLastRediff: response?.data?.data[0]
+        type: 'changeRediffs',
+        newRediffs: response?.data?.data
       });
     })
     .catch((error) => {

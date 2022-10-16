@@ -10,9 +10,9 @@ import {
   SectionStyle,
   ListWrapperStyle,
   StreamerLinkStyle,
-} from 'pages/streamers/streamers.style';
+} from 'pages/streamersBrowse/streamersBrowse.style';
 
-function Streamers() {
+function StreamersBrowse() {
   const navigate = useNavigate();
   const { isMobile } = useDevice();
   const [{}, dispatch] = StreamerConsumerHook();
@@ -35,7 +35,7 @@ function Streamers() {
   };
 
   return (
-    <Section className="streamers" isMobile={isMobile}>
+    <Section className="streamersBrowse" isMobile={isMobile}>
       <h1 className="title">STREAMERS</h1>
       <ListWrapper className="list-wrapper" isMobile={isMobile}>
         <ul>
@@ -64,4 +64,4 @@ const StreamerLink = styled.a`
   ${StreamerLinkStyle};
 `;
 
-export default Streamers;
+export default StreamersBrowse;

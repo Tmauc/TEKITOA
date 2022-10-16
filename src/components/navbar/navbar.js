@@ -122,8 +122,8 @@ function Navbar() {
             </li>
             <li>
               <NavLink
-                to="/streamers"
-                isCurrent={'/streamers' === location.pathname}
+                to="/streamersBrowse"
+                isCurrent={'/streamersBrowse' === location.pathname}
               >
                 Streamers
               </NavLink>

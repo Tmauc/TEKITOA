@@ -17,7 +17,7 @@ function HeaderStreamer({ title, pseudoTwitch }) {
   const { isMobile } = useDevice();
 
   function backStreamers() {
-    navigate('/streamers');
+    navigate('/streamersBrowse');
   }
 
   const goToTwitch = () => {

@@ -116,8 +116,8 @@ const MenuItems = ({ location, isStreamer, streamer, stream, closeMenu }) => {
           </li>
           <li>
             <NavLink
-              to="/streamers"
-              isCurrent={'/streamers' === location.pathname}
+              to="/streamersBrowse"
+              isCurrent={'/streamersBrowse' === location.pathname}
               onClick={closeMenu}
             >
               Streamers

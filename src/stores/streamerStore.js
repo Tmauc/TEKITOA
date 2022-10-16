@@ -7,7 +7,7 @@ const initialState = {
   stream: false,
   popularClip: null,
   rediffs: null,
-  emotes: null
+  emotes: null,
 };
 
 const reducer = (state, action) => {
@@ -20,7 +20,7 @@ const reducer = (state, action) => {
         stream: false,
         popularClip: null,
         rediffs: null,
-        emotes: null
+        emotes: null,
       };
     case 'changeUser':
       return {
@@ -55,7 +55,7 @@ const reducer = (state, action) => {
     case 'changeEmotes':
       return {
         ...state,
-        emotes: action.newEmotes
+        emotes: action.newEmotes,
       };
     default:
       return state;

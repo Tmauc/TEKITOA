@@ -3,9 +3,8 @@ import {
   Route,
   Routes,
   Navigate,
-} from "react-router-dom";
-import './lib.scss';
-import StreamersJson from 'assets/streamers.json';
+} from 'react-router-dom';
+import 'lib.scss';
 
 import Home from 'pages/home/home';
 import About from 'pages/about/about';
@@ -17,14 +16,17 @@ import Networks from 'pages/networks/networks';
 import Twitch from 'pages/twitch/twitch';
 import OnLive from 'pages/onLive/onLive';
 
-import Navbar from 'components/navbar/navbar'
-import NavbarMobile from 'components/navbarMobile/navbarMobile'
-import { useDevice } from 'hooks/useDevice'
+import StreamersJson from 'streamers.json';
+
+import Navbar from 'components/navbar/navbar';
+import NavbarMobile from 'components/navbarMobile/navbarMobile';
+import { useDevice } from 'hooks/useDevice';
 
 import { StreamerProvider } from 'stores/streamerStore';
 
 function App() {
   const { isMobile } = useDevice();
+
   return (
     <div className="App">
       <StreamerProvider>
@@ -37,10 +39,26 @@ function App() {
             <Route path="/podcast" element={<Podcast />} />
             {StreamersJson.streamers.map((streamer, index) => (
               <>
-                <Route key={streamer + index} path={'/' + streamer.pseudo} element={<Streamer />} />
-                <Route key={streamer + 'twitch' + index} path={'/' + streamer.pseudo + '/' + 'twitch'} element={<Twitch />} />
-                <Route key={streamer + 'reseaux' + index} path={'/' + streamer.pseudo + '/' + 'reseaux'} element={<Networks />} />
-                <Route key={streamer + 'onlive' + index} path={'/' + streamer.pseudo + '/' + 'onlive'} element={<OnLive />} />
+                <Route
+                  key={streamer + index}
+                  path={'/' + streamer.pseudo}
+                  element={<Streamer />}
+                />
+                <Route
+                  key={streamer + 'twitch' + index}
+                  path={'/' + streamer.pseudo + '/twitch'}
+                  element={<Twitch />}
+                />
+                <Route
+                  key={streamer + 'reseaux' + index}
+                  path={'/' + streamer.pseudo + '/reseaux'}
+                  element={<Networks />}
+                />
+                <Route
+                  key={streamer + 'onlive' + index}
+                  path={'/' + streamer.pseudo + '/onlive'}
+                  element={<OnLive />}
+                />
               </>
             ))}
             <Route path="*" element={<Navigate to="/home" />} />

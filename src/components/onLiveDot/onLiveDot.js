@@ -1,21 +1,19 @@
-import React from 'react'
+import React from 'react';
 
 import styled from 'styled-components';
 
 import { StreamerConsumerHook } from 'stores/streamerStore';
 
-import { StatusStyle } from './onLiveDot.style'
+import { StatusStyle } from 'components/onLiveDot/onLiveDot.style';
 
 function OnLiveDot({ small }) {
   const [{ stream }] = StreamerConsumerHook();
 
-  return (
-    <Status onlive={stream} small={small} />
-  )
+  return <Status onlive={stream} small={small} />;
 }
 
 const Status = styled.div`
   ${StatusStyle};
-`
+`;
 
-export default OnLiveDot
+export default OnLiveDot;

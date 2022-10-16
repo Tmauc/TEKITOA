@@ -1,30 +1,37 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 import HeaderStreamer from 'components/headerStreamer/headerStreamer.js';
-import FakeWindow from 'components/fakeWindow/fakeWindow'
-import ImageStreamer from 'components/imageStreamer/imageStreamer'
+import FakeWindow from 'components/fakeWindow/fakeWindow';
+import ImageStreamer from 'components/imageStreamer/imageStreamer';
 import Description from 'components/description/description.js';
 
-import { useDevice } from 'hooks/useDevice'
+import { useDevice } from 'hooks/useDevice';
 import { StreamerConsumerHook } from 'stores/streamerStore';
 import { calcTimeOnLive } from 'utils/calcTimeOnLive';
 
-import { SectionStyle, MainWrapperStyle, DescriptionWrapperStyle, LiveWrapperStyle } from './onLive.style'
+import {
+  SectionStyle,
+  MainWrapperStyle,
+  DescriptionWrapperStyle,
+  LiveWrapperStyle,
+} from 'pages/onLive/onLive.style';
 
 function OnLive() {
   const { isMobile } = useDevice();
   const [{ streamer, stream }] = StreamerConsumerHook();
   const [onLiveTimer, setOnLiveTimer] = useState(null);
 
-
   useEffect(() => {
     setOnLiveTimer(calcTimeOnLive(stream?.started_at));
-  }, [setOnLiveTimer, calcTimeOnLive, stream?.started_at]);
+  }, [setOnLiveTimer, stream?.started_at]);
 
   return (
-    <Section className='onLive' isMobile={isMobile}>
-      <HeaderStreamer title={'OnLive : ' + streamer?.pseudo} pseudoTwitch={streamer?.pseudoTwitch} />
+    <Section className="onLive" isMobile={isMobile}>
+      <HeaderStreamer
+        title={'OnLive : ' + streamer?.pseudo}
+        pseudoTwitch={streamer?.pseudoTwitch}
+      />
       <MainWrapper isMobile={isMobile}>
         <DescriptionWrapper>
           <Description title={'Game'} label={stream?.game_name} />
@@ -36,7 +43,11 @@ function OnLive() {
           <FakeWindow
             type="ONLIVE.exe"
             title={streamer?.pseudo}
-            size={isMobile ? { width: 300, height: 170 } : { width: 440, height: 250 }}
+            size={
+              isMobile
+                ? { width: 300, height: 170 }
+                : { width: 440, height: 250 }
+            }
             twitchInfos={{ live: true, channel: streamer?.pseudoTwitch }}
           />
           <FakeWindow
@@ -49,23 +60,23 @@ function OnLive() {
       </MainWrapper>
       <ImageStreamer />
     </Section>
-  )
+  );
 }
 
 const Section = styled.section`
   ${SectionStyle};
-`
+`;
 
 const MainWrapper = styled.div`
   ${MainWrapperStyle};
-`
+`;
 
 const DescriptionWrapper = styled.div`
   ${DescriptionWrapperStyle};
-`
+`;
 
 const LiveWrapper = styled.div`
   ${LiveWrapperStyle};
-`
+`;
 
-export default OnLive
+export default OnLive;

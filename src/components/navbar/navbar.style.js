@@ -10,19 +10,19 @@ export const WrapperStyle = css`
   height: ${NAVBAR_HEIGHT}px;
   width: 100%;
   padding: 15px 50px;
-  `
+`;
 
 export const WrapperBorderStyle = css`
-  border-top: 2px solid #FFFF;
+  border-top: 2px solid #ffff;
   display: flex;
-  ${p => {
+  ${(p) => {
     if (p.homePage) {
       return css`
-          justify-content: space-between;
-      `
+        justify-content: space-between;
+      `;
     }
   }};
-`
+`;
 
 export const NavBarUlStyle = css`
   display: flex;
@@ -39,7 +39,7 @@ export const NavBarUlStyle = css`
     height: 65px;
     cursor: pointer;
   }
-`
+`;
 
 export const NavLinkStyle = css`
   display: flex;
@@ -53,28 +53,28 @@ export const NavLinkStyle = css`
     margin-right: 8px;
   }
 
-  ${p => {
+  ${(p) => {
     if (p.isCurrent) {
       return css`
-        text-shadow: 2px 2px 0px #642D5A;
-        color: #F05183;
-      `
+        text-shadow: 2px 2px 0px #642d5a;
+        color: #f05183;
+      `;
     }
   }};
 
-${p => {
+  ${(p) => {
     if (p.disabled) {
       return css`
-        color: rgba(100, 100, 100, .4);
+        color: rgba(100, 100, 100, 0.4);
         cursor: not-allowed;
-      `
+      `;
     }
   }};
 
   &:hover {
     color: #642d5a;
   }
-`
+`;
 
 export const PhraseButtonStyle = css`
   display: flex;
@@ -98,16 +98,16 @@ export const PhraseButtonStyle = css`
 
   &:hover {
     transform: scale(1.05);
-    transition: all .2s ease-in-out;
+    transition: all 0.2s ease-in-out;
     img {
       transform: scale(1.2);
-    transition: all .2s ease-in-out;
+      transition: all 0.2s ease-in-out;
     }
   }
-`
+`;
 
 export const PlayIconStyle = css`
   width: 32px;
   height: 32px;
   margin-right: 8px;
-`
+`;

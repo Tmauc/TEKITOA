@@ -1,15 +1,14 @@
 import { css, keyframes } from 'styled-components';
-import { NAVBAR_HEIGHT } from 'components/navbar/navbar.style'
 
 export const ImgWrapperStyle = css`
   position: fixed;
   bottom: 0px;
-	bottom: ${p => p.isMobile ? 60 : 0}px;
+  bottom: ${(p) => (p.isMobile ? 60 : 0)}px;
   right: 0;
   width: 40%;
   height: 80%;
-	z-index: ${p => p.isMobile ? 0 : 1};
-`
+  z-index: ${(p) => (p.isMobile ? 0 : 1)};
+`;
 
 const breatheAnimation = keyframes`
   100%,0%{
@@ -33,7 +32,7 @@ const breatheAnimation = keyframes`
 		96%{
 			filter: drop-shadow(0px 0px 250px rgb(0,255,255, .5));
 		}
-`
+`;
 
 export const StreamerImgStyle = css`
   object-fit: contain;
@@ -41,8 +40,8 @@ export const StreamerImgStyle = css`
   width: 100%;
   height: 100%;
   transition: box-shadow 0.3s ease-in-out;
-  filter: drop-shadow(0px 0px 250px rgba(255,0,0, .5));
+  filter: drop-shadow(0px 0px 250px rgba(255, 0, 0, 0.5));
   animation-name: ${breatheAnimation};
   animation-duration: 20s;
   animation-iteration-count: infinite;
-`
+`;

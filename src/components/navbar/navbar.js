@@ -1,24 +1,28 @@
-import React from 'react'
+import React from 'react';
 import styled from 'styled-components';
-import { useNavigate, useLocation, Link } from "react-router-dom";
+import { useNavigate, useLocation, Link } from 'react-router-dom';
 
 import OnLiveDot from 'components/onLiveDot/onLiveDot';
-import Logo from 'assets/logo.png'
-import Play from 'assets/icons/Play.svg'
-import TEKITOASound from 'assets/TEKITOA.mp3'
 
 import { StreamerConsumerHook } from 'stores/streamerStore';
 
-import { NavLinkStyle, WrapperBorderStyle, WrapperStyle, NavBarUlStyle, PhraseButtonStyle, PlayIconStyle } from './navbar.style.js'
+import {
+  NavLinkStyle,
+  WrapperBorderStyle,
+  WrapperStyle,
+  NavBarUlStyle,
+  PhraseButtonStyle,
+  PlayIconStyle,
+} from 'components/navbar/navbar.style.js';
 
 function Navbar() {
-  const location = useLocation()
+  const location = useLocation();
   const navigate = useNavigate();
   const isStreamer = location?.state?.isStreamer;
   const [{ streamer, stream }] = StreamerConsumerHook();
   const homePage = '/home' === location.pathname;
   var audio = streamer && new Audio(streamer?.thePhrase);
-  var audioTEKITOA = TEKITOASound && new Audio(TEKITOASound);
+  var audioTEKITOA = new Audio(process.env.PUBLIC_URL + '/assets/TEKITOA.mp3');
 
   function handleClick() {
     navigate('/home');
@@ -29,15 +33,20 @@ function Navbar() {
       audioTEKITOA.play();
     } else {
       audio.play();
-    };
-  }
+    }
+  };
 
   return (
     <Wrapper>
-      {isStreamer ?
+      {isStreamer ? (
         <WrapperBorder>
-          <NavBarUl className='navbar'>
-            <img onClick={handleClick} className='logo' src={Logo} />
+          <NavBarUl className="navbar">
+            <img
+              alt="TE KI TOA logo"
+              onClick={handleClick}
+              className="logo"
+              src={process.env.PUBLIC_URL + '/assets/logo.png'}
+            />
             <li>
               <NavLink
                 to={'/' + streamer?.pseudo}
@@ -51,7 +60,9 @@ function Navbar() {
               <NavLink
                 to={'/' + streamer?.pseudo + '/twitch'}
                 state={{ isStreamer: true }}
-                isCurrent={'/' + streamer?.pseudo + '/twitch' === location.pathname}
+                isCurrent={
+                  '/' + streamer?.pseudo + '/twitch' === location.pathname
+                }
               >
                 Twitch
               </NavLink>
@@ -60,72 +71,118 @@ function Navbar() {
               <NavLink
                 to={'/' + streamer?.pseudo + '/reseaux'}
                 state={{ isStreamer: true }}
-                isCurrent={'/' + streamer?.pseudo + '/reseaux' === location.pathname}
+                isCurrent={
+                  '/' + streamer?.pseudo + '/reseaux' === location.pathname
+                }
                 disabled
               >
                 Réseaux
               </NavLink>
             </li>
-            {stream &&
+            {stream && (
               <li>
                 <NavLink
                   to={'/' + streamer?.pseudo + '/onlive'}
                   state={{ isStreamer: true }}
-                  isCurrent={'/' + streamer?.pseudo + '/onlive' === location.pathname}
+                  isCurrent={
+                    '/' + streamer?.pseudo + '/onlive' === location.pathname
+                  }
                 >
                   <OnLiveDot small />
                   On Live
                 </NavLink>
               </li>
-            }
+            )}
           </NavBarUl>
           <PhraseButton onClick={onClickAudio}>
-            <PlayIcon src={Play} />
+            <PlayIcon
+              alt="Play Icon"
+              src={process.env.PUBLIC_URL + '/assets/icons/Play.svg'}
+            />
             LA PHRASE
           </PhraseButton>
         </WrapperBorder>
-        :
+      ) : (
         <WrapperBorder homePage={homePage}>
-          <NavBarUl className='navbar'>
-            <img onClick={handleClick} className='logo' src={Logo} />
-            <li><NavLink to='/about' isCurrent={'/about' === location.pathname} disabled >À Propos</NavLink></li>
-            <li><NavLink to='/streamers' isCurrent={'/streamers' === location.pathname}>Streamers</NavLink></li>
-            <li><NavLink to='/rediffs' isCurrent={'/rediffs' === location.pathname} disabled>Rediffs</NavLink></li>
-            <li><NavLink to='/podcast' isCurrent={'/podcast' === location.pathname} disabled>Podcast</NavLink></li>
+          <NavBarUl className="navbar">
+            <img
+              alt="TE KI TOA logo"
+              onClick={handleClick}
+              className="logo"
+              src={process.env.PUBLIC_URL + '/assets/logo.png'}
+            />
+            <li>
+              <NavLink
+                to="/about"
+                isCurrent={'/about' === location.pathname}
+                disabled
+              >
+                À Propos
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/streamers"
+                isCurrent={'/streamers' === location.pathname}
+              >
+                Streamers
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/rediffs"
+                isCurrent={'/rediffs' === location.pathname}
+                disabled
+              >
+                Rediffs
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/podcast"
+                isCurrent={'/podcast' === location.pathname}
+                disabled
+              >
+                Podcast
+              </NavLink>
+            </li>
           </NavBarUl>
-          {homePage &&
+          {homePage && (
             <PhraseButton onClick={onClickAudio}>
-              <PlayIcon src={Play} />
+              <PlayIcon
+                alt="Play icon"
+                src={process.env.PUBLIC_URL + '/assets/icons/Play.svg'}
+              />
               LE SON
             </PhraseButton>
-          }
+          )}
         </WrapperBorder>
-      }
+      )}
     </Wrapper>
-  )
+  );
 }
 
 const Wrapper = styled.div`
   ${WrapperStyle};
-`
+`;
 const WrapperBorder = styled.div`
   ${WrapperBorderStyle};
-`
+`;
 
 const NavBarUl = styled.ul`
   ${NavBarUlStyle};
-`
+`;
 
 const NavLink = styled(Link)`
   ${NavLinkStyle};
-`
+`;
 
 const PhraseButton = styled.div`
   ${PhraseButtonStyle};
-`
+`;
 
 const PlayIcon = styled.img`
   ${PlayIconStyle};
-`
+`;
 
-export default Navbar
+export default Navbar;

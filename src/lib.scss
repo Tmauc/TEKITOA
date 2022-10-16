@@ -6,28 +6,38 @@
 }
 
 :root {
-  background: linear-gradient(117.13deg, #051439 0.44%, #3B2570 53.85%, #383572 85.16%);
+  background: linear-gradient(
+    117.13deg,
+    #051439 0.44%,
+    #3b2570 53.85%,
+    #383572 85.16%
+  );
 }
 
 section {
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(117.13deg, #051439 0.44%, #3B2570 53.85%, #383572 85.16%);
+  background: linear-gradient(
+    117.13deg,
+    #051439 0.44%,
+    #3b2570 53.85%,
+    #383572 85.16%
+  );
   overflow-x: hidden;
   overflow-y: scroll;
 
   h1 {
     font-family: Norwester;
     font-size: 100px;
-    color: #F05183;
-    text-shadow: 8px 8px 0px #642D5A;
+    color: #f05183;
+    text-shadow: 8px 8px 0px #642d5a;
   }
 }
 
 @font-face {
   font-family: 'Norwester';
-  src: url('assets/fonts/Norwester.woff2') format('woff2'),
-      url('assets/fonts/Norwester.woff') format('woff');
+  src: url('/assets/fonts/Norwester.woff2') format('woff2'),
+    url('/assets/fonts/Norwester.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -35,8 +45,8 @@ section {
 
 @font-face {
   font-family: 'Montserrat';
-  src: url('assets/fonts/Montserrat-Regular.woff2') format('woff2'),
-      url('assets/fonts/Montserrat-Regular.woff') format('woff');
+  src: url('/assets/fonts/Montserrat-Regular.woff2') format('woff2'),
+    url('/assets/fonts/Montserrat-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: swap;

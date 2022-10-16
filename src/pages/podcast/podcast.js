@@ -1,11 +1,11 @@
-import React from 'react'
+import React from 'react';
 
 function Podcast() {
   return (
-    <section className='podcast'>
-      <h1 className='title'>Podcast</h1>
+    <section className="podcast">
+      <h1 className="title">Podcast</h1>
     </section>
-  )
+  );
 }
 
-export default Podcast
+export default Podcast;

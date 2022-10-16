@@ -7,10 +7,15 @@ export const WrapperStyle = css`
 
   width: 100%;
   padding: 0px 50px 15px 50px;
-  border-top: 2px solid #FFFF;
+  border-top: 2px solid #ffff;
 
-  background: linear-gradient(117.13deg, #051439 0.44%, #3B2570 53.85%, #383572 85.16%);
-  `
+  background: linear-gradient(
+    117.13deg,
+    #051439 0.44%,
+    #3b2570 53.85%,
+    #383572 85.16%
+  );
+`;
 
 export const WrapperBorderStyle = css`
   display: flex;
@@ -18,21 +23,19 @@ export const WrapperBorderStyle = css`
   text-align: center;
   justify-content: space-between;
   align-items: center;
-`
+`;
 
 export const LogoStyle = css`
   width: 120px;
   height: 120px;
   cursor: pointer;
-
-`
+`;
 
 export const CloseImgStyle = css`
   width: 100px;
   height: 100px;
   cursor: pointer;
-
-`
+`;
 
 export const MenuleftStyle = css`
   display: flex;
@@ -40,21 +43,21 @@ export const MenuleftStyle = css`
   & > *:not(:last-child) {
     margin-right: 5px;
   }
-`
+`;
 
 export const MenuIconStyle = css`
   width: 32px;
   height: 32px;
   cursor: pointer;
   margin-top: 10px;
-`
+`;
 
 export const MenuLogoStyle = css`
   width: 50px;
   height: 50px;
   cursor: pointer;
   margin-top: 10px;
-`
+`;
 
 export const MenuWrapperStyle = css`
   position: fixed;
@@ -62,8 +65,8 @@ export const MenuWrapperStyle = css`
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, .8);
-`
+  background-color: rgba(0, 0, 0, 0.8);
+`;
 
 export const NavBarUlStyle = css`
   display: flex;
@@ -76,7 +79,7 @@ export const NavBarUlStyle = css`
   & > *:not(:last-child) {
     margin-bottom: 25px;
   }
-`
+`;
 
 export const NavLinkStyle = css`
   display: flex;
@@ -90,28 +93,28 @@ export const NavLinkStyle = css`
     margin-right: 8px;
   }
 
-  ${p => {
+  ${(p) => {
     if (p.isCurrent) {
       return css`
-        text-shadow: 2px 2px 0px #642D5A;
-        color: #F05183;
-      `
+        text-shadow: 2px 2px 0px #642d5a;
+        color: #f05183;
+      `;
     }
   }};
 
-  ${p => {
+  ${(p) => {
     if (p.disabled) {
       return css`
-        color: rgba(100, 100, 100, .4);
+        color: rgba(100, 100, 100, 0.4);
         cursor: not-allowed;
-      `
+      `;
     }
   }};
 
   &:hover:enabled {
     color: #642d5a;
   }
-`
+`;
 
 export const PhraseButtonStyle = css`
   display: flex;
@@ -135,16 +138,16 @@ export const PhraseButtonStyle = css`
 
   &:hover {
     transform: scale(1.05);
-    transition: all .2s ease-in-out;
+    transition: all 0.2s ease-in-out;
     img {
       transform: scale(1.2);
-    transition: all .2s ease-in-out;
+      transition: all 0.2s ease-in-out;
     }
   }
-`
+`;
 
 export const PlayIconStyle = css`
   width: 24px;
   height: 24px;
   margin-right: 8px;
-`
+`;

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 
 import HeaderStreamer from 'components/headerStreamer/headerStreamer.js';
@@ -9,7 +10,9 @@ import { useDevice } from 'hooks/useDevice';
 
 import { StreamerConsumerHook } from 'stores/streamerStore';
 
-import { getUser } from 'core/twitchAPI.js';
+import { OAuthTwitch } from 'core/twitchAPI.js';
+
+import StreamersJson from 'streamers.json';
 
 import {
   SectionStyle,
@@ -19,14 +22,21 @@ import {
 } from 'pages/streamer/streamer.style.js';
 
 function Streamer() {
+  const location = useLocation();
   const { isMobile } = useDevice();
-  const [{ streamer, user, OAuth }, dispatch] = StreamerConsumerHook();
+  const [{ streamer, user }, dispatch] = StreamerConsumerHook();
   const [createdDate, setCreatedDate] = useState(null);
   const [userDesc, setUserDesc] = useState(null);
 
   useEffect(() => {
-    getUser(dispatch, OAuth, streamer?.pseudoTwitch);
-  }, [OAuth, dispatch, streamer?.pseudoTwitch]);
+    if (!streamer) {
+      dispatch({
+        type: 'changeStreamer',
+        newStreamer: StreamersJson.streamers.find(e => e.pseudo === location?.pathname.substring(1)),
+      });
+    }
+    OAuthTwitch(dispatch, streamer?.pseudoTwitch);
+  }, [dispatch, streamer, streamer?.pseudoTwitch, location?.pathname]);
 
   useEffect(() => {
     const tmpDate =

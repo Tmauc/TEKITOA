@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
+import { generatePath, useNavigate } from 'react-router';
 
 import { getMonthString } from 'utils/parseJsonSchedule'
 import { useDevice } from 'hooks/useDevice';
@@ -7,7 +8,15 @@ import { useDevice } from 'hooks/useDevice';
 import { WrapperStyle, ScheduleMainWrapperStyle, MonthLabelStyle, ScheduleWrapperStyle, ArrowRearwardStyle, ArrowForwardStyle, DayWrapperStyle, DayHeaderWrapperStyle, DateLabelStyle, PseudoLabelStyle, MainWrapperStyle, StreamerImageStyle } from 'components/schedule/schedule.style'
 
 function ScheduleDay({ day, isMobile }) {
-  const onClickDay = () => { }
+  const navigate = useNavigate();
+
+  const onClickDay = () => {
+    var generateStreamerPath = generatePath('/:streamer', {
+      streamer: day?.pseudo,
+    });
+    navigate(generateStreamerPath, { state: { isStreamer: true } });
+  };
+
   return (
     <DayWrapper onClick={onClickDay}>
       <DayHeaderWrapper isMobile={isMobile}>

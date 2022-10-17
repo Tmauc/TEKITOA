@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
 
-import { OAuthTwitch } from 'core/twitchAPI.js';
 import { useDevice } from 'hooks/useDevice';
 import { StreamerConsumerHook } from 'stores/streamerStore';
 
@@ -9,10 +8,13 @@ import { SectionStyle, TitleStyle, LabelStyle } from 'pages/home/home.style';
 
 function Home() {
   const { isMobile } = useDevice();
-  const [{}, dispatch] = StreamerConsumerHook();
+  const [{ }, dispatch] = StreamerConsumerHook();
+
 
   useEffect(() => {
-    OAuthTwitch(dispatch);
+    dispatch({
+      type: 'cleanStreamer',
+    });
   }, [dispatch]);
 
   return (

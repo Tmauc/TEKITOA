@@ -10,7 +10,6 @@ export const WrapperStyle = css`
   width: 100%;
   height: ${NAVBAR_MOBILE_HEIGHT}px;
   padding: 0px 50px 15px 50px;
-  border-top: 2px solid #ffff;
 
   background: linear-gradient(
     90deg,
@@ -26,6 +25,7 @@ export const WrapperBorderStyle = css`
   text-align: center;
   justify-content: space-between;
   align-items: center;
+  border-top: 2px solid #ffff;
 `;
 
 export const LogoStyle = css`

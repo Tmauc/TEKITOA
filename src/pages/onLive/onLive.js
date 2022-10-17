@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 
 import HeaderStreamer from 'components/headerStreamer/headerStreamer.js';
@@ -6,9 +7,12 @@ import FakeWindow from 'components/fakeWindow/fakeWindow';
 import ImageStreamer from 'components/imageStreamer/imageStreamer';
 import Description from 'components/description/description.js';
 
+import { OAuthTwitch } from 'core/twitchAPI.js';
 import { useDevice } from 'hooks/useDevice';
 import { StreamerConsumerHook } from 'stores/streamerStore';
 import { calcTimeOnLive } from 'utils/calcTimeOnLive';
+
+import StreamersJson from 'streamers.json';
 
 import {
   SectionStyle,
@@ -18,9 +22,20 @@ import {
 } from 'pages/onLive/onLive.style';
 
 function OnLive() {
+  const location = useLocation();
   const { isMobile } = useDevice();
-  const [{ streamer, stream }] = StreamerConsumerHook();
+  const [{ streamer, stream }, dispatch] = StreamerConsumerHook();
   const [onLiveTimer, setOnLiveTimer] = useState(null);
+
+  useEffect(() => {
+    if (!streamer) {
+      dispatch({
+        type: 'changeStreamer',
+        newStreamer: StreamersJson.streamers.find(e => e.pseudo === location?.pathname.substring(1).replace('/onlive', '')),
+      });
+    }
+    OAuthTwitch(dispatch, streamer?.pseudoTwitch);
+  }, [dispatch, streamer, streamer?.pseudoTwitch, location?.pathname]);
 
   useEffect(() => {
     setOnLiveTimer(calcTimeOnLive(stream?.started_at));

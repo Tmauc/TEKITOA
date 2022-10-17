@@ -1,4 +1,5 @@
 import React, { useEffect, useCallback, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 
 import HeaderStreamer from 'components/headerStreamer/headerStreamer.js';
@@ -7,9 +8,11 @@ import FakeWindow from 'components/fakeWindow/fakeWindow';
 import ImageStreamer from 'components/imageStreamer/imageStreamer';
 import { useDevice } from 'hooks/useDevice';
 
-import { getClips, getEmote, getRediffs } from 'core/twitchAPI.js';
+import { OAuthTwitch } from 'core/twitchAPI.js';
 import { StreamerConsumerHook } from 'stores/streamerStore';
 import { getRandomArray } from 'utils/getRandomItem.js';
+
+import StreamersJson from 'streamers.json';
 
 import {
   SectionStyle,
@@ -20,15 +23,20 @@ import {
 
 function Twitch() {
   const { isMobile } = useDevice();
-  const [{ OAuth, user, streamer, popularClip, rediffs, emotes }, dispatch] =
+  const location = useLocation();
+  const [{ streamer, popularClip, rediffs, emotes }, dispatch] =
     StreamerConsumerHook();
   const [randomEmotes, setRandomEmotes] = useState([]);
 
   useEffect(() => {
-    getEmote(dispatch, OAuth, user?.id);
-    getClips(dispatch, OAuth, user?.id);
-    getRediffs(dispatch, OAuth, user?.id);
-  }, [OAuth, dispatch, user?.id]);
+    if (!streamer) {
+      dispatch({
+        type: 'changeStreamer',
+        newStreamer: StreamersJson.streamers.find(e => e.pseudo === location?.pathname.substring(1).replace('/twitch', '')),
+      });
+    }
+    OAuthTwitch(dispatch, streamer?.pseudoTwitch);
+  }, [dispatch, streamer, streamer?.pseudoTwitch, location?.pathname]);
 
   const getRandomEmotes = useCallback(() => {
     if (emotes?.length > 7) {

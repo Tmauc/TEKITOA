@@ -15,7 +15,7 @@ import {
 function StreamersBrowse() {
   const navigate = useNavigate();
   const { isMobile } = useDevice();
-  const [{}, dispatch] = StreamerConsumerHook();
+  const [{ }, dispatch] = StreamerConsumerHook();
 
   useEffect(() => {
     dispatch({
@@ -26,10 +26,6 @@ function StreamersBrowse() {
   const onClick = (streamer) => {
     var generateStreamerPath = generatePath('/:streamer', {
       streamer: streamer?.pseudo,
-    });
-    dispatch({
-      type: 'changeStreamer',
-      newStreamer: streamer,
     });
     navigate(generateStreamerPath, { state: { isStreamer: true } });
   };

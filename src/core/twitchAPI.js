@@ -1,7 +1,7 @@
 import axios from 'axios';
 import config from 'config.json';
 
-export async function OAuthTwitch(dispatch) {
+export async function OAuthTwitch(dispatch, streamerPseudo) {
   const twitchAPI =
     'https://id.twitch.tv/oauth2/token?client_id=' +
     config.clientID +
@@ -16,6 +16,7 @@ export async function OAuthTwitch(dispatch) {
         type: 'changeOAuth',
         newOAuth: response?.data?.access_token,
       });
+      getUser(dispatch, response?.data?.access_token, streamerPseudo);
     })
     .catch((error) => {
       console.log('error', error);
@@ -37,6 +38,9 @@ export async function getUser(dispatch, OAuth, streamerPseudo) {
         newUser: response?.data?.data[0],
       });
       getStream(dispatch, OAuth, response?.data?.data[0]?.id);
+      getEmote(dispatch, OAuth, response?.data?.data[0]?.id);
+      getClips(dispatch, OAuth, response?.data?.data[0]?.id);
+      getRediffs(dispatch, OAuth, response?.data?.data[0]?.id);
     })
     .catch((error) => {
       console.log('error', error);

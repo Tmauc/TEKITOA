@@ -72,6 +72,12 @@ export const DayWrapperStyle = css`
   max-width: 320px;
   border: 2px dashed rgba(255, 255, 255, .5);
   background-color: rgba(0, 0, 0, .2);
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.01);
+  }
 `
 
 export const DayHeaderWrapperStyle = css`

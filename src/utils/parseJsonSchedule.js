@@ -47,6 +47,7 @@ export function parseJsonSchedule(streamersJson) {
       scheduleArray[month] = new Array();
       scheduleArray[month].push(streamer);
     }
+    return 1;
   })
   return scheduleArray;
 }

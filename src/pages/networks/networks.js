@@ -14,7 +14,7 @@ function Networks() {
     <Section className="networks">
       <HeaderStreamer
         title={'Reseaux : ' + streamer?.pseudo}
-        pseudoTwitch={streamer?.pseudoTwitch}
+        twitchURL={streamer?.twitchURL}
       />
       <ImageStreamer />
     </Section>

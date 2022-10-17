@@ -12,7 +12,7 @@ import {
   BackIconStyle,
 } from 'components/headerStreamer/headerStreamer.style';
 
-function HeaderStreamer({ title, pseudoTwitch }) {
+function HeaderStreamer({ title, twitchURL }) {
   const navigate = useNavigate();
   const { isMobile } = useDevice();
 
@@ -21,7 +21,7 @@ function HeaderStreamer({ title, pseudoTwitch }) {
   }
 
   const goToTwitch = () => {
-    window.open('https://twitch.tv/' + pseudoTwitch, '_blank').focus();
+    window.open(twitchURL, '_blank').focus();
   };
 
   return (

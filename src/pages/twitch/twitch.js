@@ -49,7 +49,7 @@ function Twitch() {
       <HeaderStreamer
         title={'Twitch : ' + streamer?.pseudo}
         label={streamer}
-        pseudoTwitch={streamer?.pseudoTwitch}
+        twitchURL={streamer?.twitchURL}
       />
       <MainWrapper>
         <EmotesWrapper>

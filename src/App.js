@@ -10,6 +10,7 @@ import { createGlobalStyle } from 'styled-components';
 import Home from 'pages/home/home';
 import About from 'pages/about/about';
 import StreamersBrowse from 'pages/streamersBrowse/streamersBrowse';
+import Schedule from 'pages/scheduleTKT/scheduleTKT';
 import Streamer from 'pages/streamer/streamer';
 import Rediffs from 'pages/rediffs/rediffs';
 import Podcast from 'pages/podcast/podcast';
@@ -37,6 +38,7 @@ function App() {
             <Route exact path="/home" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/streamersBrowse" element={<StreamersBrowse />} />
+            <Route path="/schedule" element={<Schedule />} />
             <Route path="/rediffs" element={<Rediffs />} />
             <Route path="/podcast" element={<Podcast />} />
             {StreamersJson.streamers.map((streamer, index) => (

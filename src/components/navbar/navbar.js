@@ -130,6 +130,14 @@ function Navbar() {
             </li>
             <li>
               <NavLink
+                to="/schedule"
+                isCurrent={'/schedule' === location.pathname}
+              >
+                Calendrier
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
                 to="/rediffs"
                 isCurrent={'/rediffs' === location.pathname}
                 disabled

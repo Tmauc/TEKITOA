@@ -30,7 +30,7 @@ function OnLive() {
     <Section className="onLive" isMobile={isMobile}>
       <HeaderStreamer
         title={'OnLive : ' + streamer?.pseudo}
-        pseudoTwitch={streamer?.pseudoTwitch}
+        twitchURL={streamer?.twitchURL}
       />
       <MainWrapper isMobile={isMobile}>
         <DescriptionWrapper>

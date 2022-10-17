@@ -42,7 +42,7 @@ function Streamer() {
     <Section className="Streamer" isMobile={isMobile}>
       <HeaderStreamer
         title={streamer?.pseudo}
-        pseudoTwitch={streamer?.pseudoTwitch}
+        twitchURL={streamer?.twitchURL}
       />
       <Main>
         {

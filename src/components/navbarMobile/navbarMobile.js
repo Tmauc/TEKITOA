@@ -171,7 +171,7 @@ function NavbarMobile() {
   const isStreamer = location?.state?.isStreamer;
   const [{ streamer, stream }] = StreamerConsumerHook();
   const homePage = '/home' === location.pathname;
-  var audio = streamer && new Audio(streamer?.thePhrase);
+  var audio = streamer && streamer?.thePhrase && new Audio(streamer?.thePhrase);
   var audioTEKITOA = new Audio(process.env.PUBLIC_URL + '/assets/TEKITOA.mp3');
 
   const onClickAudio = () => {
@@ -211,7 +211,7 @@ function NavbarMobile() {
             src={process.env.PUBLIC_URL + '/assets/icons/Menu.svg'}
           />
         </Menuleft>
-        {(isStreamer || homePage) && (
+        {(audio || homePage) && (
           <PhraseButton onClick={onClickAudio}>
             <PlayIcon
               alt="Play icon"

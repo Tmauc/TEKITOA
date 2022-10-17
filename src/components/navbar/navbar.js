@@ -21,7 +21,7 @@ function Navbar() {
   const isStreamer = location?.state?.isStreamer;
   const [{ streamer, stream }] = StreamerConsumerHook();
   const homePage = '/home' === location.pathname;
-  var audio = streamer && new Audio(streamer?.thePhrase);
+  var audio = streamer && streamer?.thePhrase && new Audio(streamer?.thePhrase);
   var audioTEKITOA = new Audio(process.env.PUBLIC_URL + '/assets/TEKITOA.mp3');
 
   function handleClick() {
@@ -94,13 +94,15 @@ function Navbar() {
               </li>
             )}
           </NavBarUl>
-          <PhraseButton onClick={onClickAudio}>
-            <PlayIcon
-              alt="Play Icon"
-              src={process.env.PUBLIC_URL + '/assets/icons/Play.svg'}
-            />
-            LA PHRASE
-          </PhraseButton>
+          {(homePage || audio) &&
+            <PhraseButton onClick={onClickAudio} disabled={!homePage && !audio}>
+              <PlayIcon
+                alt="Play Icon"
+                src={process.env.PUBLIC_URL + '/assets/icons/Play.svg'}
+              />
+              LA PHRASE
+            </PhraseButton>
+          }
         </WrapperBorder>
       ) : (
         <WrapperBorder homePage={homePage}>

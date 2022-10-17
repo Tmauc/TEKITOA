@@ -15,10 +15,11 @@ import {
   HeaderRightStyle,
   CloseIconStyle,
   MainStyle,
+  ComingSoonStyle,
   IframeStyle,
 } from 'components/fakeWindow/fakeWindow.style';
 
-function FakeWindow({ type, title, youtubeUrl, size, twitchInfos }) {
+function FakeWindow({ type, title, dateTKT, youtubeUrl, size, twitchInfos }) {
   const { isMobile } = useDevice();
 
   return (
@@ -43,7 +44,10 @@ function FakeWindow({ type, title, youtubeUrl, size, twitchInfos }) {
         </HeaderRight>
       </Header>
       <Main width={size.width} height={size.height}>
-        {!twitchInfos && (
+        {!twitchInfos && !youtubeUrl && (
+          <ComingSoon isMobile={isMobile}>Disponible le lendemain du {dateTKT}</ComingSoon>
+        )}
+        {!twitchInfos && youtubeUrl && (
           <Iframe
             src={youtubeUrl}
             title={title}
@@ -131,6 +135,11 @@ const CloseIcon = styled.img`
 const Main = styled.div`
   ${MainStyle};
 `;
+
+const ComingSoon = styled.p`
+  ${ComingSoonStyle};
+`;
+
 
 const Iframe = styled.iframe`
   ${IframeStyle};

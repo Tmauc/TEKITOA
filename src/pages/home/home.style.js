@@ -20,14 +20,14 @@ export const SectionStyle = css`
 `;
 
 export const TitleStyle = css`
-  font-size: ${(p) => (p.isMobile ? 90 : 250)}px;
+  font-size: ${(p) => (p.isMobile ? 70 : 250)}px;
   animation-name: ${float};
   animation-duration: 5s;
   animation-iteration-count: infinite;
 `;
 
 export const LabelStyle = css`
-  font-size: ${(p) => (p.isMobile ? 15 : 40)}px;
+  font-size: ${(p) => (p.isMobile ? 10 : 40)}px;
   font-family: Montserrat;
   color: white;
   text-shadow: 0px 0px 4px #ffffff;

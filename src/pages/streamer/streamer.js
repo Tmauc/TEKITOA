@@ -67,6 +67,7 @@ function Streamer() {
                 type="Rediff.exe"
                 title={'TKT ' + streamer?.pseudo + ' - ' + streamer?.dateTKT}
                 youtubeUrl={streamer?.rediffTKT}
+                dateTKT={streamer?.dateTKT}
                 size={
                   isMobile
                     ? { width: 300, height: 170 }

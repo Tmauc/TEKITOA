@@ -44,10 +44,21 @@ export const HeaderRightStyle = css`
 export const CloseIconStyle = css``;
 
 export const MainStyle = css`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: rgba(217, 217, 217, 0.5);
   border: 2px solid rgba(255, 255, 255, 0.2);
   width: ${(p) => p.width + 'px'};
   height: ${(p) => p.height + 'px'};
+`;
+
+export const ComingSoonStyle = css`
+  text-align: center;
+  font-size: ${(p) => (p.isMobile ? 30 : 40)}px;
+  font-family: Montserrat;
+  color: white;
+  text-shadow: 0px 0px 4px #ffffff;
 `;
 
 export const IframeStyle = css`

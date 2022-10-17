@@ -26,6 +26,9 @@ import { useDevice } from 'hooks/useDevice';
 
 import { StreamerProvider } from 'stores/streamerStore';
 
+import { NAVBAR_HEIGHT } from 'components/navbar/navbar.style';
+import { NAVBAR_MOBILE_HEIGHT } from 'components/navbarMobile/navbarMobile.style';
+
 function App() {
   const { isMobile } = useDevice();
 
@@ -84,7 +87,7 @@ const GlobalStyle = createGlobalStyle`
 
 :root {
   background: linear-gradient(
-    117.13deg,
+    90deg,
     #051439 0.44%,
     #3b2570 53.85%,
     #383572 85.16%
@@ -95,13 +98,13 @@ section {
   width: 100vw;
   height: 100vh;
   background: linear-gradient(
-    117.13deg,
+    90deg,
     #051439 0.44%,
     #3b2570 53.85%,
     #383572 85.16%
   );
   overflow-x: hidden;
-  overflow-y: ${p => p.isMobile ? 'scroll' : 'hidden'};
+  overflow-y: 'scroll';
 
   h1 {
     font-family: Norwester;
@@ -109,6 +112,30 @@ section {
     color: #f05183;
     text-shadow: 8px 8px 0px #642d5a;
   }
+
+  padding: ${(p) => (p.isMobile ? '10px 30px' : '20px 100px')};
+  padding-bottom: ${p => p.isMobile ? NAVBAR_MOBILE_HEIGHT : NAVBAR_HEIGHT}px;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(240, 81, 131, 0.7);
+  border-radius: 4px;
+  width: 3px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #642d5a;
 }
 
 @font-face {

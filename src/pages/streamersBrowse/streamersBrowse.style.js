@@ -1,5 +1,4 @@
 import { css } from 'styled-components';
-import { NAVBAR_HEIGHT } from 'components/navbar/navbar.style';
 
 export const SectionStyle = css`
   display: flex;
@@ -8,7 +7,6 @@ export const SectionStyle = css`
   h1 {
     font-size: ${(p) => (p.isMobile ? 50 : 100)}px;
   }
-  padding-bottom: ${(p) => (p.isMobile ? NAVBAR_HEIGHT : 0)}px;
 `;
 
 export const ListWrapperStyle = css`

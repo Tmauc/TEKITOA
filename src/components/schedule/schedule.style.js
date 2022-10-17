@@ -8,14 +8,14 @@ export const WrapperStyle = css`
   justify-content: center;
   align-items: center;
   & > *:not(:last-child) {
-    margin-bottom: 20px;
+    margin-bottom: ${p => p.isMobile ? 10 : 20}px;
   }
 `
 export const ScheduleMainWrapperStyle = css`
   display: flex;
   justify-content: center;
   align-items: center;
-  filter: drop-shadow(0px 0px 300px rgba(255,0,0, .5));
+  filter: drop-shadow(0px 0px 30px rgba(255,0,0, .1));
   
   & > *:not(:last-child) {
     margin-right: 10px;
@@ -31,10 +31,20 @@ export const MonthLabelStyle = css`
 
 export const ScheduleWrapperStyle = css`
   display: flex;
-  justify-content: center;
   width: 80vw;
   height: 60vh;
   color: white;
+  ${p => {
+    if (p.isMobile) {
+      return css`
+        flex-direction: column;
+      `
+    } else {
+      return css`
+        justify-content: center;
+      `
+    }
+  }}
 `
 
 export const ArrowRearwardStyle = css`
@@ -59,8 +69,9 @@ export const ArrowForwardStyle = css`
 
 export const DayWrapperStyle = css`
   width: 100%;
-  max-width: 350px;
+  max-width: 320px;
   border: 2px dashed rgba(255, 255, 255, .5);
+  background-color: rgba(0, 0, 0, .2);
 `
 
 export const DayHeaderWrapperStyle = css`
@@ -70,8 +81,15 @@ export const DayHeaderWrapperStyle = css`
   align-items: center;
 
   padding: 10px;
-  border-bottom: 2px dashed rgba(255, 255, 255, .5);
   max-height: ${HEADER_HEIGHT}px;
+
+  ${p => {
+    if (!p.isMobile) {
+      return css`
+          border-bottom: 2px dashed rgba(255, 255, 255, .5);
+      `
+    }
+  }}
 `
 
 export const DateLabelStyle = css`

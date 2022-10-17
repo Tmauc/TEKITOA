@@ -127,6 +127,7 @@ const MenuItems = ({ location, isStreamer, streamer, stream, closeMenu }) => {
             <NavLink
               to="/schedule"
               isCurrent={'/schedule' === location.pathname}
+              onClick={closeMenu}
             >
               Calendrier
             </NavLink>

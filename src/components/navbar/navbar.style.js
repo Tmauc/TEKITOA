@@ -10,11 +10,19 @@ export const WrapperStyle = css`
   height: ${NAVBAR_HEIGHT}px;
   width: 100%;
   padding: 15px 50px;
+
+  background: linear-gradient(
+    90deg,
+    #051439 0.44%,
+    #3b2570 53.85%,
+    #383572 85.16%
+  );
 `;
 
 export const WrapperBorderStyle = css`
   border-top: 2px solid #ffff;
   display: flex;
+  
   ${(p) => {
     if (p.homePage) {
       return css`

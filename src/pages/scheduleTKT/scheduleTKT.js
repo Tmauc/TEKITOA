@@ -4,16 +4,18 @@ import styled from 'styled-components';
 import StreamersJson from 'streamers.json';
 import { parseJsonSchedule } from 'utils/parseJsonSchedule';
 import Schedule from 'components/schedule/schedule';
+import { useDevice } from 'hooks/useDevice';
 
 import { SectionStyle, HeaderStyle, TitleStyle } from 'pages/scheduleTKT/scheduleTKT.style.js';
 
 function ScheduleTKT() {
+  const { isMobile } = useDevice();
   const scheduleArray = parseJsonSchedule(StreamersJson)
 
   return (
     <Section className="schedule">
       <Header>
-        <Title>Calendrier</Title>
+        <Title isMobile={isMobile}>Calendrier</Title>
         <Schedule scheduleArray={scheduleArray} />
       </Header>
     </Section>

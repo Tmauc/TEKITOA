@@ -1,16 +1,19 @@
 import { css } from 'styled-components';
 
+export const NAVBAR_MOBILE_HEIGHT = 77;
+
 export const WrapperStyle = css`
   position: fixed;
   bottom: 0;
   left: 0;
 
   width: 100%;
+  height: ${NAVBAR_MOBILE_HEIGHT}px;
   padding: 0px 50px 15px 50px;
   border-top: 2px solid #ffff;
 
   background: linear-gradient(
-    117.13deg,
+    90deg,
     #051439 0.44%,
     #3b2570 53.85%,
     #383572 85.16%

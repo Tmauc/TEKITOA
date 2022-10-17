@@ -36,7 +36,7 @@ function HeaderStreamer({ title, twitchURL }) {
           alt="Back icon"
           small={isMobile}
           onClick={backStreamers}
-          src={process.env.PUBLIC_URL + '/assets/icons/Arrow.svg'}
+          src={process.env.PUBLIC_URL + '/assets/icons/ArrowLeft.svg'}
         />
       </HeaderRightWrapper>
     </Header>

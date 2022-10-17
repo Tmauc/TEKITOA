@@ -5,7 +5,7 @@ import { generatePath, useNavigate } from 'react-router';
 import { getMonthString } from 'utils/parseJsonSchedule'
 import { useDevice } from 'hooks/useDevice';
 
-import { WrapperStyle, ScheduleMainWrapperStyle, MonthLabelStyle, ScheduleWrapperStyle, ArrowRearwardStyle, ArrowForwardStyle, DayWrapperStyle, DayHeaderWrapperStyle, DateLabelStyle, PseudoLabelStyle, MainWrapperStyle, StreamerImageStyle } from 'components/schedule/schedule.style'
+import { WrapperStyle, ScheduleMainWrapperStyle, MonthLabelStyle, ScheduleWrapperStyle, ArrowStyle, DayWrapperStyle, DayHeaderWrapperStyle, DateLabelStyle, PseudoLabelStyle, MainWrapperStyle, StreamerImageStyle } from 'components/schedule/schedule.style'
 
 function ScheduleDay({ day, isMobile }) {
   const navigate = useNavigate();
@@ -56,13 +56,13 @@ function Schedule({ scheduleArray }) {
           alt="Rearward icon"
           onClick={onClickRearward}
           small
-          src={process.env.PUBLIC_URL + '/assets/icons/Arrow.svg'}
+          src={process.env.PUBLIC_URL + '/assets/icons/ArrowLeft.svg'}
         />
         <ArrowForward
           alt="Rearward icon"
           onClick={onClickForward}
           small
-          src={process.env.PUBLIC_URL + '/assets/icons/Arrow.svg'}
+          src={process.env.PUBLIC_URL + '/assets/icons/ArrowRight.svg'}
         />
       </div>
       }
@@ -70,7 +70,7 @@ function Schedule({ scheduleArray }) {
         {!isMobile && <ArrowRearward
           alt="Rearward icon"
           onClick={onClickRearward}
-          src={process.env.PUBLIC_URL + '/assets/icons/Arrow.svg'}
+          src={process.env.PUBLIC_URL + '/assets/icons/ArrowLeft.svg'}
         />}
         <ScheduleWrapper isMobile={isMobile}>
           {scheduleArray && scheduleArray[Object.keys(scheduleArray)[currentMonth]].map((day, index) => (
@@ -80,7 +80,7 @@ function Schedule({ scheduleArray }) {
         {!isMobile && <ArrowForward
           alt="Rearward icon"
           onClick={onClickForward}
-          src={process.env.PUBLIC_URL + '/assets/icons/Arrow.svg'}
+          src={process.env.PUBLIC_URL + '/assets/icons/ArrowRight.svg'}
         />
         }
       </ScheduleMainWrapper>
@@ -105,11 +105,11 @@ const ScheduleWrapper = styled.div`
 `
 
 const ArrowRearward = styled.img`
-  ${ArrowRearwardStyle};
+  ${ArrowStyle};
 `;
 
 const ArrowForward = styled.img`
-  ${ArrowForwardStyle};
+  ${ArrowStyle};
 `;
 
 const DayWrapper = styled.div`

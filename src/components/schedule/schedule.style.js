@@ -47,21 +47,11 @@ export const ScheduleWrapperStyle = css`
   }}
 `
 
-export const ArrowRearwardStyle = css`
+export const ArrowStyle = css`
   width: ${(p) => (p.small ? 50 : 100)}px;
   height: ${(p) => (p.small ? 50 : 100)}px;
   &:hover {
     transform: scale(1.1);
-    transition: all 0.2s ease-in-out;
-  }
-  cursor: pointer;
-`
-
-export const ArrowForwardStyle = css`
-  width: ${(p) => (p.small ? 50 : 100)}px;
-  height: ${(p) => (p.small ? 50 : 100)}px;
-  transform: scaleX(-1);
-  &:hover {
     transition: all 0.2s ease-in-out;
   }
   cursor: pointer;

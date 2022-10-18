@@ -129,7 +129,7 @@ section {
   }
 
   padding: ${(p) => (p.isMobile ? '10px 30px' : '20px 100px')};
-  padding-bottom: ${p => p.isMobile ? NAVBAR_MOBILE_HEIGHT : NAVBAR_HEIGHT}px;
+  padding-bottom: ${p => p.isMobile ? NAVBAR_MOBILE_HEIGHT + 10 : NAVBAR_HEIGHT + 10}px;
 }
 
 ::-webkit-scrollbar {

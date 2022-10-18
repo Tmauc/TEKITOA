@@ -15,15 +15,16 @@ import {
   HeaderRightStyle,
   CloseIconStyle,
   MainStyle,
+  StreamerPseudoStyle,
   ComingSoonStyle,
   IframeStyle,
 } from 'components/fakeWindow/fakeWindow.style';
 
-function FakeWindow({ type, title, dateTKT, youtubeUrl, size, twitchInfos }) {
+function FakeWindow({ onClick, type, title, dateTKT, content, youtubeUrl, size, twitchInfos }) {
   const { isMobile } = useDevice();
 
   return (
-    <Wrapper width={size.width} height={size.height}>
+    <Wrapper width={size.width} height={size.height} onClick={onClick && onClick}>
       <Header width={size.width} isMobile={isMobile}>
         <HeaderLeft>
           <SquareIcon
@@ -44,7 +45,10 @@ function FakeWindow({ type, title, dateTKT, youtubeUrl, size, twitchInfos }) {
         </HeaderRight>
       </Header>
       <Main width={size.width} height={size.height}>
-        {!twitchInfos && !youtubeUrl && (
+        {content &&
+          <StreamerPseudo isMobile={isMobile}>{content}</StreamerPseudo>
+        }
+        {!twitchInfos && !youtubeUrl && !content && (
           <ComingSoon isMobile={isMobile}>Disponible le lendemain du {dateTKT}</ComingSoon>
         )}
         {!twitchInfos && youtubeUrl && (
@@ -134,6 +138,10 @@ const CloseIcon = styled.img`
 
 const Main = styled.div`
   ${MainStyle};
+`;
+
+const StreamerPseudo = styled.p`
+  ${StreamerPseudoStyle};
 `;
 
 const ComingSoon = styled.p`

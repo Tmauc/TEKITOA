@@ -17,11 +17,11 @@ export const LeftWrapperStyle = css`
 `;
 
 export const RediffWrapperStyle = css`
+  display: flex;
   margin-top: ${(p) => (p.isMobile ? 50 : 100)}px;
   ${(p) => {
     if (p.isMobile) {
       return css`
-        display: flex;
         justify-content: center;
       `;
     }

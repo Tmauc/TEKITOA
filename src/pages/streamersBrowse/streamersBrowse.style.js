@@ -11,6 +11,24 @@ export const SectionStyle = css`
 
 export const ListWrapperStyle = css`
   margin-top: ${(p) => (p.isMobile ? 20 : 100)}px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 50px;
+
+  @media (max-width: 1300px) {
+    grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  }
+
+  @media (max-width: 700px) {
+    grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+  }
+
+  @media (max-width: 400px) {
+    grid-template-columns: repeat(1, 1fr);
+  grid-gap: 20px;
+  }
 `;
 
 export const StreamerLinkStyle = css`

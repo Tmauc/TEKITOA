@@ -36,6 +36,7 @@ function Schedule({ scheduleArray }) {
   const { isMobile } = useDevice();
   const [currentMonth, setCurrentMonth] = useState(Object.keys(scheduleArray)?.length - 1);
 
+
   const onClickRearward = () => {
     if (currentMonth < Object.keys(scheduleArray)?.length - 1) {
       setCurrentMonth(currentMonth + 1)
@@ -52,24 +53,27 @@ function Schedule({ scheduleArray }) {
     <Wrapper isMobile={isMobile}>
       <MonthLabel isMobile={isMobile}>{getMonthString(scheduleArray[Object.keys(scheduleArray)[currentMonth]][0]?.dateTKT)}</MonthLabel>
       {isMobile && <div>
-        <ArrowRearward
-          alt="Rearward icon"
-          onClick={onClickRearward}
-          small
-          src={process.env.PUBLIC_URL + '/assets/icons/ArrowLeft.svg'}
-        />
-        <ArrowForward
+        {currentMonth > 0 && <ArrowRearward
           alt="Rearward icon"
           onClick={onClickForward}
           small
-          src={process.env.PUBLIC_URL + '/assets/icons/ArrowRight.svg'}
+          src={process.env.PUBLIC_URL + '/assets/icons/ArrowLeft.svg'}
         />
+        }
+        {(currentMonth < Object.keys(scheduleArray)?.length - 1) &&
+          <ArrowForward
+            alt="Forward icon"
+            onClick={onClickRearward}
+            small
+            src={process.env.PUBLIC_URL + '/assets/icons/ArrowRight.svg'}
+          />
+        }
       </div>
       }
       <ScheduleMainWrapper>
-        {!isMobile && <ArrowRearward
+        {!isMobile && currentMonth > 0 && <ArrowRearward
           alt="Rearward icon"
-          onClick={onClickRearward}
+          onClick={onClickForward}
           src={process.env.PUBLIC_URL + '/assets/icons/ArrowLeft.svg'}
         />}
         <ScheduleWrapper isMobile={isMobile}>
@@ -77,9 +81,9 @@ function Schedule({ scheduleArray }) {
             <ScheduleDay key={day + index} day={day} isMobile={isMobile} />
           ))}
         </ScheduleWrapper>
-        {!isMobile && <ArrowForward
-          alt="Rearward icon"
-          onClick={onClickForward}
+        {!isMobile && (currentMonth < Object.keys(scheduleArray)?.length - 1) && <ArrowForward
+          alt="Forward icon"
+          onClick={onClickRearward}
           src={process.env.PUBLIC_URL + '/assets/icons/ArrowRight.svg'}
         />
         }

@@ -6,6 +6,7 @@ import HeaderStreamer from 'components/headerStreamer/headerStreamer.js';
 import Description from 'components/description/description.js';
 import FakeWindow from 'components/fakeWindow/fakeWindow.js';
 import ImageStreamer from 'components/imageStreamer/imageStreamer';
+import Emotes from 'components/emotes/emotes';
 import { useDevice } from 'hooks/useDevice';
 
 import { StreamerConsumerHook } from 'stores/streamerStore';
@@ -50,6 +51,7 @@ function Streamer() {
 
   return (
     <Section className="Streamer" isMobile={isMobile}>
+      <Emotes maxEmotes={10} />
       <HeaderStreamer
         title={streamer?.pseudo}
         twitchURL={streamer?.twitchURL}

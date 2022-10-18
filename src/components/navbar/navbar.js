@@ -10,6 +10,7 @@ import {
   NavLinkStyle,
   WrapperBorderStyle,
   WrapperStyle,
+  LogoStyle,
   NavBarUlStyle,
   PhraseButtonStyle,
   PlayIconStyle,
@@ -41,7 +42,7 @@ function Navbar() {
       {isStreamer ? (
         <WrapperBorder>
           <NavBarUl className="navbar">
-            <img
+            <LogoImg
               alt="TE KI TOA logo"
               onClick={handleClick}
               className="logo"
@@ -107,7 +108,7 @@ function Navbar() {
       ) : (
         <WrapperBorder homePage={homePage}>
           <NavBarUl className="navbar">
-            <img
+            <LogoImg
               alt="TE KI TOA logo"
               onClick={handleClick}
               className="logo"
@@ -117,7 +118,6 @@ function Navbar() {
               <NavLink
                 to="/about"
                 isCurrent={'/about' === location.pathname}
-                disabled
               >
                 À Propos
               </NavLink>
@@ -138,6 +138,7 @@ function Navbar() {
                 Calendrier
               </NavLink>
             </li>
+            {/*
             <li>
               <NavLink
                 to="/rediffs"
@@ -156,6 +157,7 @@ function Navbar() {
                 Podcast
               </NavLink>
             </li>
+            */}
           </NavBarUl>
           {homePage && (
             <PhraseButton onClick={onClickAudio}>
@@ -175,8 +177,13 @@ function Navbar() {
 const Wrapper = styled.div`
   ${WrapperStyle};
 `;
+
 const WrapperBorder = styled.div`
   ${WrapperBorderStyle};
+`;
+
+const LogoImg = styled.img`
+  ${LogoStyle};
 `;
 
 const NavBarUl = styled.ul`

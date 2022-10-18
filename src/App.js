@@ -5,7 +5,7 @@ import {
   Navigate,
 } from 'react-router-dom';
 
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle, keyframes } from 'styled-components';
 
 import Home from 'pages/home/home';
 import About from 'pages/about/about';
@@ -77,6 +77,18 @@ function App() {
   );
 }
 
+const float = keyframes`
+  0% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.03);
+	}
+	100% {
+		transform: scale(1);
+	}
+`;
+
 const GlobalStyle = createGlobalStyle`
 * {
   padding: 0;
@@ -111,6 +123,9 @@ section {
     font-size: 100px;
     color: #f05183;
     text-shadow: 8px 8px 0px #642d5a;
+    animation-name: ${float};
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
   }
 
   padding: ${(p) => (p.isMobile ? '10px 30px' : '20px 100px')};

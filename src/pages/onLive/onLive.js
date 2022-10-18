@@ -6,6 +6,7 @@ import HeaderStreamer from 'components/headerStreamer/headerStreamer.js';
 import FakeWindow from 'components/fakeWindow/fakeWindow';
 import ImageStreamer from 'components/imageStreamer/imageStreamer';
 import Description from 'components/description/description.js';
+import Emotes from 'components/emotes/emotes';
 
 import { OAuthTwitch } from 'core/twitchAPI.js';
 import { useDevice } from 'hooks/useDevice';
@@ -43,6 +44,7 @@ function OnLive() {
 
   return (
     <Section className="onLive" isMobile={isMobile}>
+      <Emotes maxEmotes={10} />
       <HeaderStreamer
         title={'OnLive : ' + streamer?.pseudo}
         twitchURL={streamer?.twitchURL}

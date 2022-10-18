@@ -32,11 +32,15 @@ export const LogoStyle = css`
   width: 120px;
   height: 120px;
   cursor: pointer;
+  
+  &:hover {
+    transform: scale(1.1);
+  }
 `;
 
 export const CloseImgStyle = css`
-  width: 100px;
-  height: 100px;
+  width: 50px;
+  height: 50px;
   cursor: pointer;
 `;
 
@@ -68,7 +72,9 @@ export const MenuWrapperStyle = css`
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.95);
+  text-shadow: 0px 0px 4px #ffffff;
+  z-index: 10 !important;
 `;
 
 export const NavBarUlStyle = css`
@@ -87,7 +93,7 @@ export const NavBarUlStyle = css`
 export const NavLinkStyle = css`
   display: flex;
   align-items: center;
-  font-size: 50px;
+  font-size: 30px;
   font-family: Montserrat;
   color: white;
   text-decoration: none;

@@ -1,6 +1,9 @@
 import { css } from 'styled-components';
 
-export const WrapperStyle = css``;
+export const WrapperStyle = css`
+  z-index: 0;
+  filter: drop-shadow(5px 5px 5px rgba(0,0,0, .8));
+`;
 
 export const HeaderStyle = css`
   display: flex;

@@ -7,18 +7,7 @@ import OnLiveDot from 'components/onLiveDot/onLiveDot';
 import { StreamerConsumerHook } from 'stores/streamerStore';
 
 import {
-  NavLinkStyle,
-  WrapperBorderStyle,
-  LogoStyle,
-  CloseImgStyle,
-  MenuleftStyle,
-  MenuLogoStyle,
-  MenuIconStyle,
-  MenuWrapperStyle,
-  WrapperStyle,
-  NavBarUlStyle,
-  PhraseButtonStyle,
-  PlayIconStyle,
+  NavLinkStyle, WrapperBorderStyle, LogoStyle, CloseImgStyle, MenuleftStyle, MenuLogoStyle, MenuIconStyle, MenuWrapperStyle, WrapperStyle, NavBarUlStyle, PhraseButtonStyle, PlayIconStyle,
 } from 'components/navbarMobile/navbarMobile.style.js';
 
 const MenuItems = ({ location, isStreamer, streamer, stream, closeMenu }) => {
@@ -41,20 +30,20 @@ const MenuItems = ({ location, isStreamer, streamer, stream, closeMenu }) => {
           />
           <li>
             <NavLink
-              to={'/' + streamer.pseudo}
+              to={'/' + streamer?.pseudo}
               state={{ isStreamer: true }}
-              isCurrent={'/' + streamer.pseudo === location.pathname}
+              isCurrent={'/' + streamer?.pseudo === location.pathname}
               onClick={closeMenu}
             >
-              {streamer.pseudo}
+              {streamer?.pseudo}
             </NavLink>
           </li>
           <li>
             <NavLink
-              to={'/' + streamer.pseudo + '/twitch'}
+              to={'/' + streamer?.pseudo + '/twitch'}
               state={{ isStreamer: true }}
               isCurrent={
-                '/' + streamer.pseudo + '/twitch' === location.pathname
+                '/' + streamer?.pseudo + '/twitch' === location.pathname
               }
               onClick={closeMenu}
             >
@@ -63,10 +52,10 @@ const MenuItems = ({ location, isStreamer, streamer, stream, closeMenu }) => {
           </li>
           <li>
             <NavLink
-              to={'/' + streamer.pseudo + '/reseaux'}
+              to={'/' + streamer?.pseudo + '/reseaux'}
               state={{ isStreamer: true }}
               isCurrent={
-                '/' + streamer.pseudo + '/reseaux' === location.pathname
+                '/' + streamer?.pseudo + '/reseaux' === location.pathname
               }
               onClick={closeMenu}
               disabled
@@ -109,7 +98,6 @@ const MenuItems = ({ location, isStreamer, streamer, stream, closeMenu }) => {
               to="/about"
               isCurrent={'/about' === location.pathname}
               onClick={closeMenu}
-              disabled
             >
               À Propos
             </NavLink>
@@ -132,6 +120,7 @@ const MenuItems = ({ location, isStreamer, streamer, stream, closeMenu }) => {
               Calendrier
             </NavLink>
           </li>
+          {/*
           <li>
             <NavLink
               to="/rediffs"
@@ -152,6 +141,7 @@ const MenuItems = ({ location, isStreamer, streamer, stream, closeMenu }) => {
               Podcast
             </NavLink>
           </li>
+          */}
           <CloseImg
             alt="Close icon"
             onClick={closeMenu}

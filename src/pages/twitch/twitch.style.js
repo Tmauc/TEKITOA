@@ -8,13 +8,6 @@ export const MainWrapperStyle = css`
   flex-direction: column;
 `;
 
-export const EmotesWrapperStyle = css`
-  display: flex;
-  & > * {
-    margin-right: 8px;
-  }
-`;
-
 export const EmbedWrapperStyle = css`
   display: flex;
   flex-direction: ${(p) => (p.isMobile ? 'column' : 'row')};

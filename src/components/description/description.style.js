@@ -1,6 +1,7 @@
 import { css } from 'styled-components';
 
 export const WrapperStyle = css`
+  position: relative;
   display: flex;
   font-size: ${(p) => (p.isMobile ? 12 : 20)}px;
   font-family: Montserrat;
@@ -10,6 +11,8 @@ export const WrapperStyle = css`
   & > *:not(:last-child) {
     margin-right: 10px;
   }
+  z-index: 0;
+  text-shadow: 4px 4px 10px black;
 `;
 
 export const TitleStyle = css`

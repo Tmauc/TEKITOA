@@ -32,6 +32,15 @@ export const WrapperBorderStyle = css`
   }};
 `;
 
+export const LogoStyle = css`
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  
+  &:hover {
+    transform: scale(1.1);
+  }
+`;
+
 export const NavBarUlStyle = css`
   display: flex;
   align-items: center;

@@ -20,6 +20,7 @@ import OnLive from 'pages/onLive/onLive';
 
 import StreamersJson from 'streamers.json';
 
+import FooterInfos from 'components/footerInfos/footerInfos'
 import Navbar from 'components/navbar/navbar';
 import NavbarMobile from 'components/navbarMobile/navbarMobile';
 import { useDevice } from 'hooks/useDevice';
@@ -71,6 +72,7 @@ function App() {
             <Route path="*" element={<Navigate to="/home" />} />
           </Routes>
           {!isMobile ? <Navbar /> : <NavbarMobile />}
+          <FooterInfos />
         </Router>
       </StreamerProvider>
     </div>

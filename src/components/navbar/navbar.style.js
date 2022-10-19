@@ -1,6 +1,6 @@
 import { css } from 'styled-components';
 
-export const NAVBAR_HEIGHT = 112;
+export const NAVBAR_HEIGHT = 120;
 
 export const WrapperStyle = css`
   position: fixed;

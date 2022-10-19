@@ -58,7 +58,6 @@ const MenuItems = ({ location, isStreamer, streamer, stream, closeMenu }) => {
                 '/' + streamer?.pseudo + '/reseaux' === location.pathname
               }
               onClick={closeMenu}
-              disabled
             >
               Réseaux
             </NavLink>

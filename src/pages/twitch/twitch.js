@@ -41,7 +41,7 @@ function Twitch() {
       <HeaderStreamer
         title={'Twitch : ' + streamer?.pseudo}
         label={streamer}
-        twitchURL={streamer?.twitchURL}
+        twitchURL={streamer?.networks.find(o => o?.type === 'twitch')?.url}
       />
       <MainWrapper>
         <EmbedWrapper isMobile={isMobile}>

@@ -1,6 +1,17 @@
-import { css } from 'styled-components';
+import { css, keyframes } from 'styled-components';
+
+const float = keyframes`
+  0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-2px);
+  }
+`
 
 export const WrapperStyle = css`
+  display: flex;
+  flex-direction: column;
   z-index: 0;
   filter: drop-shadow(5px 5px 5px rgba(0,0,0, .8));
   cursor: pointer;
@@ -10,6 +21,10 @@ export const WrapperStyle = css`
     transform: scale(1.05);
     transition: all 0.3s ease-in-out;
   }
+
+  animation-name: ${float};
+  animation-duration: ${(p) => p.duration}s;
+  animation-iteration-count: infinite;
 `;
 
 export const HeaderStyle = css`

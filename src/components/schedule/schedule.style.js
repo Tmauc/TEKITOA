@@ -13,8 +13,8 @@ export const WrapperStyle = css`
 `
 export const ScheduleMainWrapperStyle = css`
   display: flex;
-  justify-content: center;
   align-items: center;
+
   filter: drop-shadow(0px 0px 30px rgba(255,0,0, .1));
   
   & > *:not(:last-child) {
@@ -38,6 +38,7 @@ export const ScheduleWrapperStyle = css`
     if (p.isMobile) {
       return css`
         flex-direction: column;
+        align-items: center;
       `
     } else {
       return css`
@@ -57,9 +58,17 @@ export const ArrowStyle = css`
   cursor: pointer;
 `
 
+export const ArrowDisabledStyle = css`
+  width: ${(p) => (p.small ? 50 : 100)}px;
+  height: ${(p) => (p.small ? 50 : 100)}px;
+  opacity: .2;
+  cursor: not-allowed;
+`
+
 export const DayWrapperStyle = css`
   width: 100%;
   max-width: 320px;
+  min-width: 120px;
   border: 2px dashed rgba(255, 255, 255, .5);
   background-color: rgba(0, 0, 0, .2);
   transition: all 0.2s ease-in-out;
@@ -105,14 +114,14 @@ export const PseudoLabelStyle = css`
 export const MainWrapperStyle = css`
   position:relative;
   display: flex;
+  justify-content: center;
+  align-items: flex-end;
   height: 100%;
   height: calc(100% - ${HEADER_HEIGHT}px);
+  overflow: hidden;
 `
 
 export const StreamerImageStyle = css`
-  position:absolute;
-  right:0;
-  bottom:0;
-  max-width: 100%;
-  max-height: 100%;
+  max-height: 80%;
+  object-position: center;
 `

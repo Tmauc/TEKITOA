@@ -9,12 +9,28 @@
       "thePhrase": "/streamers/aneiina/aneiinaPhrase.mp3",
       "dateTKT": "22/06/2022",
       "rediffTKT": "https://www.youtube.com/embed/eGDmQQX_PAY",
-      "twitchURL": "https://www.twitch.tv/aneiina",
-      "youtubeURL": "",
-      "tiktokURL": "https://www.tiktok.com/@aneiinaa",
-      "discordURL": "https://discord.com/invite/T54njzbYJ8",
-      "instagramURL": "https://www.instagram.com/aneiina_/",
-      "twitterURL": "https://twitter.com/aneiina"
+      "networks": [
+        {
+          "type": "twitch",
+          "url": "https://www.twitch.tv/aneiina"
+        },
+        {
+          "type": "tiktok",
+          "url": "https://www.tiktok.com/@aneiinaa"
+        },
+        {
+          "type": "discord",
+          "url": "https://discord.com/invite/T54njzbYJ8"
+        },
+        {
+          "type": "instagram",
+          "url": "https://www.instagram.com/aneiina_/"
+        },
+        {
+          "type": "twitter",
+          "url": "https://twitter.com/aneiina"
+        }
+      ]
     },
     {
       "pseudoTwitch": "bakared_",
@@ -25,12 +41,32 @@
       "thePhrase": "",
       "dateTKT": "09/11/2022",
       "rediffTKT": "",
-      "twitchURL": "https://www.twitch.tv/bakared_",
-      "youtubeURL": "https://www.youtube.com/c/Bakared",
-      "tiktokURL": "https://www.tiktok.com/@bakared_?lang=fr",
-      "discordURL": "https://discord.gg/eqJdEU7Q9h",
-      "instagramURL": "https://www.instagram.com/bakared/",
-      "twitterURL": "https://twitter.com/bakared_"
+      "networks": [
+        {
+          "type": "twitch",
+          "url": "https://www.twitch.tv/bakared_"
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/c/Bakared"
+        },
+        {
+          "type": "tiktok",
+          "url": "https://www.tiktok.com/@bakared_?lang=fr"
+        },
+        {
+          "type": "discord",
+          "url": "https://discord.gg/eqJdEU7Q9h"
+        },
+        {
+          "type": "instagram",
+          "url": "https://www.instagram.com/bakared/"
+        },
+        {
+          "type": "twitter",
+          "url": "https://twitter.com/bakared_"
+        }
+      ]
     },
     {
       "pseudoTwitch": "discodevli",
@@ -41,12 +77,32 @@
       "thePhrase": "/streamers/discodevli/discodevliPhrase.mp3",
       "dateTKT": "06/07/2022",
       "rediffTKT": "https://www.youtube.com/embed/cE3MlQlM80w",
-      "twitchURL": "https://www.twitch.tv/discodevli",
-      "youtubeURL": "https://www.youtube.com/channel/UCMAeXtIYHP8G2AgNSG5oUOA",
-      "tiktokURL": "https://www.tiktok.com/@discodevli",
-      "discordURL": "https://discord.com/invite/KZe7ZhSzbN",
-      "instagramURL": "https://www.instagram.com/discodevli/",
-      "twitterURL": "https://twitter.com/DiscoDevli"
+      "networks": [
+        {
+          "type": "twitch",
+          "url": "https://www.twitch.tv/discodevli"
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/channel/UCMAeXtIYHP8G2AgNSG5oUOA"
+        },
+        {
+          "type": "tiktok",
+          "url": "https://www.tiktok.com/@discodevli"
+        },
+        {
+          "type": "discord",
+          "url": "https://discord.com/invite/KZe7ZhSzbN"
+        },
+        {
+          "type": "instagram",
+          "url": "https://www.instagram.com/discodevli/"
+        },
+        {
+          "type": "twitter",
+          "url": "https://twitter.com/DiscoDevli"
+        }
+      ]
     },
     {
       "pseudoTwitch": "elypwet",
@@ -57,12 +113,32 @@
       "thePhrase": "",
       "dateTKT": "03/11/2022",
       "rediffTKT": "",
-      "twitchURL": "https://www.twitch.tv/elypwet",
-      "youtubeURL": "https://www.youtube.com/channel/UC46SYNmJ6A-ialAcTfAtlhg?view_as=subscriber",
-      "tiktokURL": "https://www.tiktok.com/@elypwet?lang=fr",
-      "discordURL": "https://discord.com/invite/fKhBTGVm7Y",
-      "instagramURL": "https://www.instagram.com/elypwet/",
-      "twitterURL": "https://twitter.com/ElyPwet"
+      "networks": [
+        {
+          "type": "twitch",
+          "url": "https://www.twitch.tv/elypwet"
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/channel/UC46SYNmJ6A-ialAcTfAtlhg?view_as=subscriber"
+        },
+        {
+          "type": "tiktok",
+          "url": "https://www.tiktok.com/@elypwet?lang=fr"
+        },
+        {
+          "type": "discord",
+          "url": "https://discord.com/invite/fKhBTGVm7Y"
+        },
+        {
+          "type": "instagram",
+          "url": "https://www.instagram.com/elypwet/"
+        },
+        {
+          "type": "twitter",
+          "url": "https://twitter.com/ElyPwet"
+        }
+      ]
     },
     {
       "pseudoTwitch": "espiona_",
@@ -73,12 +149,28 @@
       "thePhrase": "",
       "dateTKT": "16/11/2022",
       "rediffTKT": "",
-      "twitchURL": "https://www.twitch.tv/espiona_",
-      "youtubeURL": "",
-      "tiktokURL": "https://www.tiktok.com/@espiona?lang=fr",
-      "discordURL": "https://discord.gg/fnhfvTGyw3",
-      "instagramURL": "https://www.instagram.com/espiona_sg/?hl=fr",
-      "twitterURL": "https://twitter.com/EspionaSg"
+      "networks": [
+        {
+          "type": "twitch",
+          "url": "https://www.twitch.tv/espiona_"
+        },
+        {
+          "type": "tiktok",
+          "url": "https://www.tiktok.com/@espiona?lang=fr"
+        },
+        {
+          "type": "discord",
+          "url": "https://discord.gg/fnhfvTGyw3"
+        },
+        {
+          "type": "instagram",
+          "url": "https://www.instagram.com/espiona_sg/?hl=fr"
+        },
+        {
+          "type": "twitter",
+          "url": "https://twitter.com/EspionaSg"
+        }
+      ]
     },
     {
       "pseudoTwitch": "flachony",
@@ -89,12 +181,32 @@
       "thePhrase": "/streamers/flachony/flachonyPhrase.mp3",
       "dateTKT": "21/09/2022",
       "rediffTKT": "https://www.youtube.com/embed/zV1_5y28K7A",
-      "twitchURL": "https://www.twitch.tv/flachony",
-      "youtubeURL": "https://www.youtube.com/channel/UCs9jD-1lAhZihDGqnrk9OcA",
-      "tiktokURL": "https://www.tiktok.com/@flachony?lang=fr",
-      "discordURL": "https://discord.com/invite/FTWysqV",
-      "instagramURL": "https://www.instagram.com/flachony/",
-      "twitterURL": "https://twitter.com/Flachony"
+      "networks": [
+        {
+          "type": "twitch",
+          "url": "https://www.twitch.tv/flachony"
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/channel/UCs9jD-1lAhZihDGqnrk9OcA"
+        },
+        {
+          "type": "tiktok",
+          "url": "https://www.tiktok.com/@flachony?lang=fr"
+        },
+        {
+          "type": "discord",
+          "url": "https://discord.com/invite/FTWysqV"
+        },
+        {
+          "type": "instagram",
+          "url": "https://www.instagram.com/flachony/"
+        },
+        {
+          "type": "twitter",
+          "url": "https://twitter.com/Flachony"
+        }
+      ]
     },
     {
       "pseudoTwitch": "hermesstv",
@@ -105,12 +217,32 @@
       "thePhrase": "/streamers/hermesstv/hermesstvPhrase.mp3",
       "dateTKT": "24/08/2022",
       "rediffTKT": "https://www.youtube.com/embed/n4TBSXSxGmw",
-      "twitchURL": "https://www.twitch.tv/hermesstv",
-      "youtubeURL": "https://www.youtube.com/channel/UCNZ1ur5zgDtuupy_7CeYaFA/featured",
-      "tiktokURL": "https://www.tiktok.com/@hermesstv?lang=fr",
-      "discordURL": "https://discord.com/invite/QCV56ePwYQ",
-      "instagramURL": "https://www.instagram.com/hermes.tv/",
-      "twitterURL": "https://twitter.com/HermessTV"
+      "networks": [
+        {
+          "type": "twitch",
+          "url": "https://www.twitch.tv/hermesstv"
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/channel/UCNZ1ur5zgDtuupy_7CeYaFA/featured"
+        },
+        {
+          "type": "tiktok",
+          "url": "https://www.tiktok.com/@hermesstv?lang=fr"
+        },
+        {
+          "type": "discord",
+          "url": "https://discord.com/invite/QCV56ePwYQ"
+        },
+        {
+          "type": "instagram",
+          "url": "https://www.instagram.com/hermes.tv/"
+        },
+        {
+          "type": "twitter",
+          "url": "https://twitter.com/HermessTV"
+        }
+      ]
     },
     {
       "pseudoTwitch": "juliettepsqt",
@@ -121,12 +253,28 @@
       "thePhrase": "/streamers/juliettepsqt/juliettepsqtPhrase.mp3",
       "dateTKT": "13/07/2022",
       "rediffTKT": "https://www.youtube.com/embed/5BFDtF8L-X8",
-      "twitchURL": "https://www.twitch.tv/juliettepsqt",
-      "youtubeURL": "",
-      "tiktokURL": "https://www.tiktok.com/@juliettepsqt?",
-      "discordURL": "https://discord.com/invite/cY3mBE2YYT",
-      "instagramURL": "https://www.instagram.com/juliettepsqt/",
-      "twitterURL": "https://twitter.com/JPasquault"
+      "networks": [
+        {
+          "type": "twitch",
+          "url": "https://www.twitch.tv/juliettepsqt"
+        },
+        {
+          "type": "tiktok",
+          "url": "https://www.tiktok.com/@juliettepsqt?"
+        },
+        {
+          "type": "discord",
+          "url": "https://discord.com/invite/cY3mBE2YYT"
+        },
+        {
+          "type": "instagram",
+          "url": "https://www.instagram.com/juliettepsqt/"
+        },
+        {
+          "type": "twitter",
+          "url": "https://twitter.com/JPasquault"
+        }
+      ]
     },
     {
       "pseudoTwitch": "khenael",
@@ -137,12 +285,32 @@
       "thePhrase": "/streamers/khenael/khenaelPhrase.mp3",
       "dateTKT": "28/09/2022",
       "rediffTKT": "https://www.youtube.com/embed/2S0K0j6V2UU",
-      "twitchURL": "https://www.twitch.tv/khenael",
-      "youtubeURL": "https://www.youtube.com/channel/UCt8k48w7Nb8kXq39_xkeXDw",
-      "tiktokURL": "https://www.tiktok.com/@khenael",
-      "discordURL": "https://discord.com/invite/BA9pUQW",
-      "instagramURL": "https://www.instagram.com/khenael",
-      "twitterURL": "https://twitter.com/Khenael"
+      "networks": [
+        {
+          "type": "twitch",
+          "url": "https://www.twitch.tv/khenael"
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/channel/UCt8k48w7Nb8kXq39_xkeXDw"
+        },
+        {
+          "type": "tiktok",
+          "url": "https://www.tiktok.com/@khenael"
+        },
+        {
+          "type": "discord",
+          "url": "https://discord.com/invite/BA9pUQW"
+        },
+        {
+          "type": "instagram",
+          "url": "https://www.instagram.com/khenael"
+        },
+        {
+          "type": "twitter",
+          "url": "https://twitter.com/Khenael"
+        }
+      ]
     },
     {
       "pseudoTwitch": "lacantine_",
@@ -153,12 +321,28 @@
       "thePhrase": "",
       "dateTKT": "19/10/2022",
       "rediffTKT": "",
-      "twitchURL": "https://www.twitch.tv/lacantine_",
-      "youtubeURL": "",
-      "tiktokURL": "https://www.tiktok.com/@lacantine_?lang=fr",
-      "discordURL": "https://discord.com/invite/EAM3dUq77z",
-      "instagramURL": "https://www.instagram.com/lacantine_twitch/",
-      "twitterURL": "https://twitter.com/LaCantine_"
+      "networks": [
+        {
+          "type": "twitch",
+          "url": "https://www.twitch.tv/lacantine_"
+        },
+        {
+          "type": "tiktok",
+          "url": "https://www.tiktok.com/@lacantine_?lang=fr"
+        },
+        {
+          "type": "discord",
+          "url": "https://discord.com/invite/EAM3dUq77z"
+        },
+        {
+          "type": "instagram",
+          "url": "https://www.instagram.com/lacantine_twitch/"
+        },
+        {
+          "type": "twitter",
+          "url": "https://twitter.com/LaCantine_"
+        }
+      ]
     },
     {
       "pseudoTwitch": "lapoustouflance",
@@ -169,12 +353,24 @@
       "thePhrase": "/streamers/lapoustouflance/lapoustouflancePhrase.mp3",
       "dateTKT": "01/06/2022",
       "rediffTKT": "https://www.youtube.com/embed/rFN3nr3b_HI",
-      "twitchURL": "https://www.twitch.tv/lapoustouflance",
-      "youtubeURL": "https://www.youtube.com/c/MichelSaucisseUhcPlayer",
-      "tiktokURL": "https://www.tiktok.com/@lapoustouflance?lang=fr",
-      "discordURL": "",
-      "instagramURL": "https://www.instagram.com/_louisreynaud/",
-      "twitterURL": ""
+      "networks": [
+        {
+          "type": "twitch",
+          "url": "https://www.twitch.tv/lapoustouflance"
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/c/MichelSaucisseUhcPlayer"
+        },
+        {
+          "type": "tiktok",
+          "url": "https://www.tiktok.com/@lapoustouflance?lang=fr"
+        },
+        {
+          "type": "instagram",
+          "url": "https://www.instagram.com/_louisreynaud/"
+        }
+      ]
     },
     {
       "pseudoTwitch": "laytho_",
@@ -185,12 +381,32 @@
       "thePhrase": "/streamers/laytho/laythoPhrase.mp3",
       "dateTKT": "12/10/2022",
       "rediffTKT": "https://www.youtube.com/embed/xlG2Ofoeptc",
-      "twitchURL": "https://www.twitch.tv/laytho_",
-      "youtubeURL": "https://www.youtube.com/channel/UCUviZXq0ekW6qR3mCSAsG0Q",
-      "tiktokURL": "https://www.tiktok.com/@laytho_",
-      "discordURL": "https://discord.com/invite/K2h5ZUrNBT",
-      "instagramURL": "https://www.instagram.com/laytho_jujul/",
-      "twitterURL": "https://twitter.com/Laytho_jujul"
+      "networks": [
+        {
+          "type": "twitch",
+          "url": "https://www.twitch.tv/laytho"
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/channel/UCUviZXq0ekW6qR3mCSAsG0Q"
+        },
+        {
+          "type": "tiktok",
+          "url": "https://www.tiktok.com/@laytho_"
+        },
+        {
+          "type": "discord",
+          "url": "https://discord.com/invite/K2h5ZUrNBT"
+        },
+        {
+          "type": "instagram",
+          "url": "https://www.instagram.com/laytho_jujul/"
+        },
+        {
+          "type": "twitter",
+          "url": "https://twitter.com/Laytho_jujul"
+        }
+      ]
     },
     {
       "pseudoTwitch": "mayucca",
@@ -201,12 +417,32 @@
       "thePhrase": "",
       "dateTKT": "23/11/2022",
       "rediffTKT": "",
-      "twitchURL": "https://www.twitch.tv/mayucca",
-      "youtubeURL": "https://www.youtube.com/channel/UC0QAOCbBGs-zY_lmGwoIb3w",
-      "tiktokURL": "https://www.tiktok.com/@mayucca?lang=fr",
-      "discordURL": "https://discord.com/invite/Zwut4taj7W",
-      "instagramURL": "https://www.instagram.com/mayucca.tw/?hl=fr",
-      "twitterURL": "https://twitter.com/Mayucca_"
+      "networks": [
+        {
+          "type": "twitch",
+          "url": "https://www.twitch.tv/mayucca"
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/channel/UC0QAOCbBGs-zY_lmGwoIb3w"
+        },
+        {
+          "type": "tiktok",
+          "url": "https://www.tiktok.com/@mayucca?lang=fr"
+        },
+        {
+          "type": "discord",
+          "url": "https://discord.com/invite/Zwut4taj7W"
+        },
+        {
+          "type": "instagram",
+          "url": "https://www.instagram.com/mayucca.tw/?hl=fr"
+        },
+        {
+          "type": "twitter",
+          "url": "https://twitter.com/Mayucca_"
+        }
+      ]
     },
     {
       "pseudoTwitch": "niruvia",
@@ -217,12 +453,32 @@
       "thePhrase": "",
       "dateTKT": "26/10/2022",
       "rediffTKT": "",
-      "twitchURL": "https://www.twitch.tv/niruvia",
-      "youtubeURL": "https://www.youtube.com/channel/UC9xqqrxPDaIcBxa5v2vWG_A/featured",
-      "tiktokURL": "https://www.tiktok.com/@niruvia?lang=fr",
-      "discordURL": "https://discord.com/invite/psyv3bYBSt",
-      "instagramURL": "https://www.instagram.com/niruvia_tv/",
-      "twitterURL": "https://twitter.com/Niruviaa"
+      "networks": [
+        {
+          "type": "twitch",
+          "url": "https://www.twitch.tv/niruvia"
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/channel/UC9xqqrxPDaIcBxa5v2vWG_A/featured"
+        },
+        {
+          "type": "tiktok",
+          "url": "https://www.tiktok.com/@niruvia?lang=fr"
+        },
+        {
+          "type": "discord",
+          "url": "https://discord.com/invite/psyv3bYBSt"
+        },
+        {
+          "type": "instagram",
+          "url": "https://www.instagram.com/niruvia_tv/"
+        },
+        {
+          "type": "twitter",
+          "url": "https://twitter.com/Niruviaa"
+        }
+      ]
     },
     {
       "pseudoTwitch": "peachyqueen16",
@@ -233,12 +489,28 @@
       "thePhrase": "/streamers/peachyqueen/peachyqueenPhrase.mp3",
       "dateTKT": "03/08/2022",
       "rediffTKT": "https://www.youtube.com/embed/CeMTNDv7ZeI",
-      "twitchURL": "https://www.twitch.tv/peachyqueen16",
-      "youtubeURL": "",
-      "tiktokURL": "https://www.tiktok.com/@ch_artlotte?lang=fr",
-      "discordURL": "https://discord.com/invite/snBwAA9gsK ",
-      "instagramURL": "https://www.instagram.com/ch_artlotte",
-      "twitterURL": "https://twitter.com/charlottebibi16"
+      "networks": [
+        {
+          "type": "twitch",
+          "url": "https://www.twitch.tv/peachyqueen16"
+        },
+        {
+          "type": "tiktok",
+          "url": "https://www.tiktok.com/@ch_artlotte?lang=fr"
+        },
+        {
+          "type": "discord",
+          "url": "https://discord.com/invite/snBwAA9gsK"
+        },
+        {
+          "type": "instagram",
+          "url": "https://www.instagram.com/ch_artlotte"
+        },
+        {
+          "type": "twitter",
+          "url": "https://twitter.com/charlottebibi16"
+        }
+      ]
     },
     {
       "pseudoTwitch": "piedpiedd",
@@ -249,12 +521,32 @@
       "thePhrase": "/streamers/piedpiedd/piedpieddPhrase.mp3",
       "dateTKT": "25/05/2022",
       "rediffTKT": "https://www.youtube.com/embed/MjLuMP3B3FE",
-      "twitchURL": "https://www.twitch.tv/piedpiedd",
-      "youtubeURL": "https://www.youtube.com/channel/UCiwglr4a8OsjgLe4ucVzAPQ",
-      "tiktokURL": "https://www.tiktok.com/@piedpieddtwitch?lang=fr",
-      "discordURL": "https://discord.com/invite/FuTmbMsKnp",
-      "instagramURL": "https://www.instagram.com/piedpieddtwitch/",
-      "twitterURL": "https://twitter.com/piedpiedd"
+      "networks": [
+        {
+          "type": "twitch",
+          "url": "https://www.twitch.tv/piedpiedd"
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/channel/UCiwglr4a8OsjgLe4ucVzAPQ"
+        },
+        {
+          "type": "tiktok",
+          "url": "https://www.tiktok.com/@piedpieddtwitch?lang=fr"
+        },
+        {
+          "type": "discord",
+          "url": "https://discord.com/invite/FuTmbMsKnp"
+        },
+        {
+          "type": "instagram",
+          "url": "https://www.instagram.com/piedpieddtwitch/"
+        },
+        {
+          "type": "twitter",
+          "url": "https://twitter.com/piedpiedd"
+        }
+      ]
     },
     {
       "pseudoTwitch": "kzrayki",
@@ -265,12 +557,32 @@
       "thePhrase": "/streamers/rayki/raykiPhrase.mp3",
       "dateTKT": "10/08/2022",
       "rediffTKT": "https://www.youtube.com/embed/5en0r95H2Cw",
-      "twitchURL": "https://www.twitch.tv/kzrayki",
-      "youtubeURL": "https://www.youtube.com/channel/UCS8MZNKbIlK2Z6hyzkkOBOQ",
-      "tiktokURL": "https://www.tiktok.com/@kzrayki",
-      "discordURL": "https://discord.com/invite/fYs4yKtsJx",
-      "instagramURL": "https://www.instagram.com/rayki.brrr/",
-      "twitterURL": "https://twitter.com/kzrayki"
+      "networks": [
+        {
+          "type": "twitch",
+          "url": "https://www.twitch.tv/kzrayki"
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/channel/UCS8MZNKbIlK2Z6hyzkkOBOQ"
+        },
+        {
+          "type": "tiktok",
+          "url": "https://www.tiktok.com/@kzrayki"
+        },
+        {
+          "type": "discord",
+          "url": "https://discord.com/invite/fYs4yKtsJx"
+        },
+        {
+          "type": "instagram",
+          "url": "https://www.instagram.com/rayki.brrr/"
+        },
+        {
+          "type": "twitter",
+          "url": "https://twitter.com/kzrayki"
+        }
+      ]
     },
     {
       "pseudoTwitch": "mrreydo",
@@ -281,12 +593,32 @@
       "thePhrase": "/streamers/reydo/reydoPhrase.mp3",
       "dateTKT": "05/10/2022",
       "rediffTKT": "https://www.youtube.com/embed/zRTWPBgfVEg",
-      "twitchURL": "https://www.twitch.tv/mrreydo",
-      "youtubeURL": "https://www.youtube.com/channel/UCEajSlHlX0s-rVDcyDxZGlA",
-      "tiktokURL": "https://www.tiktok.com/@reydoofficial?",
-      "discordURL": "https://discord.com/invite/gu3prgq",
-      "instagramURL": "https://www.instagram.com/reydoofficial/",
-      "twitterURL": "https://twitter.com/Reydoofficial"
+      "networks": [
+        {
+          "type": "twitch",
+          "url": "https://www.twitch.tv/mrreydo"
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/channel/UCEajSlHlX0s-rVDcyDxZGlA"
+        },
+        {
+          "type": "tiktok",
+          "url": "https://www.tiktok.com/@reydoofficial?"
+        },
+        {
+          "type": "discord",
+          "url": "https://discord.com/invite/gu3prgq"
+        },
+        {
+          "type": "instagram",
+          "url": "https://www.instagram.com/reydoofficial/"
+        },
+        {
+          "type": "twitter",
+          "url": "https://twitter.com/Reydoofficial"
+        }
+      ]
     },
     {
       "pseudoTwitch": "kzshine",
@@ -297,12 +629,32 @@
       "thePhrase": "/streamers/shine/shinePhrase.mp3",
       "dateTKT": "29/06/2022",
       "rediffTKT": "https://www.youtube.com/embed/Nh_YCuxWRiM",
-      "twitchURL": "https://www.twitch.tv/kzshine",
-      "youtubeURL": "https://www.youtube.com/c/LeShine/videos",
-      "tiktokURL": "https://www.tiktok.com/@shine2time",
-      "discordURL": "https://discord.gg/AgAJNJ7",
-      "instagramURL": "https://www.instagram.com/shine2timee/",
-      "twitterURL": "https://twitter.com/shine2time"
+      "networks": [
+        {
+          "type": "twitch",
+          "url": "https://www.twitch.tv/kzshine"
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/c/LeShine/"
+        },
+        {
+          "type": "tiktok",
+          "url": "https://www.tiktok.com/@shine2time"
+        },
+        {
+          "type": "discord",
+          "url": "https://discord.gg/AgAJNJ7"
+        },
+        {
+          "type": "instagram",
+          "url": "https://www.instagram.com/shine2timee/"
+        },
+        {
+          "type": "twitter",
+          "url": "https://twitter.com/shine2time"
+        }
+      ]
     },
     {
       "pseudoTwitch": "shironamie",
@@ -313,12 +665,32 @@
       "thePhrase": "/streamers/shironamie/shironamiePhrase.mp3",
       "dateTKT": "07/08/2022",
       "rediffTKT": "https://www.youtube.com/embed/mrXrdJ3VVgo",
-      "twitchURL": "https://www.twitch.tv/shironamie",
-      "youtubeURL": "https://www.youtube.com/channel/UC2M89MeeddeeBv2FpUE6E2A",
-      "tiktokURL": "https://www.tiktok.com/@shironamie",
-      "discordURL": "https://discord.com/invite/NNaymcm",
-      "instagramURL": "https://www.instagram.com/shironamie/",
-      "twitterURL": "https://twitter.com/Shironamie"
+      "networks": [
+        {
+          "type": "twitch",
+          "url": "https://www.twitch.tv/shironamie"
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/channel/UC2M89MeeddeeBv2FpUE6E2A"
+        },
+        {
+          "type": "tiktok",
+          "url": "https://www.tiktok.com/@shironamie"
+        },
+        {
+          "type": "discord",
+          "url": "https://discord.com/invite/NNaymcm"
+        },
+        {
+          "type": "instagram",
+          "url": "https://www.instagram.com/shironamie/"
+        },
+        {
+          "type": "twitter",
+          "url": "https://twitter.com/Shironamie"
+        }
+      ]
     },
     {
       "pseudoTwitch": "sididi",
@@ -329,12 +701,32 @@
       "thePhrase": "/streamers/sididi/sididiPhrase.mp3",
       "dateTKT": "27/07/2022",
       "rediffTKT": "https://www.youtube.com/embed/9Db8nhToe7I",
-      "twitchURL": "https://www.twitch.tv/sididi",
-      "youtubeURL": "https://www.youtube.com/sididiyt",
-      "tiktokURL": "https://www.tiktok.com/@sididi_lol?lang=fr",
-      "discordURL": "https://discord.com/invite/cYCFssrSSM",
-      "instagramURL": "https://www.instagram.com/sididiyt/",
-      "twitterURL": "https://twitter.com/My_Sididi"
+      "networks": [
+        {
+          "type": "twitch",
+          "url": "https://www.twitch.tv/sididi"
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/sididiyt"
+        },
+        {
+          "type": "tiktok",
+          "url": "https://www.tiktok.com/@sididi_lol?lang=fr"
+        },
+        {
+          "type": "discord",
+          "url": "https://discord.com/invite/cYCFssrSSM"
+        },
+        {
+          "type": "instagram",
+          "url": "https://www.instagram.com/sididiyt/"
+        },
+        {
+          "type": "twitter",
+          "url": "https://twitter.com/My_Sididi"
+        }
+      ]
     },
     {
       "pseudoTwitch": "sixtineXVI",
@@ -345,12 +737,32 @@
       "thePhrase": "/streamers/sixtine/sixtinePhrase.mp3",
       "dateTKT": "07/09/2022",
       "rediffTKT": "https://www.youtube.com/embed/GAbQ1N7DjT4",
-      "twitchURL": "https://www.twitch.tv/sixtinexvi",
-      "youtubeURL": "https://www.youtube.com/channel/UCmdHBoMucem15RkSfMvu3SQ",
-      "tiktokURL": "https://www.tiktok.com/@xvi_custom",
-      "discordURL": "https://discord.gg/ZEWpgFbhTM",
-      "instagramURL": "https://www.instagram.com/sixtine_51/?hl=fr",
-      "twitterURL": "https://twitter.com/SixtineXVI"
+      "networks": [
+        {
+          "type": "twitch",
+          "url": "https://www.twitch.tv/sixtinexvi"
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/channel/UCmdHBoMucem15RkSfMvu3SQ"
+        },
+        {
+          "type": "tiktok",
+          "url": "https://www.tiktok.com/@xvi_custom"
+        },
+        {
+          "type": "discord",
+          "url": "https://discord.gg/ZEWpgFbhTM"
+        },
+        {
+          "type": "instagram",
+          "url": "https://www.instagram.com/sixtine_51/?hl=fr"
+        },
+        {
+          "type": "twitter",
+          "url": "https://twitter.com/SixtineXVI"
+        }
+      ]
     },
     {
       "pseudoTwitch": "shinystaar_",
@@ -361,12 +773,32 @@
       "thePhrase": "/streamers/staar/staarPhrase.mp3",
       "dateTKT": "20/07/2022",
       "rediffTKT": "https://www.youtube.com/embed/6rcklnSDS4E",
-      "twitchURL": "https://www.twitch.tv/shinystaar_",
-      "youtubeURL": "https://www.youtube.com/channel/UCK83g4hM3uP19k-1e9TsTZw",
-      "tiktokURL": "https://www.tiktok.com/@shinystaar_",
-      "discordURL": "https://discord.com/invite/A5Wdz436en",
-      "instagramURL": "https://www.instagram.com/twitch_staar/",
-      "twitterURL": "https://twitter.com/Staarontwt"
+      "networks": [
+        {
+          "type": "twitch",
+          "url": "https://www.twitch.tv/shinystaar_"
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/channel/UCK83g4hM3uP19k-1e9TsTZw"
+        },
+        {
+          "type": "tiktok",
+          "url": "https://www.tiktok.com/@shinystaar_"
+        },
+        {
+          "type": "discord",
+          "url": "https://discord.com/invite/A5Wdz436en"
+        },
+        {
+          "type": "instagram",
+          "url": "https://www.instagram.com/twitch_staar/"
+        },
+        {
+          "type": "twitter",
+          "url": "https://twitter.com/Staarontwt"
+        }
+      ]
     },
     {
       "pseudoTwitch": "weefuz_",
@@ -377,12 +809,32 @@
       "thePhrase": "/streamers/weefuz/weefuzPhrase.mp3",
       "dateTKT": "15/06/2022",
       "rediffTKT": "https://www.youtube.com/embed/751VwD3LXRE",
-      "twitchURL": "https://www.twitch.tv/weefuz_",
-      "youtubeURL": "https://www.youtube.com/channel/UCpLcgFuaihXjwjRp67yY4Vg",
-      "tiktokURL": "https://www.tiktok.com/@weefuz?lang=fr",
-      "discordURL": "https://discord.com/invite/ennfNZwCpy",
-      "instagramURL": "https://www.instagram.com/iweefuz/",
-      "twitterURL": "https://twitter.com/WeeFuZ?lang=fr"
+      "networks": [
+        {
+          "type": "twitch",
+          "url": "https://www.twitch.tv/weefuz_"
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/channel/UCpLcgFuaihXjwjRp67yY4Vg"
+        },
+        {
+          "type": "tiktok",
+          "url": "https://www.tiktok.com/@weefuz?lang=fr"
+        },
+        {
+          "type": "discord",
+          "url": "https://discord.com/invite/ennfNZwCpy"
+        },
+        {
+          "type": "instagram",
+          "url": "https://www.instagram.com/iweefuz/"
+        },
+        {
+          "type": "twitter",
+          "url": "https://twitter.com/WeeFuZ?lang=fr"
+        }
+      ]
     },
     {
       "pseudoTwitch": "wiknesss",
@@ -393,12 +845,32 @@
       "thePhrase": "/streamers/wiknesss/wiknesssPhrase.mp3",
       "dateTKT": "08/06/2022",
       "rediffTKT": "https://www.youtube.com/embed/cYKZOFqgmr8",
-      "twitchURL": "https://www.twitch.tv/wiknesss",
-      "youtubeURL": "https://www.youtube.com/channel/UCCmuKUhcJXQRxo3a2gTHciA",
-      "tiktokURL": "https://www.tiktok.com/@wikness",
-      "discordURL": "https://discord.com/invite/2ZTkRRRWxb",
-      "instagramURL": "https://www.instagram.com/8kness/",
-      "twitterURL": "https://twitter.com/8kness"
+      "networks": [
+        {
+          "type": "twitch",
+          "url": "https://www.twitch.tv/wiknesss"
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/channel/UCCmuKUhcJXQRxo3a2gTHciA"
+        },
+        {
+          "type": "tiktok",
+          "url": "https://www.tiktok.com/@wikness"
+        },
+        {
+          "type": "discord",
+          "url": "https://www.tiktok.com/@wikness"
+        },
+        {
+          "type": "instagram",
+          "url": "https://www.instagram.com/8kness/"
+        },
+        {
+          "type": "twitter",
+          "url": "https://twitter.com/8kness"
+        }
+      ]
     },
     {
       "pseudoTwitch": "wiwiwinston",
@@ -409,12 +881,32 @@
       "thePhrase": "",
       "dateTKT": "30/11/2022",
       "rediffTKT": "",
-      "twitchURL": "https://www.twitch.tv/wiwiwinston",
-      "youtubeURL": "https://www.youtube.com/c/WINSTONLAND",
-      "tiktokURL": "https://www.tiktok.com/@wiwiwinston?lang=fr",
-      "discordURL": "https://discord.com/invite/472fFvRemB",
-      "instagramURL": "https://www.instagram.com/wiwiwinston/?hl=fr",
-      "twitterURL": "https://twitter.com/WiWiWinston"
+      "networks": [
+        {
+          "type": "twitch",
+          "url": "https://www.twitch.tv/wiwiwinston"
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/c/WINSTONLAND"
+        },
+        {
+          "type": "tiktok",
+          "url": "https://www.tiktok.com/@wiwiwinston?lang=fr"
+        },
+        {
+          "type": "discord",
+          "url": "https://discord.com/invite/472fFvRemB"
+        },
+        {
+          "type": "instagram",
+          "url": "https://www.instagram.com/wiwiwinston/?hl=fr"
+        },
+        {
+          "type": "twitter",
+          "url": "https://twitter.com/WiWiWinston"
+        }
+      ]
     }
   ]
 }

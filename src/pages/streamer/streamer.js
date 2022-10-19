@@ -54,7 +54,7 @@ function Streamer() {
       <Emotes maxEmotes={10} />
       <HeaderStreamer
         title={streamer?.pseudo}
-        twitchURL={streamer?.twitchURL}
+        twitchURL={streamer?.networks.find(o => o?.type === 'twitch')?.url}
       />
       <Main>
         {

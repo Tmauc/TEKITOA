@@ -30,12 +30,3 @@ export const ListWrapperStyle = css`
   grid-gap: 20px;
   }
 `;
-
-export const StreamerLinkStyle = css`
-  font-size: 20px;
-  color: white;
-  cursor: pointer;
-  &:hover {
-    color: #f05183;
-  }
-`;

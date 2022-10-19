@@ -16,8 +16,8 @@ function ScheduleTKT() {
     <Section className="schedule">
       <Header>
         <Title isMobile={isMobile}>Calendrier</Title>
-        <Schedule scheduleArray={scheduleArray} />
       </Header>
+      <Schedule scheduleArray={scheduleArray} />
     </Section>
   );
 }

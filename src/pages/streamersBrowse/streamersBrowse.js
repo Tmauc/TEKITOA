@@ -10,7 +10,6 @@ import { StreamerConsumerHook } from 'stores/streamerStore';
 import {
   SectionStyle,
   ListWrapperStyle,
-  StreamerLinkStyle,
 } from 'pages/streamersBrowse/streamersBrowse.style';
 
 function StreamersBrowse() {
@@ -60,10 +59,6 @@ const Section = styled.section`
 
 const ListWrapper = styled.ul`
   ${ListWrapperStyle};
-`;
-
-const StreamerLink = styled.a`
-  ${StreamerLinkStyle};
 `;
 
 export default StreamersBrowse;

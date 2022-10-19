@@ -75,7 +75,6 @@ function Navbar() {
                 isCurrent={
                   '/' + streamer?.pseudo + '/reseaux' === location.pathname
                 }
-                disabled
               >
                 Réseaux
               </NavLink>

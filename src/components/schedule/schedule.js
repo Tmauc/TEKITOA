@@ -5,7 +5,7 @@ import { generatePath, useNavigate } from 'react-router';
 import { getMonthString } from 'utils/parseJsonSchedule'
 import { useDevice } from 'hooks/useDevice';
 
-import { WrapperStyle, ScheduleMainWrapperStyle, MonthLabelStyle, ScheduleWrapperStyle, ArrowStyle, DayWrapperStyle, DayHeaderWrapperStyle, DateLabelStyle, PseudoLabelStyle, MainWrapperStyle, StreamerImageStyle } from 'components/schedule/schedule.style'
+import { WrapperStyle, ScheduleMainWrapperStyle, MonthLabelStyle, ScheduleWrapperStyle, ArrowDisabledStyle, ArrowStyle, DayWrapperStyle, DayHeaderWrapperStyle, DateLabelStyle, PseudoLabelStyle, MainWrapperStyle, StreamerImageStyle } from 'components/schedule/schedule.style'
 
 function ScheduleDay({ day, isMobile }) {
   const navigate = useNavigate();
@@ -36,6 +36,7 @@ function Schedule({ scheduleArray }) {
   const { isMobile } = useDevice();
   const [currentMonth, setCurrentMonth] = useState(Object.keys(scheduleArray)?.length - 1);
 
+  scheduleArray[Object.keys(scheduleArray)[currentMonth]].sort((a, b) => (a?.dateTKT > b?.dateTKT) ? 1 : -1)
 
   const onClickRearward = () => {
     if (currentMonth < Object.keys(scheduleArray)?.length - 1) {
@@ -52,40 +53,79 @@ function Schedule({ scheduleArray }) {
   return (
     <Wrapper isMobile={isMobile}>
       <MonthLabel isMobile={isMobile}>{getMonthString(scheduleArray[Object.keys(scheduleArray)[currentMonth]][0]?.dateTKT)}</MonthLabel>
-      {isMobile && <div>
-        {currentMonth > 0 && <ArrowRearward
-          alt="Rearward icon"
-          onClick={onClickForward}
-          small
-          src={process.env.PUBLIC_URL + '/assets/icons/ArrowLeft.svg'}
-        />
-        }
-        {(currentMonth < Object.keys(scheduleArray)?.length - 1) &&
-          <ArrowForward
-            alt="Forward icon"
-            onClick={onClickRearward}
-            small
-            src={process.env.PUBLIC_URL + '/assets/icons/ArrowRight.svg'}
-          />
-        }
-      </div>
+      {isMobile &&
+        <div>
+          {currentMonth > 0 ?
+            <ArrowRearward
+              alt="Rearward icon"
+              onClick={onClickForward}
+              small
+              src={process.env.PUBLIC_URL + '/assets/icons/ArrowLeft.svg'}
+            />
+            :
+            <ArrowDisabledRearward
+              alt="Rearward icon"
+              onClick={onClickForward}
+              small
+              src={process.env.PUBLIC_URL + '/assets/icons/ArrowDisabledLeft.svg'}
+            />
+          }
+          {(currentMonth < Object.keys(scheduleArray)?.length - 1) ?
+            <ArrowForward
+              alt="Forward icon"
+              onClick={onClickRearward}
+              small
+              src={process.env.PUBLIC_URL + '/assets/icons/ArrowRight.svg'}
+            />
+            :
+            <ArrowDisabledForward
+              alt="Forward icon"
+              onClick={onClickRearward}
+              small
+              src={process.env.PUBLIC_URL + '/assets/icons/ArrowDisabledRight.svg'}
+            />
+          }
+        </div>
       }
       <ScheduleMainWrapper>
-        {!isMobile && currentMonth > 0 && <ArrowRearward
-          alt="Rearward icon"
-          onClick={onClickForward}
-          src={process.env.PUBLIC_URL + '/assets/icons/ArrowLeft.svg'}
-        />}
+        {!isMobile &&
+          <div>
+            {currentMonth > 0 ?
+              <ArrowRearward
+                alt="Rearward icon"
+                onClick={onClickForward}
+                src={process.env.PUBLIC_URL + '/assets/icons/ArrowLeft.svg'}
+              />
+              :
+              <ArrowDisabledRearward
+                alt="Rearward icon"
+                onClick={onClickForward}
+                src={process.env.PUBLIC_URL + '/assets/icons/ArrowDisabledLeft.svg'}
+              />
+            }
+          </div>
+        }
         <ScheduleWrapper isMobile={isMobile}>
           {scheduleArray && scheduleArray[Object.keys(scheduleArray)[currentMonth]].map((day, index) => (
             <ScheduleDay key={day + index} day={day} isMobile={isMobile} />
           ))}
         </ScheduleWrapper>
-        {!isMobile && (currentMonth < Object.keys(scheduleArray)?.length - 1) && <ArrowForward
-          alt="Forward icon"
-          onClick={onClickRearward}
-          src={process.env.PUBLIC_URL + '/assets/icons/ArrowRight.svg'}
-        />
+        {!isMobile &&
+          <div>
+            {(currentMonth < Object.keys(scheduleArray)?.length - 1) ?
+              <ArrowForward
+                alt="Forward icon"
+                onClick={onClickRearward}
+                src={process.env.PUBLIC_URL + '/assets/icons/ArrowRight.svg'}
+              />
+              :
+              <ArrowDisabledForward
+                alt="Forward icon"
+                onClick={onClickRearward}
+                src={process.env.PUBLIC_URL + '/assets/icons/ArrowDisabledRight.svg'}
+              />
+            }
+          </div>
         }
       </ScheduleMainWrapper>
     </Wrapper>
@@ -114,6 +154,14 @@ const ArrowRearward = styled.img`
 
 const ArrowForward = styled.img`
   ${ArrowStyle};
+`;
+
+const ArrowDisabledRearward = styled.img`
+  ${ArrowDisabledStyle};
+`;
+
+const ArrowDisabledForward = styled.img`
+  ${ArrowDisabledStyle};
 `;
 
 const DayWrapper = styled.div`

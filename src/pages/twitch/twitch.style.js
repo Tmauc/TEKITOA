@@ -10,22 +10,10 @@ export const MainWrapperStyle = css`
 
 export const EmbedWrapperStyle = css`
   display: flex;
-  flex-direction: ${(p) => (p.isMobile ? 'column' : 'row')};
+  flex-direction: column;
+  width: fit-content;
 
-  ${(p) => {
-    if (p.isMobile) {
-      return css`
-        align-items: center;
-        & > * {
-          margin-bottom: 10px;
-        }
-      `;
-    } else {
-      return css`
-        & > * {
-          margin-right: 10px;
-        }
-      `;
-    }
-  }};
+  & > * {
+    margin-bottom: 20px;
+  }
 `;

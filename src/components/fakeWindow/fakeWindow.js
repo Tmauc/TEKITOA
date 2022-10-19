@@ -22,9 +22,10 @@ import {
 
 function FakeWindow({ onClick, type, title, dateTKT, content, youtubeUrl, size, twitchInfos }) {
   const { isMobile } = useDevice();
+  const randomDuration = Math.floor(Math.random() * 5) + 1;
 
   return (
-    <Wrapper width={size.width} height={size.height} onClick={onClick && onClick}>
+    <Wrapper width={size.width} height={size.height} onClick={onClick && onClick} duration={randomDuration}>
       <Header width={size.width} isMobile={isMobile}>
         <HeaderLeft>
           <SquareIcon

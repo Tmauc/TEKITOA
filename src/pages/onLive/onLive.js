@@ -47,7 +47,7 @@ function OnLive() {
       <Emotes maxEmotes={10} />
       <HeaderStreamer
         title={'OnLive : ' + streamer?.pseudo}
-        twitchURL={streamer?.twitchURL}
+        twitchURL={streamer?.networks.find(o => o?.type === 'twitch')?.url}
       />
       <MainWrapper isMobile={isMobile}>
         <DescriptionWrapper>

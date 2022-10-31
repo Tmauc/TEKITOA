@@ -18,7 +18,6 @@ export const WrapperStyle = css`
 
   &:hover {
     filter: drop-shadow(5px 5px 1px rgba(0,0,0, .8));
-    transform: scale(1.05);
     transition: all 0.3s ease-in-out;
   }
 

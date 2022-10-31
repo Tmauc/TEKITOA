@@ -37,6 +37,7 @@ function StreamersBrowse() {
         {StreamersJson.streamers.map((streamer, index) => (
           <li key={streamer + index}>
             <FakeWindow
+              isStreamer
               onClick={() => onClick(streamer)}
               type={streamer.pseudo + ".exe"}
               content={streamer.pseudo}

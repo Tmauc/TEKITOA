@@ -14,6 +14,7 @@ import Schedule from 'pages/scheduleTKT/scheduleTKT';
 import Streamer from 'pages/streamer/streamer';
 import Rediffs from 'pages/rediffs/rediffs';
 import Podcast from 'pages/podcast/podcast';
+import Conditions from 'pages/conditions/conditions';
 import Networks from 'pages/networks/networks';
 import Twitch from 'pages/twitch/twitch';
 import OnLive from 'pages/onLive/onLive';
@@ -45,6 +46,7 @@ function App() {
             <Route path="/schedule" element={<Schedule />} />
             <Route path="/rediffs" element={<Rediffs />} />
             <Route path="/podcast" element={<Podcast />} />
+            <Route path="/conditions" element={<Conditions />} />
             {StreamersJson.streamers.map((streamer, index) => (
               <>
                 <Route

@@ -22,11 +22,17 @@ function About() {
       <Title className="title" isMobile={isMobile}>A Propos</Title>
       <Main>
         <DescriptionWrapper isMobile={isMobile}>
-          <Description isMobile={isMobile}>Bienvenue dans TE KI TOA, je suis Mauc et aujourd'hui je te présente mon émission qui va te faire découvrir pleins de petits streamer !</Description>
+          <Description isMobile={isMobile}>Bienvenue dans TE KI TOA, je suis Mauc et aujourd'hui je te présente mon émission qui va te faire découvrir pleins de streamer⸱euse !</Description>
           <Description isMobile={isMobile}>Tous les mercredis à 18h sur Twitch, un petit streamer va rejoindre mon live et nous allons apprendre à le découvrir.</Description>
           <Description isMobile={isMobile}>L'objectif de cette soirée ? Retracer tout son parcours sur twitch et internet depuis qu'il est devenu streamer.</Description>
-          <Description isMobile={isMobile}>Alors, ça te dis de découvrir chaque semaine une nouvelle personne et d'augmenter considérablement ton catalogue de tes streamer favoris?</Description>
+          <Description isMobile={isMobile}>Alors, ça te dis de découvrir chaque semaine une nouvelle personne et d'augmenter considérablement ton catalogue de tes streamer⸱euses favoris?</Description>
           <Description isMobile={isMobile}>Prends ton meilleur coca frais, mets toi à l'aise et profite bien !</Description>
+          <Description isMobile={isMobile}>Tu souhaites participer ou tu connais quelqu'un qui mérite d'être interviewer ?</Description>
+        </DescriptionWrapper>
+        <Separator />
+        <DescriptionWrapper isMobile={isMobile}>
+          <Description isMobile={isMobile}>Tu souhaites participer ou tu connais quelqu'un qui mérite d'être interviewer ?</Description>
+          <Description isMobile={isMobile}>Alors clique <a href='https://docs.google.com/forms/d/e/1FAIpQLSdkEcmIujWtUmV8RZXHQXXN_pPrZHXxYGt19lBZDmd0JsOOTg/viewform?usp=pp_url' target="_blank">sur ce lien</a> pour me partager sa / ta chaine twitch !</Description>
         </DescriptionWrapper>
         <Separator />
         <LiveWrapper isMobile={isMobile}>

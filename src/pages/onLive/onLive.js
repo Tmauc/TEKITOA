@@ -35,7 +35,7 @@ function OnLive() {
         newStreamer: StreamersJson.streamers.find(e => e.pseudo === location?.pathname.substring(1).replace('/onlive', '')),
       });
     }
-    OAuthTwitch(dispatch, streamer?.pseudoTwitch);
+    streamer?.pseudoTwitch && OAuthTwitch(dispatch, streamer?.pseudoTwitch);
   }, [dispatch, streamer, streamer?.pseudoTwitch, location?.pathname]);
 
   useEffect(() => {

@@ -36,7 +36,7 @@ function Streamer() {
         newStreamer: StreamersJson.streamers.find(e => e.pseudo === location?.pathname.substring(1)),
       });
     }
-    OAuthTwitch(dispatch, streamer?.pseudoTwitch);
+    streamer?.pseudoTwitch && streamer?.pseudoTwitch && OAuthTwitch(dispatch, streamer?.pseudoTwitch);
   }, [dispatch, streamer, streamer?.pseudoTwitch, location?.pathname]);
 
   useEffect(() => {
@@ -61,7 +61,7 @@ function Streamer() {
           <LeftWrapper small={isMobile}>
             <p></p>
             <Description title={'Création'} label={createdDate} />
-            <Description title={'Pseudo'} label={streamer?.pseudoHistory} />
+            <Description title={'Pseudo'} label={streamer?.pseudoHistory || 'Disponible bientôt...'} />
             <Description title={'Description'} label={userDesc} />
             <Description title={'Catégories'} label={streamer?.categories} />
             <RediffWrapper isMobile={isMobile}>

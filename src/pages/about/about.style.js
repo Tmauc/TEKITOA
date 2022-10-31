@@ -17,25 +17,28 @@ export const MainStyle = css`
 `;
 
 export const DescriptionWrapperStyle = css`
-    padding: ${p => p.isMobile ? '0px 10px' : '0px 50px'};
-    & > *:not(:last-child) {
-      padding: 5px 0px;
-    }
+  padding: ${p => p.isMobile ? '0px 10px' : '0px 50px'};
+  & > *:not(:last-child) {
+    padding: 5px 0px;
+  }
 `;
 
 export const DescriptionStyle = css`
-  font-size: ${(p) => (p.isMobile ? 12 : 18)}px;
+  font-size: ${(p) => (p.isMobile ? 12 : 16)}px;
   text-align: center;
   font-family: Montserrat;
   color: white;
   text-shadow: 0px 0px 4px #ffffff;
+  a {
+    color: white;
+  }
 `;
 
 export const SeparatorStyle = css`
   background-color: white;
   width: 20vw;
   height: 1px;
-  margin: 30px 0px;
+  margin: 25px 0px;
 `;
 
 export const LiveWrapperStyle = css`

@@ -8,7 +8,7 @@ function FooterInfos() {
   const { isMobile } = useDevice()
   return (
     <Wrapper isMobile={isMobile}>
-      <Copyright isMobile={isMobile}>© TE KI TOA - 2022 (<a href='/home'>Conditions</a>) - Conception <a href='https://tmauc.fr' target="_blank">MAUC</a></Copyright>
+      <Copyright isMobile={isMobile}>© TE KI TOA - 2022 (<a href='/conditions'>Conditions</a>) - Conception <a href='https://tmauc.fr' target="_blank">MAUC</a></Copyright>
     </Wrapper>
   );
 }

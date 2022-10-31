@@ -27,7 +27,7 @@ function Networks() {
         newStreamer: StreamersJson.streamers.find(e => e.pseudo === location?.pathname.substring(1).replace('/reseaux', '')),
       });
     }
-    OAuthTwitch(dispatch, streamer?.pseudoTwitch);
+    streamer?.pseudoTwitch && OAuthTwitch(dispatch, streamer?.pseudoTwitch);
   }, [dispatch, streamer, streamer?.pseudoTwitch, location?.pathname]);
 
   const onClickNetwork = (url) => {

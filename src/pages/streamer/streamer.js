@@ -61,7 +61,7 @@ function Streamer() {
           <LeftWrapper small={isMobile}>
             <p></p>
             <Description title={'Création'} label={createdDate} />
-            <Description title={'Pseudo'} label={streamer?.pseudoHistory || 'Disponible bientôt...'} />
+            {streamer?.pseudoHistory && <Description title={'Pseudo'} label={streamer?.pseudoHistory} />}
             <Description title={'Description'} label={userDesc} />
             <Description title={'Catégories'} label={streamer?.categories} />
             <RediffWrapper isMobile={isMobile}>

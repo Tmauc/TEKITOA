@@ -1,42 +1,6 @@
 {
   "streamers": [
     {
-      "pseudoTwitch": "flachony",
-      "pseudo": "Flachony",
-      "pseudoHistory": "Générateur de pseudo Dofus ! Car sa maman ne voulait pas qu'il mette son prénom !",
-      "categories": "League Of Legends",
-      "imgPath": "/streamers/flachony/flachony.png",
-      "thePhrase": "/streamers/flachony/flachonyPhrase.mp3",
-      "dateTKT": "21/09/2022",
-      "rediffTKT": "https://www.youtube.com/embed/zV1_5y28K7A",
-      "networks": [
-        {
-          "type": "twitch",
-          "url": "https://www.twitch.tv/flachony"
-        },
-        {
-          "type": "youtube",
-          "url": "https://www.youtube.com/channel/UCs9jD-1lAhZihDGqnrk9OcA"
-        },
-        {
-          "type": "tiktok",
-          "url": "https://www.tiktok.com/@flachony?lang=fr"
-        },
-        {
-          "type": "discord",
-          "url": "https://discord.com/invite/FTWysqV"
-        },
-        {
-          "type": "instagram",
-          "url": "https://www.instagram.com/flachony/"
-        },
-        {
-          "type": "twitter",
-          "url": "https://twitter.com/Flachony"
-        }
-      ]
-    },
-    {
       "pseudoTwitch": "lapoustouflance",
       "pseudo": "LaPoustouflance",
       "pseudoHistory": "Générateur de mot aléatoire, il a hésité entre Épée stratosphère ou PoustoufLimace qui est finalement devenu La Poustouflance !",
@@ -61,78 +25,6 @@
         {
           "type": "instagram",
           "url": "https://www.instagram.com/_louisreynaud/"
-        }
-      ]
-    },
-    {
-      "pseudoTwitch": "shironamie",
-      "pseudo": "Shironamie",
-      "pseudoHistory": "Générateur de pseudo aléatoire, d'abord Nami puis Shiro => Shironamie !",
-      "categories": "Discussion / MultiGaming",
-      "imgPath": "/streamers/shironamie/shironamie.png",
-      "thePhrase": "/streamers/shironamie/shironamiePhrase.mp3",
-      "dateTKT": "07/08/2022",
-      "rediffTKT": "https://www.youtube.com/embed/mrXrdJ3VVgo",
-      "networks": [
-        {
-          "type": "twitch",
-          "url": "https://www.twitch.tv/shironamie"
-        },
-        {
-          "type": "youtube",
-          "url": "https://www.youtube.com/channel/UC2M89MeeddeeBv2FpUE6E2A"
-        },
-        {
-          "type": "tiktok",
-          "url": "https://www.tiktok.com/@shironamie"
-        },
-        {
-          "type": "discord",
-          "url": "https://discord.com/invite/NNaymcm"
-        },
-        {
-          "type": "instagram",
-          "url": "https://www.instagram.com/shironamie/"
-        },
-        {
-          "type": "twitter",
-          "url": "https://twitter.com/Shironamie"
-        }
-      ]
-    },
-    {
-      "pseudoTwitch": "sixtineXVI",
-      "pseudo": "Sixtine",
-      "pseudoHistory": "C'est son prénom !",
-      "categories": "MultiGaming / Art / Discussion",
-      "imgPath": "/streamers/sixtine/sixtine.png",
-      "thePhrase": "/streamers/sixtine/sixtinePhrase.mp3",
-      "dateTKT": "07/09/2022",
-      "rediffTKT": "https://www.youtube.com/embed/GAbQ1N7DjT4",
-      "networks": [
-        {
-          "type": "twitch",
-          "url": "https://www.twitch.tv/sixtinexvi"
-        },
-        {
-          "type": "youtube",
-          "url": "https://www.youtube.com/channel/UCmdHBoMucem15RkSfMvu3SQ"
-        },
-        {
-          "type": "tiktok",
-          "url": "https://www.tiktok.com/@xvi_custom"
-        },
-        {
-          "type": "discord",
-          "url": "https://discord.gg/ZEWpgFbhTM"
-        },
-        {
-          "type": "instagram",
-          "url": "https://www.instagram.com/sixtine_51/?hl=fr"
-        },
-        {
-          "type": "twitter",
-          "url": "https://twitter.com/SixtineXVI"
         }
       ]
     }

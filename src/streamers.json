@@ -38,9 +38,9 @@
       "pseudoHistory": "",
       "categories": "Chant / Discussion",
       "imgPath": "/streamers/bakared/bakared.png",
-      "thePhrase": "",
+      "thePhrase": "/streamers/bakared/bakaredPhrase.mp3",
       "dateTKT": "09/11/2022",
-      "rediffTKT": "",
+      "rediffTKT": "https://www.youtube.com/embed/IM_10yZRNMI",
       "networks": [
         {
           "type": "twitch",
@@ -65,6 +65,10 @@
         {
           "type": "twitter",
           "url": "https://twitter.com/bakared_"
+        },
+        {
+          "type": "Behance",
+          "url": "https://www.behance.net/bakared"
         }
       ]
     },
@@ -107,12 +111,12 @@
     {
       "pseudoTwitch": "elypwet",
       "pseudo": "Elypwet",
-      "pseudoHistory": "",
+      "pseudoHistory": "Son surnom c'est Ely et avec un sondage de sa communauté s'est devenu Elypwet !",
       "categories": "Souls Like / Discussion",
       "imgPath": "/streamers/elypwet/elypwet.png",
-      "thePhrase": "",
+      "thePhrase": "/streamers/elypwet/elypwetPhrase.mp3",
       "dateTKT": "03/11/2022",
-      "rediffTKT": "",
+      "rediffTKT": "https://www.youtube.com/embed/lneJfE8FXHA",
       "networks": [
         {
           "type": "twitch",
@@ -121,10 +125,6 @@
         {
           "type": "youtube",
           "url": "https://www.youtube.com/channel/UC46SYNmJ6A-ialAcTfAtlhg?view_as=subscriber"
-        },
-        {
-          "type": "tiktok",
-          "url": "https://www.tiktok.com/@elypwet?lang=fr"
         },
         {
           "type": "discord",
@@ -169,6 +169,42 @@
         {
           "type": "twitter",
           "url": "https://twitter.com/EspionaSg"
+        }
+      ]
+    },
+    {
+      "pseudoTwitch": "flachony",
+      "pseudo": "Flachony",
+      "pseudoHistory": "Générateur de pseudo Dofus ! Car sa maman ne voulait pas qu'il mette son prénom !",
+      "categories": "League Of Legends",
+      "imgPath": "/streamers/flachony/flachony.png",
+      "thePhrase": "/streamers/flachony/flachonyPhrase.mp3",
+      "dateTKT": "21/09/2022",
+      "rediffTKT": "https://www.youtube.com/embed/zV1_5y28K7A",
+      "networks": [
+        {
+          "type": "twitch",
+          "url": "https://www.twitch.tv/flachony"
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/channel/UCs9jD-1lAhZihDGqnrk9OcA"
+        },
+        {
+          "type": "tiktok",
+          "url": "https://www.tiktok.com/@flachony?lang=fr"
+        },
+        {
+          "type": "discord",
+          "url": "https://discord.com/invite/FTWysqV"
+        },
+        {
+          "type": "instagram",
+          "url": "https://www.instagram.com/flachony/"
+        },
+        {
+          "type": "twitter",
+          "url": "https://twitter.com/Flachony"
         }
       ]
     },
@@ -593,6 +629,42 @@
       ]
     },
     {
+      "pseudoTwitch": "shironamie",
+      "pseudo": "Shironamie",
+      "pseudoHistory": "Générateur de pseudo aléatoire, d'abord Nami puis Shiro => Shironamie !",
+      "categories": "Discussion / MultiGaming",
+      "imgPath": "/streamers/shironamie/shironamie.png",
+      "thePhrase": "/streamers/shironamie/shironamiePhrase.mp3",
+      "dateTKT": "07/08/2022",
+      "rediffTKT": "https://www.youtube.com/embed/mrXrdJ3VVgo",
+      "networks": [
+        {
+          "type": "twitch",
+          "url": "https://www.twitch.tv/shironamie"
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/channel/UC2M89MeeddeeBv2FpUE6E2A"
+        },
+        {
+          "type": "tiktok",
+          "url": "https://www.tiktok.com/@shironamie"
+        },
+        {
+          "type": "discord",
+          "url": "https://discord.com/invite/NNaymcm"
+        },
+        {
+          "type": "instagram",
+          "url": "https://www.instagram.com/shironamie/"
+        },
+        {
+          "type": "twitter",
+          "url": "https://twitter.com/Shironamie"
+        }
+      ]
+    },
+    {
       "pseudoTwitch": "sididi",
       "pseudo": "Sididi",
       "pseudoHistory": "Surnom donné par rapport au prénom !",
@@ -629,6 +701,42 @@
       ]
     },
     {
+      "pseudoTwitch": "sixtineXVI",
+      "pseudo": "Sixtine",
+      "pseudoHistory": "C'est son prénom !",
+      "categories": "MultiGaming / Art / Discussion",
+      "imgPath": "/streamers/sixtine/sixtine.png",
+      "thePhrase": "/streamers/sixtine/sixtinePhrase.mp3",
+      "dateTKT": "07/09/2022",
+      "rediffTKT": "https://www.youtube.com/embed/GAbQ1N7DjT4",
+      "networks": [
+        {
+          "type": "twitch",
+          "url": "https://www.twitch.tv/sixtinexvi"
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/channel/UCmdHBoMucem15RkSfMvu3SQ"
+        },
+        {
+          "type": "tiktok",
+          "url": "https://www.tiktok.com/@xvi_custom"
+        },
+        {
+          "type": "discord",
+          "url": "https://discord.gg/ZEWpgFbhTM"
+        },
+        {
+          "type": "instagram",
+          "url": "https://www.instagram.com/sixtine_51/?hl=fr"
+        },
+        {
+          "type": "twitter",
+          "url": "https://twitter.com/SixtineXVI"
+        }
+      ]
+    },
+    {
       "pseudoTwitch": "shinystaar_",
       "pseudo": "Staar",
       "pseudoHistory": "Inspiration de trois autres streamers, Dream pour l'anglais, Étoile pour Star et Zerator pour le R !",
@@ -661,6 +769,42 @@
         {
           "type": "twitter",
           "url": "https://twitter.com/Staarontwt"
+        }
+      ]
+    },
+    {
+      "pseudoTwitch": "unknownrock",
+      "pseudo": "Unknownrock",
+      "pseudoHistory": "",
+      "categories": "Discussion / MultiGaming",
+      "imgPath": "/streamers/unknownrock/unknownrock.png",
+      "thePhrase": "",
+      "dateTKT": "07/12/2022",
+      "rediffTKT": "",
+      "networks": [
+        {
+          "type": "twitch",
+          "url": "    https://www.twitch.tv/unknownrock"
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/c/UnknownRock/featured"
+        },
+        {
+          "type": "tiktok",
+          "url": "https://www.tiktok.com/@unknownrock1?lang=fr"
+        },
+        {
+          "type": "discord",
+          "url": "https://discord.com/invite/UwhTdUs"
+        },
+        {
+          "type": "instagram",
+          "url": "https://www.instagram.com/pierre_thrn/"
+        },
+        {
+          "type": "twitter",
+          "url": "https://twitter.com/UnknownRock_"
         }
       ]
     },

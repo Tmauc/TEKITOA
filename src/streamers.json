@@ -521,6 +521,38 @@
       ]
     },
     {
+      "pseudoTwitch": "PoppieLaLa",
+      "pseudo": "PoppieLaLa",
+      "pseudoHistory": "",
+      "categories": "MultiGaming / Discussion",
+      "imgPath": "/streamers/poppielala/poppielala.png",
+      "thePhrase": "",
+      "dateTKT": "21/12/2022",
+      "rediffTKT": "",
+      "networks": [
+        {
+          "type": "twitch",
+          "url": "https://www.twitch.tv/poppielala"
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/channel/UCsN0_O21-yoRuj3-5T0jPmg"
+        },
+        {
+          "type": "tiktok",
+          "url": "https://www.tiktok.com/@poppielala?"
+        },
+        {
+          "type": "instagram",
+          "url": "https://www.instagram.com/poppielala/"
+        },
+        {
+          "type": "twitter",
+          "url": "https://twitter.com/poppielala"
+        }
+      ]
+    },
+    {
       "pseudoTwitch": "kzrayki",
       "pseudo": "Rayki",
       "pseudoHistory": "",
@@ -589,6 +621,42 @@
         {
           "type": "twitter",
           "url": "https://twitter.com/Reydoofficial"
+        }
+      ]
+    },
+    {
+      "pseudoTwitch": "Shakaam",
+      "pseudo": "Shakaam",
+      "pseudoHistory": "",
+      "categories": "MultiGaming / Discussion",
+      "imgPath": "",
+      "thePhrase": "",
+      "dateTKT": "11/01/2023",
+      "rediffTKT": "",
+      "networks": [
+        {
+          "type": "twitch",
+          "url": "https://www.twitch.tv/shakaam"
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/channel/UCvFo1YB-CE0HtMUZyBI_j9g"
+        },
+        {
+          "type": "tiktok",
+          "url": "https://www.tiktok.com/@shakaam__?lang=fr"
+        },
+        {
+          "type": "discord",
+          "url": "https://discord.com/invite/z4gtWhc"
+        },
+        {
+          "type": "instagram",
+          "url": "https://www.instagram.com/shakaam__/"
+        },
+        {
+          "type": "twitter",
+          "url": "https://twitter.com/Shakaam_"
         }
       ]
     },

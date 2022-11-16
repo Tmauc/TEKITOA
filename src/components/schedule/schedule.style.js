@@ -27,6 +27,13 @@ export const MonthLabelStyle = css`
   font-family: Montserrat;
   color: white;
   text-shadow: 0px 0px 4px #ffffff;
+  ${p => {
+    if (p.isMobile) {
+      return css`
+        margin-top: 10px;
+      `
+    }
+  }}
 `;
 
 export const ScheduleWrapperStyle = css`

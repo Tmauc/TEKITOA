@@ -1,28 +1,42 @@
+function getYear(date) {
+  const year = date && date[6] + date[7] + date[8] + date[9];
+  return year;
+}
+
 function getMonth(date) {
   const month = date && date[3] + date[4];
   return month;
 }
 
-export function getMonthString(date) {
-  const monthNumber = getMonth(date);
-  switch (monthNumber) {
-    case '01':
+export function getCurrentYear() {
+  const year = new Date().getFullYear()
+  return year;
+}
+
+export function getCurrentMonth() {
+  const month = new Date().getMonth()
+  return month + 1;
+}
+
+export function getMonthString(monthNumber) {
+  switch (monthNumber.toString()) {
+    case '1':
       return 'Janvier';
-    case '02':
+    case '2':
       return 'Février';
-    case '03':
+    case '3':
       return 'Mars';
-    case '04':
+    case '4':
       return 'Avril';
-    case '05':
+    case '5':
       return 'Mai';
-    case '06':
+    case '6':
       return 'Juin';
-    case '07':
+    case '7':
       return 'Juillet';
-    case '08':
+    case '8':
       return 'Août';
-    case '09':
+    case '9':
       return 'Septembre';
     case '10':
       return 'Octobre';
@@ -40,13 +54,25 @@ export function parseJsonSchedule(streamersJson) {
 
   streamersJson.streamers.map((streamer, index) => {
     const month = parseInt(getMonth(streamer?.dateTKT))
+    const year = getYear(streamer?.dateTKT);
 
-    if (scheduleArray[month]) {
-      scheduleArray[month].push(streamer);
+    if (scheduleArray[year]) {
+      if (scheduleArray[year][month]) {
+        scheduleArray[year][month].push(streamer);
+      } else {
+        scheduleArray[year][month] = new Array();
+        scheduleArray[year][month].push(streamer);
+      }
     } else {
-      scheduleArray[month] = new Array();
-      scheduleArray[month].push(streamer);
+      scheduleArray[year] = new Array();
+      if (scheduleArray[year][month]) {
+        scheduleArray[year][month].push(streamer);
+      } else {
+        scheduleArray[year][month] = new Array();
+        scheduleArray[year][month].push(streamer);
+      }
     }
+
     return 1;
   })
   return scheduleArray;

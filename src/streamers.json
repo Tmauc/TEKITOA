@@ -1,6 +1,42 @@
 {
   "streamers": [
     {
+      "pseudoTwitch": "Amobones",
+      "pseudo": "Amobones",
+      "pseudoHistory": "Am vient de son prénom et Bones vient de son rappeur américain préféré quand elle était ado !",
+      "categories": "Fortnite / MultiGaming",
+      "imgPath": "/streamers/amobones/amobones.png",
+      "thePhrase": "/streamers/amobones/amobonesPhrase.mp3",
+      "dateTKT": "14/12/2022",
+      "rediffTKT": "https://www.youtube.com/embed/NlQ8hMGay88",
+      "networks": [
+        {
+          "type": "twitch",
+          "url": "https://www.twitch.tv/amobones"
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/channel/UCclR-mzjdWKc435PjtmUPqw"
+        },
+        {
+          "type": "tiktok",
+          "url": "https://www.tiktok.com/@amobones"
+        },
+        {
+          "type": "discord",
+          "url": "https://discord.com/invite/A8FdPdW9Sv"
+        },
+        {
+          "type": "instagram",
+          "url": "https://www.instagram.com/amobones_/"
+        },
+        {
+          "type": "twitter",
+          "url": "https://twitter.com/Amobones_"
+        }
+      ]
+    },
+    {
       "pseudoTwitch": "aneiina",
       "pseudo": "Aneiina",
       "pseudoHistory": "Elle a mis des mots / lettres dans tous les sens !",
@@ -69,6 +105,38 @@
         {
           "type": "Behance",
           "url": "https://www.behance.net/bakared"
+        }
+      ]
+    },
+    {
+      "pseudoTwitch": "its_darkee",
+      "pseudo": "Darkee",
+      "pseudoHistory": "Son premier pseudo était DarkSnake, mais comme il était trop long un pote l'appelait Darkee !",
+      "categories": "MultiGaming / Discussion",
+      "imgPath": "/streamers/darkee/darkee.png",
+      "thePhrase": "/streamers/darkee/darkeePhrase.mp3",
+      "dateTKT": "21/12/2022",
+      "rediffTKT": "https://www.youtube.com/embed/qSbt8U5B7C8",
+      "networks": [
+        {
+          "type": "twitch",
+          "url": "https://www.twitch.tv/its_darkee"
+        },
+        {
+          "type": "tiktok",
+          "url": "https://www.tiktok.com/@its.darkeeagain"
+        },
+        {
+          "type": "discord",
+          "url": "https://discord.com/invite/TgbBbrdPuG"
+        },
+        {
+          "type": "instagram",
+          "url": "https://www.instagram.com/itsdarkee/"
+        },
+        {
+          "type": "twitter",
+          "url": "https://twitter.com/ItsDarkeee"
         }
       ]
     },
@@ -143,12 +211,12 @@
     {
       "pseudoTwitch": "espiona_",
       "pseudo": "Espiona",
-      "pseudoHistory": "",
+      "pseudoHistory": "Comme elle jouait la classe Espion sur Dofus, elle s'appelle Espiona !",
       "categories": "Discussion / League Of Legends",
       "imgPath": "/streamers/espiona/espiona.png",
-      "thePhrase": "",
+      "thePhrase": "/streamers/espiona/espionaPhrase.mp3",
       "dateTKT": "16/11/2022",
-      "rediffTKT": "",
+      "rediffTKT": "https://www.youtube.com/embed/_uQFiFbPpmg",
       "networks": [
         {
           "type": "twitch",
@@ -380,15 +448,51 @@
         }
       ]
     },
+        {
+      "pseudoTwitch": "lefilsdepub",
+      "pseudo": "LeFilsdePub",
+      "pseudoHistory": "",
+      "categories": "Discussion",
+      "imgPath": "/streamers/lefilsdepub/lefilsdepub.png",
+      "thePhrase": "",
+      "dateTKT": "01/02/2023",
+      "rediffTKT": "",
+      "networks": [
+        {
+          "type": "twitch",
+          "url": "https://www.twitch.tv/lefilsdepub"
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/channel/UCOA6N3AUAr1Y5c9bShaM4Vw"
+        },
+        {
+          "type": "tiktok",
+          "url": "https://www.tiktok.com/@lefilsdepub"
+        },
+        {
+          "type": "discord",
+          "url": "https://discord.com/invite/5AANKGv"
+        },
+        {
+          "type": "instagram",
+          "url": "https://www.instagram.com/le_fils_de_pub/"
+        },
+        {
+          "type": "twitter",
+          "url": "https://twitter.com/Le_FilsDePub"
+        }
+      ]
+    },
     {
       "pseudoTwitch": "mayucca",
       "pseudo": "Mayucca",
-      "pseudoHistory": "",
+      "pseudoHistory": "Viens du personnage Mayucca dans les Cités d'or !",
       "categories": "Fortnite / Discussion",
       "imgPath": "/streamers/mayucca/mayucca.png",
-      "thePhrase": "",
+      "thePhrase": "/streamers/mayucca/mayuccaPhrase.mp3",
       "dateTKT": "23/11/2022",
-      "rediffTKT": "",
+      "rediffTKT": "https://www.youtube.com/embed/_R7CeS0caUQ",
       "networks": [
         {
           "type": "twitch",
@@ -521,38 +625,6 @@
       ]
     },
     {
-      "pseudoTwitch": "PoppieLaLa",
-      "pseudo": "PoppieLaLa",
-      "pseudoHistory": "",
-      "categories": "MultiGaming / Discussion",
-      "imgPath": "/streamers/poppielala/poppielala.png",
-      "thePhrase": "",
-      "dateTKT": "21/12/2022",
-      "rediffTKT": "",
-      "networks": [
-        {
-          "type": "twitch",
-          "url": "https://www.twitch.tv/poppielala"
-        },
-        {
-          "type": "youtube",
-          "url": "https://www.youtube.com/channel/UCsN0_O21-yoRuj3-5T0jPmg"
-        },
-        {
-          "type": "tiktok",
-          "url": "https://www.tiktok.com/@poppielala?"
-        },
-        {
-          "type": "instagram",
-          "url": "https://www.instagram.com/poppielala/"
-        },
-        {
-          "type": "twitter",
-          "url": "https://twitter.com/poppielala"
-        }
-      ]
-    },
-    {
       "pseudoTwitch": "kzrayki",
       "pseudo": "Rayki",
       "pseudoHistory": "",
@@ -625,11 +697,47 @@
       ]
     },
     {
+      "pseudoTwitch": "ribie14",
+      "pseudo": "Ribie",
+      "pseudoHistory": "",
+      "categories": "Discussion / MultiGaming",
+      "imgPath": "/streamers/ribie/ribie.png",
+      "thePhrase": "",
+      "dateTKT": "25/01/2023",
+      "rediffTKT": "",
+      "networks": [
+        {
+          "type": "twitch",
+          "url": "https://www.twitch.tv/ribie14"
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/c/Ribie"
+        },
+        {
+          "type": "tiktok",
+          "url": "https://www.tiktok.com/@ribie14?"
+        },
+        {
+          "type": "discord",
+          "url": "https://discord.com/invite/XupYtYm"
+        },
+        {
+          "type": "instagram",
+          "url": "https://www.instagram.com/petite_ribie/"
+        },
+        {
+          "type": "twitter",
+          "url": "https://twitter.com/Ribiz14"
+        }
+      ]
+    },
+    {
       "pseudoTwitch": "Shakaam",
       "pseudo": "Shakaam",
       "pseudoHistory": "",
       "categories": "MultiGaming / Discussion",
-      "imgPath": "",
+      "imgPath": "/streamers/shakaam/shakaam.png",
       "thePhrase": "",
       "dateTKT": "11/01/2023",
       "rediffTKT": "",
@@ -805,6 +913,42 @@
       ]
     },
     {
+      "pseudoTwitch": "Solivann",
+      "pseudo": "Solivann",
+      "pseudoHistory": "",
+      "categories": "Discussion / MultiGaming",
+      "imgPath": "/streamers/solivann/solivann.png",
+      "thePhrase": "",
+      "dateTKT": "19/01/2023",
+      "rediffTKT": "",
+      "networks": [
+        {
+          "type": "twitch",
+          "url": "https://www.twitch.tv/solivann"
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/channel/UCYsBa9j8JWLYZfMS0hO1GHA"
+        },
+        {
+          "type": "tiktok",
+          "url": "https://www.tiktok.com/@solivanntv?lang=fr"
+        },
+        {
+          "type": "discord",
+          "url": "https://discord.com/invite/nQFxEMf"
+        },
+        {
+          "type": "instagram",
+          "url": "https://www.instagram.com/solivannoff/"
+        },
+        {
+          "type": "twitter",
+          "url": "https://twitter.com/solivann_"
+        }
+      ]
+    },
+    {
       "pseudoTwitch": "shinystaar_",
       "pseudo": "Staar",
       "pseudoHistory": "Inspiration de trois autres streamers, Dream pour l'anglais, Étoile pour Star et Zerator pour le R !",
@@ -841,14 +985,86 @@
       ]
     },
     {
+      "pseudoTwitch": "tommyroldez",
+      "pseudo": "TommyRoldez",
+      "pseudoHistory": "",
+      "categories": "Valorant",
+      "imgPath": "/streamers/tommyroldez/tommyroldez.png",
+      "thePhrase": "",
+      "dateTKT": "22/02/2023",
+      "rediffTKT": "",
+      "networks": [
+        {
+          "type": "twitch",
+          "url": "https://www.twitch.tv/tommyroldez"
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/channel/UCjdsN2ef4UsrqYFS7OKABRA"
+        },
+        {
+          "type": "tiktok",
+          "url": "https://www.tiktok.com/@tommyroldez"
+        },
+        {
+          "type": "discord",
+          "url": "https://discord.com/invite/rbTEnw38vE"
+        },
+        {
+          "type": "instagram",
+          "url": "https://www.instagram.com/thomasroldez/"
+        },
+        {
+          "type": "twitter",
+          "url": "https://twitter.com/TommyRoldez"
+        }
+      ]
+    },
+    {
+      "pseudoTwitch": "tsunadida",
+      "pseudo": "Tsunadida",
+      "pseudoHistory": "",
+      "categories": "Dofus / Multigaming",
+      "imgPath": "/streamers/tsunadida/tsunadida.png",
+      "thePhrase": "",
+      "dateTKT": "08/02/2023",
+      "rediffTKT": "",
+      "networks": [
+        {
+          "type": "twitch",
+          "url": "https://www.twitch.tv/tsunadida"
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/channel/UCqMmmNhkWqFAkUH85Q4nxeg?"
+        },
+        {
+          "type": "tiktok",
+          "url": "https://www.tiktok.com/@tsunadida"
+        },
+        {
+          "type": "discord",
+          "url": "https://discord.com/invite/gzBuXrd"
+        },
+        {
+          "type": "instagram",
+          "url": "https://www.instagram.com/eva_tsuna/"
+        },
+        {
+          "type": "twitter",
+          "url": "https://twitter.com/Tsunadida"
+        }
+      ]
+    },
+    {
       "pseudoTwitch": "unknownrock",
       "pseudo": "Unknownrock",
-      "pseudoHistory": "",
+      "pseudoHistory": "Rock vient de son prénom Pierre, Unknown car Rock n'était pas disponible et il se considérait comme inconnu sur Twitch.",
       "categories": "Discussion / MultiGaming",
       "imgPath": "/streamers/unknownrock/unknownrock.png",
-      "thePhrase": "",
+      "thePhrase": "/streamers/unknownrock/unknownrockPhrase.mp3",
       "dateTKT": "07/12/2022",
-      "rediffTKT": "",
+      "rediffTKT": "https://www.youtube.com/embed/22uD8WawCW0",
       "networks": [
         {
           "type": "twitch",
@@ -951,12 +1167,12 @@
     {
       "pseudoTwitch": "wiwiwinston",
       "pseudo": "Winston",
-      "pseudoHistory": "",
+      "pseudoHistory": "De nulle part il s'appelait Winston Chirac, mais pour pas être pris pour quelqu'un de droite il n'a gardé que Winston !",
       "categories": "Discussion / MultiGaming",
       "imgPath": "/streamers/winston/winston.png",
-      "thePhrase": "",
+      "thePhrase": "/streamers/winston/winstonPhrase.mp3",
       "dateTKT": "30/11/2022",
-      "rediffTKT": "",
+      "rediffTKT": "https://www.youtube.com/embed/B0ozOqbAoK8",
       "networks": [
         {
           "type": "twitch",

@@ -91,7 +91,7 @@ function Schedule({ scheduleArray }) {
 
   return (
     <Wrapper isMobile={isMobile}>
-      <MonthLabel isMobile={isMobile}>{getMonthString(currentMonth)}</MonthLabel>
+      <MonthLabel isMobile={isMobile}>{getMonthString(currentMonth)} {currentYear}</MonthLabel>
       {isMobile &&
         <div>
           {canRearward() ?

@@ -32,3 +32,11 @@ export const LabelStyle = css`
   color: white;
   text-shadow: 0px 0px 4px #ffffff;
 `;
+
+export const LabelTmpStyle = css`
+  margin-top: 20px;
+  font-size: ${(p) => (p.isMobile ? 8 : 20)}px;
+  font-family: Montserrat;
+  color: white;
+  text-shadow: 0px 0px 4px #ffffff;
+`;

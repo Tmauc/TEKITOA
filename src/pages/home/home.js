@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { useDevice } from 'hooks/useDevice';
 import { StreamerConsumerHook } from 'stores/streamerStore';
 
-import { SectionStyle, TitleStyle, LabelStyle } from 'pages/home/home.style';
+import { SectionStyle, TitleStyle, LabelStyle, LabelTmpStyle } from 'pages/home/home.style';
 
 function Home() {
   const { isMobile } = useDevice();
@@ -21,6 +21,7 @@ function Home() {
     <Section className="home" isMobile={isMobile}>
       <Title isMobile={isMobile}>TE KI TOA</Title>
       <Label isMobile={isMobile}>À la découverte des streamer⸱euses !</Label>
+      <LabelTmp isMobile={isMobile}>L'émission est en pause pendant une durée indéterminée ! Merci à tous de votre soutien :D</LabelTmp>
     </Section>
   );
 }
@@ -33,8 +34,12 @@ const Title = styled.h1`
   ${TitleStyle};
 `;
 
-const Label = styled.p`
+const Label = styled.h2`
   ${LabelStyle};
+`;
+
+const LabelTmp = styled.h3`
+  ${LabelTmpStyle};
 `;
 
 export default Home;

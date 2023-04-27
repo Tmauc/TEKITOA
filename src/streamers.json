@@ -448,15 +448,15 @@
         }
       ]
     },
-        {
+    {
       "pseudoTwitch": "lefilsdepub",
       "pseudo": "LeFilsdePub",
-      "pseudoHistory": "",
+      "pseudoHistory": "Il ne connaît pas l'origine exacte, cela provient d'une idée de son ami qui l'a réutilisée.. Mais on se doute que c'est un jeu de mots entre fdp et la vulgarisation de la pub !",
       "categories": "Discussion",
       "imgPath": "/streamers/lefilsdepub/lefilsdepub.png",
-      "thePhrase": "",
+      "thePhrase": "/streamers/lefilsdepub/lefilsdepub.mp3",
       "dateTKT": "01/02/2023",
-      "rediffTKT": "",
+      "rediffTKT": "https://www.youtube.com/embed/1psO8aSfG6I",
       "networks": [
         {
           "type": "twitch",
@@ -699,12 +699,12 @@
     {
       "pseudoTwitch": "ribie14",
       "pseudo": "Ribie",
-      "pseudoHistory": "",
+      "pseudoHistory": "Elle cherchait un pseudo commençant par Ri, puis en testant différentes combinaisons elle est tombée sur Ribie !",
       "categories": "Discussion / MultiGaming",
       "imgPath": "/streamers/ribie/ribie.png",
-      "thePhrase": "",
+      "thePhrase": "/streamers/ribie/ribie.mp3",
       "dateTKT": "25/01/2023",
-      "rediffTKT": "",
+      "rediffTKT": "https://www.youtube.com/embed/lgZLaOtdL5E",
       "networks": [
         {
           "type": "twitch",
@@ -739,7 +739,7 @@
       "categories": "MultiGaming / Discussion",
       "imgPath": "/streamers/shakaam/shakaam.png",
       "thePhrase": "",
-      "dateTKT": "11/01/2023",
+      "dateTKT": "",
       "rediffTKT": "",
       "networks": [
         {
@@ -913,42 +913,6 @@
       ]
     },
     {
-      "pseudoTwitch": "Solivann",
-      "pseudo": "Solivann",
-      "pseudoHistory": "",
-      "categories": "Discussion / MultiGaming",
-      "imgPath": "/streamers/solivann/solivann.png",
-      "thePhrase": "",
-      "dateTKT": "19/01/2023",
-      "rediffTKT": "",
-      "networks": [
-        {
-          "type": "twitch",
-          "url": "https://www.twitch.tv/solivann"
-        },
-        {
-          "type": "youtube",
-          "url": "https://www.youtube.com/channel/UCYsBa9j8JWLYZfMS0hO1GHA"
-        },
-        {
-          "type": "tiktok",
-          "url": "https://www.tiktok.com/@solivanntv?lang=fr"
-        },
-        {
-          "type": "discord",
-          "url": "https://discord.com/invite/nQFxEMf"
-        },
-        {
-          "type": "instagram",
-          "url": "https://www.instagram.com/solivannoff/"
-        },
-        {
-          "type": "twitter",
-          "url": "https://twitter.com/solivann_"
-        }
-      ]
-    },
-    {
       "pseudoTwitch": "shinystaar_",
       "pseudo": "Staar",
       "pseudoHistory": "Inspiration de trois autres streamers, Dream pour l'anglais, Étoile pour Star et Zerator pour le R !",
@@ -985,50 +949,14 @@
       ]
     },
     {
-      "pseudoTwitch": "tommyroldez",
-      "pseudo": "TommyRoldez",
-      "pseudoHistory": "",
-      "categories": "Valorant",
-      "imgPath": "/streamers/tommyroldez/tommyroldez.png",
-      "thePhrase": "",
-      "dateTKT": "22/02/2023",
-      "rediffTKT": "",
-      "networks": [
-        {
-          "type": "twitch",
-          "url": "https://www.twitch.tv/tommyroldez"
-        },
-        {
-          "type": "youtube",
-          "url": "https://www.youtube.com/channel/UCjdsN2ef4UsrqYFS7OKABRA"
-        },
-        {
-          "type": "tiktok",
-          "url": "https://www.tiktok.com/@tommyroldez"
-        },
-        {
-          "type": "discord",
-          "url": "https://discord.com/invite/rbTEnw38vE"
-        },
-        {
-          "type": "instagram",
-          "url": "https://www.instagram.com/thomasroldez/"
-        },
-        {
-          "type": "twitter",
-          "url": "https://twitter.com/TommyRoldez"
-        }
-      ]
-    },
-    {
       "pseudoTwitch": "tsunadida",
       "pseudo": "Tsunadida",
-      "pseudoHistory": "",
+      "pseudoHistory": "Tsunade dans Naruto + Sadida dans Dofus = Tsunadida",
       "categories": "Dofus / Multigaming",
       "imgPath": "/streamers/tsunadida/tsunadida.png",
-      "thePhrase": "",
-      "dateTKT": "08/02/2023",
-      "rediffTKT": "",
+      "thePhrase": "/streamers/tsunadida/tsunadida.mp3",
+      "dateTKT": "16/02/2023",
+      "rediffTKT": "https://www.youtube.com/embed/XoFkWravirc",
       "networks": [
         {
           "type": "twitch",

@@ -1,4 +1,4 @@
-import { css, keyframes } from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 const glowRed = keyframes`
   0% {
@@ -12,7 +12,7 @@ const glowRed = keyframes`
 	}
 `;
 
-export const StatusStyle = css`
+export const Status = styled.div`
   width: ${(p) => (p.small ? 20 : 55)}px;
   height: ${(p) => (p.small ? 20 : 55)}px;
   border-radius: 100%;

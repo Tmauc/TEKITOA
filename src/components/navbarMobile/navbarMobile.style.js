@@ -1,34 +1,29 @@
-import { css } from 'styled-components';
+import styled, { css } from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const NAVBAR_MOBILE_HEIGHT = 77;
 
-export const WrapperStyle = css`
+export const Wrapper = styled.div`
   position: fixed;
-  bottom: 0;
+  top: 0;
   left: 0;
 
   width: 100%;
   height: ${NAVBAR_MOBILE_HEIGHT}px;
-  padding: 0px 50px 15px 50px;
+  padding: 0px 30px 15px 30px;
 
-  background: linear-gradient(
-    90deg,
-    #051439 0.44%,
-    #3b2570 53.85%,
-    #383572 85.16%
-  );
+  background: linear-gradient(270deg, #07143B 0%, #33226D 49.35%, #07143B 100%);
 `;
 
-export const WrapperBorderStyle = css`
+export const WrapperBorder = styled.div`
   display: flex;
   align-items: center;
   text-align: center;
   justify-content: space-between;
   align-items: center;
-  border-top: 2px solid #ffff;
 `;
 
-export const LogoStyle = css`
+export const LogoImg = styled.img`
   width: 120px;
   height: 120px;
   cursor: pointer;
@@ -38,46 +33,48 @@ export const LogoStyle = css`
   }
 `;
 
-export const CloseImgStyle = css`
+export const CloseImg = styled.img`
   width: 50px;
   height: 50px;
   cursor: pointer;
 `;
 
-export const MenuleftStyle = css`
+export const Menuleft = styled.div`
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  width: 100%;
+
   & > *:not(:last-child) {
     margin-right: 5px;
   }
 `;
 
-export const MenuIconStyle = css`
+export const MenuIcon = styled.img`
   width: 32px;
   height: 32px;
   cursor: pointer;
   margin-top: 10px;
 `;
 
-export const MenuLogoStyle = css`
+export const MenuLogo = styled.img`
   width: 50px;
   height: 50px;
   cursor: pointer;
   margin-top: 10px;
 `;
 
-export const MenuWrapperStyle = css`
+export const MenuWrapper = styled.div`
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.95);
-  text-shadow: 0px 0px 4px #ffffff;
   z-index: 10 !important;
 `;
 
-export const NavBarUlStyle = css`
+export const NavBarUl = styled.ul`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -90,7 +87,7 @@ export const NavBarUlStyle = css`
   }
 `;
 
-export const NavLinkStyle = css`
+export const NavLink = styled(Link)`
   display: flex;
   align-items: center;
   font-size: 30px;
@@ -103,7 +100,7 @@ export const NavLinkStyle = css`
   }
 
   ${(p) => {
-    if (p.isCurrent) {
+    if (p.active === 'true') {
       return css`
         text-shadow: 2px 2px 0px #642d5a;
         color: #f05183;
@@ -123,40 +120,4 @@ export const NavLinkStyle = css`
   &:hover:enabled {
     color: #642d5a;
   }
-`;
-
-export const PhraseButtonStyle = css`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  width: 150px;
-  height: 60px;
-  margin-left: 5%;
-
-  background-color: transparent;
-  border: 2px solid white;
-  border-top-width: 0px;
-  border-radius: 0px 0px 7px 7px;
-
-  font-size: 15px;
-  font-family: Montserrat;
-  color: white;
-
-  cursor: pointer;
-
-  &:hover {
-    transform: scale(1.05);
-    transition: all 0.2s ease-in-out;
-    img {
-      transform: scale(1.2);
-      transition: all 0.2s ease-in-out;
-    }
-  }
-`;
-
-export const PlayIconStyle = css`
-  width: 24px;
-  height: 24px;
-  margin-right: 8px;
 `;

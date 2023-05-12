@@ -1,4 +1,4 @@
-import { css, keyframes } from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 const float = keyframes`
   0% {
@@ -12,26 +12,36 @@ const float = keyframes`
 	}
 `;
 
-export const ConditionsStyle = css`
+export const ConditionsWrapper = styled.section`
   display: flex;
   flex-direction: column;
   text-align: left;
   font-family: Montserrat;
   color: white;
-  text-shadow: 0px 0px 4px #ffffff;
+  padding-bottom: 100px;
   & > *:not(:last-child) {
       padding: 5px 0px;
   }
 
   h2 {
-    font-size: ${(p) => (p.isMobile ? 12 : 16)}px;
+    font-size: 16px;
   }
   p {
-    font-size: ${(p) => (p.isMobile ? 8 : 12)}px;
+    font-size: 12px;
+  }
+
+  @media only screen and (max-width: 1024px) {
+    h2 {
+      font-size: 12px;
+    }
+
+    p {
+      font-size: 8px;
+    }
   }
 `;
 
-export const LogoStyle = css`
+export const LogoImg = styled.img`
   width: 300px;
   height: 300px;
   align-self: center;

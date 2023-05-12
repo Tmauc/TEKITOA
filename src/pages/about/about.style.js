@@ -1,63 +1,107 @@
-import { css } from 'styled-components';
+import styled from 'styled-components';
 
-export const SectionStyle = css`
+export const Section = styled.section`
+  padding-bottom: 100px;
 `;
 
-export const TitleStyle = css`
-  font-size: ${(p) => (p.isMobile ? 50 : 100)}px;
+export const Title = styled.h1`
+  font-size: 100px;
   text-align: center;
+
+  @media only screen and (max-width: 1024px) {
+    font-size: 50px;
+  }
   `;
 
-export const MainStyle = css`
+export const Main = styled.div`
   display: flex;
   flex-direction: column;
+  margin-top: 30px;
   justify-content: center;
   align-items: center;
-  margin-top: 30px;
 `;
 
-export const DescriptionWrapperStyle = css`
-  padding: ${p => p.isMobile ? '0px 10px' : '0px 50px'};
+export const DescriptionWrapper = styled.div`
+  padding: '0px 50px';
   & > *:not(:last-child) {
     padding: 5px 0px;
   }
-`;
 
-export const DescriptionStyle = css`
-  font-size: ${(p) => (p.isMobile ? 12 : 16)}px;
-  text-align: center;
-  font-family: Montserrat;
-  color: white;
-  text-shadow: 0px 0px 4px #ffffff;
-  a {
-    color: white;
+  @media only screen and (max-width: 1024px) {
+    padding: '0px 10px';
   }
 `;
 
-export const SeparatorStyle = css`
+export const DescriptionTitle = styled.h3`
+  font-size: 20px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+`;
+
+export const DescriptionLeftWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const BottomWrapper = styled.div`
+  margin-top: 150px;
+  display: flex;
+  flex-direction: column;
+  max-width: 900px;
+
+  & > *:not(:last-child) {
+    margin-bottom: 60px;
+  }
+
+  @media only screen and (max-width: 1024px) {
+    margin-top: 50px;
+  }
+`;
+
+export const Description = styled.p`
+  font-size: 20px;
+  text-align: center;
+  font-family: Montserrat;
+  color: white;
+  a {
+    color: white;
+  }
+  @media only screen and (max-width: 1024px) {
+    font-size: 12px;
+  }
+`;
+
+export const DescriptionLeft = styled(Description)`
+  font-size: 16px;
+  text-align: left;
+
+  a {
+    color: #f05183;
+  }
+
+  @media only screen and (max-width: 1024px) {
+    font-size: 12px;
+  }
+`;
+
+export const Separator = styled.div`
   background-color: white;
   width: 20vw;
   height: 1px;
   margin: 25px 0px;
+  margin-bottom: 80px;
 `;
 
-export const LiveWrapperStyle = css`
+export const LiveWrapper = styled.div`
   display: flex;
-  flex-direction: ${(p) => (p.isMobile ? 'column' : 'row')};
+  flex-direction: 'row';
+  margin-right: 10px;
 
-  ${(p) => {
-    if (p.isMobile) {
-      return css`
-        & > * {
-          margin-bottom: 10px;
-        }
-      `;
-    } else {
-      return css`
-        & > * {
-          margin-right: 10px;
-        }
-      `;
-    }
-  }}
+  & > * {
+    margin-right: 10px;
+  }
+
+  @media only screen and (max-width: 1024px) {
+    margin-right: 0px;
+  }
 `;

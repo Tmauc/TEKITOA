@@ -1,9 +1,8 @@
 import React from 'react';
-import styled from 'styled-components';
 
-import { EmoteWrapperStyle, EmoteStyle } from 'components/emote/emote.style.js';
+import { EmoteWrapper, EmoteImg } from 'components/emote/emote.style.js';
 
-function Emote({ path, small }) {
+function Emote({ path }) {
   const randomY = Math.floor(Math.random() * 10) + 5;
   const randomX = Math.floor(Math.random() * 10) + 5;
 
@@ -12,19 +11,10 @@ function Emote({ path, small }) {
       <EmoteImg
         alt="Sreamer emote"
         src={path}
-        small={small}
         randomY={randomY}
       />
     </EmoteWrapper>
   );
 }
-
-const EmoteWrapper = styled.div`
-  ${EmoteWrapperStyle};
-`;
-
-const EmoteImg = styled.img`
-  ${EmoteStyle};
-`;
 
 export default Emote;

@@ -1,4 +1,4 @@
-import { css, keyframes } from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 const float = keyframes`
   0% {
@@ -9,7 +9,7 @@ const float = keyframes`
   }
 `
 
-export const WrapperStyle = css`
+export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   z-index: 0;
@@ -26,7 +26,7 @@ export const WrapperStyle = css`
   animation-iteration-count: infinite;
 `;
 
-export const HeaderStyle = css`
+export const Header = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -35,10 +35,14 @@ export const HeaderStyle = css`
   padding: 0px 10px;
   background-color: rgba(217, 217, 217, 0.3);
   color: rgba(255, 255, 255, 0.8);
-  font-size: ${(p) => (p.isMobile ? 10 : 16)}px;
+  font-size: 16px;
+
+  @media only screen and (max-width: 1024px) {
+    font-size: 12px;
+  }
 `;
 
-export const HeaderLeftStyle = css`
+export const HeaderLeft = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -47,29 +51,28 @@ export const HeaderLeftStyle = css`
   }
 `;
 
-export const SquareIconStyle = css``;
+export const SquareIcon = styled.img``;
 
-export const TypeStyle = css``;
+export const Type = styled.p``;
 
-export const HeaderMiddleStyle = css`
+export const HeaderMiddle = styled.div`
   display: flex;
   text-align: center;
   white-space: nowrap;
 `;
 
-export const TitleStyle = css``;
+export const Title = styled.p``;
 
-export const HeaderRightStyle = css`
+export const HeaderRight = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
 `;
 
-export const CloseIconStyle = css``;
+export const CloseIcon = styled.img``;
 
-export const MainStyle = css`
+export const Main = styled.div`
   display: flex;
-  justify-content: center;
   align-items: center;
   background: rgba(217, 217, 217, 0.2);
   border: 2px solid rgba(255, 255, 255, 0.2);
@@ -77,25 +80,36 @@ export const MainStyle = css`
   height: ${(p) => p.height + 'px'};
 `;
 
-export const StreamerPseudoStyle = css`
+export const StreamerPseudo = styled.p`
   text-align: center;
-  font-size: ${(p) => (p.isMobile ? 20 : 30)}px;
+  font-size: 30px;
   font-family: Montserrat;
   color: white;
-  text-shadow: 0px 0px 4px #ffffff;
 `;
 
-export const ComingSoonStyle = css`
+export const ComingSoon = styled.p`
   text-align: center;
-  font-size: ${(p) => (p.isMobile ? 30 : 40)}px;
+  font-size: 40px;
   font-family: Montserrat;
   color: white;
-  text-shadow: 0px 0px 4px #ffffff;
 `;
 
-export const IframeStyle = css`
+export const Iframe = styled.iframe`
   border: 0;
   overflow: hidden;
   width: 100%;
   height: 100%;
+`;
+
+export const StreamerWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const StreamerPP = styled.img`
+  width: 70px;
+  height: 70px;
+
+  margin: 0 16px;
 `;

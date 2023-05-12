@@ -1,18 +1,13 @@
 import React from 'react'
-import styled from 'styled-components';
 
-import { useDevice } from 'hooks/useDevice'
-
-import { ConditionsStyle, LogoStyle } from 'pages/conditions/conditions.style.js';
+import { ConditionsWrapper, LogoImg } from 'pages/conditions/conditions.style.js';
 
 function Conditions() {
-  const { isMobile } = useDevice()
   return (
-    <ConditionsWrapper isMobile={isMobile}>
+    <ConditionsWrapper>
       <LogoImg
         alt="TE KI TOA logo"
         className="logo"
-        isMobile={isMobile}
         src={process.env.PUBLIC_URL + '/assets/logo.png'}
       />
       <div>
@@ -229,13 +224,5 @@ function Conditions() {
     </ConditionsWrapper >
   )
 }
-
-const ConditionsWrapper = styled.section`
-  ${ConditionsStyle};
-`;
-
-const LogoImg = styled.img`
-  ${LogoStyle};
-`;
 
 export default Conditions

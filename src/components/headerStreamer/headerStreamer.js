@@ -1,66 +1,46 @@
 import React from 'react';
-import styled from 'styled-components';
-import { useNavigate } from 'react-router-dom';
 
+import AudioButton from 'components/audioButton/audioButton';
+import OnLiveDot from 'components/onLiveDot/onLiveDot';
 import { useDevice } from 'hooks/useDevice';
+import { StreamerConsumerHook } from 'stores/streamerStore';
 
 import {
-  HeaderStyle,
-  HeaderLeftWrapperStyle,
-  TitleLinkStyle,
-  HeaderRightWrapperStyle,
-  BackIconStyle,
+  Header,
+  HeaderLeftWrapper,
+  TitleLink,
+  P,
+  WrapperAudio,
 } from 'components/headerStreamer/headerStreamer.style';
 
-function HeaderStreamer({ title, twitchURL }) {
-  const navigate = useNavigate();
+function HeaderStreamer({ title, twitchURL, onClickAudio }) {
   const { isMobile } = useDevice();
-
-  function backStreamers() {
-    navigate('/streamersBrowse');
-  }
+  const [{ stream }] = StreamerConsumerHook();
 
   const goToTwitch = () => {
     window.open(twitchURL, '_blank').focus();
   };
 
   return (
-    <Header isMobile={isMobile}>
-      <HeaderLeftWrapper isMobile={isMobile}>
-        <TitleLink onClick={goToTwitch} isMobile={isMobile}>
+    <Header>
+      <HeaderLeftWrapper>
+        <TitleLink onClick={goToTwitch}>
           {title}
         </TitleLink>
+        {!isMobile &&
+          <WrapperAudio>
+            <AudioButton onClickAudio={onClickAudio} />
+            {stream && (
+              <>
+                <P>ON LIVE</P>
+                <OnLiveDot small />
+              </>
+            )}
+          </WrapperAudio>
+        }
       </HeaderLeftWrapper>
-      <HeaderRightWrapper>
-        <BackIcon
-          alt="Back icon"
-          small={isMobile}
-          onClick={backStreamers}
-          src={process.env.PUBLIC_URL + '/assets/icons/ArrowLeft.svg'}
-        />
-      </HeaderRightWrapper>
     </Header>
   );
 }
-
-const Header = styled.header`
-  ${HeaderStyle};
-`;
-
-const HeaderLeftWrapper = styled.div`
-  ${HeaderLeftWrapperStyle};
-`;
-
-const TitleLink = styled.h1`
-  ${TitleLinkStyle};
-`;
-
-const HeaderRightWrapper = styled.div`
-  ${HeaderRightWrapperStyle};
-`;
-
-const BackIcon = styled.img`
-  ${BackIconStyle};
-`;
 
 export default HeaderStreamer;

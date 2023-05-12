@@ -1,14 +1,12 @@
 import React, { useEffect, useCallback, useState } from 'react';
 
 import Emote from 'components/emote/emote';
-import { useDevice } from 'hooks/useDevice';
 
 import { StreamerConsumerHook } from 'stores/streamerStore';
 import { getRandomArray } from 'utils/getRandomItem.js';
 
 
 function Emotes({ maxEmotes }) {
-  const { isMobile } = useDevice();
   const [{ emotes }] =
     StreamerConsumerHook();
   const [randomEmotes, setRandomEmotes] = useState([]);
@@ -34,7 +32,6 @@ function Emotes({ maxEmotes }) {
           <Emote
             key={emote?.id + index}
             path={emote?.images.url_4x}
-            small={isMobile}
           />
         ))}
     </>

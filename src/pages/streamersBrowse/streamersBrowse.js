@@ -1,20 +1,22 @@
 import React, { useEffect } from 'react';
 import { generatePath, useNavigate } from 'react-router';
-import styled from 'styled-components';
 
 import StreamersJson from 'streamers.json';
 import FakeWindow from 'components/fakeWindow/fakeWindow';
-import { useDevice } from 'hooks/useDevice';
 import { StreamerConsumerHook } from 'stores/streamerStore';
+import { useDevice } from 'hooks/useDevice';
 
 import {
-  SectionStyle,
-  ListWrapperStyle,
+  Section,
+  ListWrapper,
+  StreamersDesc,
+  Separator,
 } from 'pages/streamersBrowse/streamersBrowse.style';
 
 function StreamersBrowse() {
   const navigate = useNavigate();
   const { isMobile } = useDevice();
+  // eslint-disable-next-line
   const [{ }, dispatch] = StreamerConsumerHook();
 
   useEffect(() => {
@@ -31,9 +33,11 @@ function StreamersBrowse() {
   };
 
   return (
-    <Section className="streamersBrowse" isMobile={isMobile}>
+    <Section className="streamersBrowse">
       <h1 className="title">STREAMERS</h1>
-      <ListWrapper isMobile={isMobile}>
+      <StreamersDesc>Ils ont participé à l’émission TE KI TOA !</StreamersDesc>
+      <Separator />
+      <ListWrapper>
         {StreamersJson.streamers.map((streamer, index) => (
           <li key={streamer + index}>
             <FakeWindow
@@ -41,10 +45,11 @@ function StreamersBrowse() {
               onClick={() => onClick(streamer)}
               type={streamer.pseudo + ".exe"}
               content={streamer.pseudo}
+              pp={streamer.ppPath}
               size={
                 isMobile
-                  ? { width: 180, height: 50 }
-                  : { width: 280, height: 100 }
+                  ? { width: 330, height: 100 }
+                  : { width: 330, height: 100 }
               }
             />
           </li>
@@ -53,13 +58,5 @@ function StreamersBrowse() {
     </Section>
   );
 }
-
-const Section = styled.section`
-  ${SectionStyle};
-`;
-
-const ListWrapper = styled.ul`
-  ${ListWrapperStyle};
-`;
 
 export default StreamersBrowse;

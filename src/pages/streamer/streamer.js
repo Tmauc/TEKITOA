@@ -1,33 +1,66 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import styled from 'styled-components';
+import { useNavigate } from 'react-router-dom';
 
 import HeaderStreamer from 'components/headerStreamer/headerStreamer.js';
 import Description from 'components/description/description.js';
 import FakeWindow from 'components/fakeWindow/fakeWindow.js';
 import ImageStreamer from 'components/imageStreamer/imageStreamer';
 import Emotes from 'components/emotes/emotes';
-import { useDevice } from 'hooks/useDevice';
+import Button from 'components/button/button';
+import AudioButton from 'components/audioButton/audioButton';
 
 import { StreamerConsumerHook } from 'stores/streamerStore';
 
+import { useDevice } from 'hooks/useDevice';
 import { OAuthTwitch } from 'core/twitchAPI.js';
+
+import OnLiveDot from 'components/onLiveDot/onLiveDot';
 
 import StreamersJson from 'streamers.json';
 
 import {
-  SectionStyle,
-  MainStyle,
-  LeftWrapperStyle,
-  RediffWrapperStyle,
+  Section,
+  Main,
+  LeftWrapper,
+  Categories,
+  Separator,
+  Title,
+  RediffWrapper,
+  ParallaxBg,
+  ParallaxOverlay,
+  ParallaxContent,
+  HeaderRightWrapper,
+  NetWorksWrapper,
+  LiveWrapper,
+  BackIcon,
+  WrapperAudio,
+  DescWrapper,
+  P,
+  OnLiveWrapper,
 } from 'pages/streamer/streamer.style.js';
 
 function Streamer() {
   const location = useLocation();
   const { isMobile } = useDevice();
-  const [{ streamer, user }, dispatch] = StreamerConsumerHook();
+  const navigate = useNavigate();
+  const [{ streamer, user, stream }, dispatch] = StreamerConsumerHook();
   const [createdDate, setCreatedDate] = useState(null);
   const [userDesc, setUserDesc] = useState(null);
+  var audio = streamer && streamer?.thePhrase && new Audio(streamer?.thePhrase);
+
+  function backStreamers() {
+    navigate('/streamersBrowse');
+  }
+
+  const onClickNetwork = (url) => {
+    window.open(url, '_blank').focus();
+  }
+
+
+  const onClickAudio = () => {
+    audio.play();
+  };
 
   useEffect(() => {
     if (!streamer) {
@@ -50,21 +83,63 @@ function Streamer() {
   }, [setUserDesc, user?.description]);
 
   return (
-    <Section className="Streamer" isMobile={isMobile}>
-      <Emotes maxEmotes={10} />
-      <HeaderStreamer
-        title={streamer?.pseudo}
-        twitchURL={streamer?.networks.find(o => o?.type === 'twitch')?.url}
-      />
-      <Main>
-        {
-          <LeftWrapper small={isMobile}>
-            <p></p>
-            <Description title={'Création'} label={createdDate} />
-            {streamer?.pseudoHistory && <Description title={'Pseudo'} label={streamer?.pseudoHistory} />}
-            <Description title={'Description'} label={userDesc} />
-            <Description title={'Catégories'} label={streamer?.categories} />
-            <RediffWrapper isMobile={isMobile}>
+    <Section className="Streamer">
+      <ParallaxBg>
+        <Emotes maxEmotes={10} />
+      </ParallaxBg>
+      <ParallaxOverlay />
+
+      <ParallaxContent>
+        {!isMobile &&
+          <HeaderRightWrapper>
+            <BackIcon
+              alt="Back icon"
+              onClick={backStreamers}
+              src={process.env.PUBLIC_URL + '/assets/icons/ArrowLeft.svg'}
+            />
+          </HeaderRightWrapper>
+        }
+        {stream && isMobile && (
+          <OnLiveWrapper>
+            <P>ON LIVE</P>
+            <OnLiveDot small />
+          </OnLiveWrapper>
+        )}
+        <HeaderStreamer
+          title={streamer?.pseudo}
+          twitchURL={streamer?.networks.find(o => o?.type === 'twitch')?.url}
+          onClickAudio={onClickAudio}
+        />
+        <Main>
+          <LeftWrapper>
+            <Categories>{streamer?.categories}</Categories>
+            {isMobile &&
+              <WrapperAudio>
+                <AudioButton onClickAudio={onClickAudio} />
+              </WrapperAudio>
+            }
+            <Separator />
+            {stream &&
+              <LiveWrapper>
+                <FakeWindow
+                  type="ONLIVE.exe"
+                  title={streamer?.pseudo}
+                  size={
+                    isMobile
+                      ? { width: 300, height: 170 }
+                      : { width: 440, height: 250 }
+                  }
+                  twitchInfos={{ live: true, channel: streamer?.pseudoTwitch }}
+                />
+              </LiveWrapper>
+            }
+            <DescWrapper>
+              <Description title={'Date de creation'} label={createdDate} />
+              {streamer?.pseudoHistory && <Description title={'Pseudo signification'} label={streamer?.pseudoHistory} />}
+              <Description title={'Description'} label={userDesc} />
+            </DescWrapper>
+            <RediffWrapper>
+              <Title>La rediffusion</Title>
               <FakeWindow
                 type="Rediff.exe"
                 title={'TKT ' + streamer?.pseudo + ' - ' + streamer?.dateTKT}
@@ -75,31 +150,20 @@ function Streamer() {
                     ? { width: 300, height: 170 }
                     : { width: 440, height: 250 }
                 }
-                isMobile={isMobile}
               />
             </RediffWrapper>
+            <NetWorksWrapper>
+              <Title>Où le / la retrouver ?</Title>
+              {streamer?.networks?.map((network, index) => (
+                <Button key={network?.type + index} label={network?.type} callbackFunc={() => onClickNetwork(network?.url)} />
+              ))}
+            </NetWorksWrapper>
           </LeftWrapper>
-        }
-        <ImageStreamer />
-      </Main>
+          {!isMobile && <ImageStreamer />}
+        </Main>
+      </ParallaxContent>
     </Section>
   );
 }
-
-const Section = styled.section`
-  ${SectionStyle};
-`;
-
-const Main = styled.div`
-  ${MainStyle};
-`;
-
-const LeftWrapper = styled.div`
-  ${LeftWrapperStyle};
-`;
-
-const RediffWrapper = styled.div`
-  ${RediffWrapperStyle};
-`;
 
 export default Streamer;

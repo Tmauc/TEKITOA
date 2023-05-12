@@ -12,18 +12,14 @@ import About from 'pages/about/about';
 import StreamersBrowse from 'pages/streamersBrowse/streamersBrowse';
 import Schedule from 'pages/scheduleTKT/scheduleTKT';
 import Streamer from 'pages/streamer/streamer';
-import Rediffs from 'pages/rediffs/rediffs';
-import Podcast from 'pages/podcast/podcast';
 import Conditions from 'pages/conditions/conditions';
-import Networks from 'pages/networks/networks';
-import Twitch from 'pages/twitch/twitch';
-import OnLive from 'pages/onLive/onLive';
 
 import StreamersJson from 'streamers.json';
 
 import FooterInfos from 'components/footerInfos/footerInfos'
 import Navbar from 'components/navbar/navbar';
 import NavbarMobile from 'components/navbarMobile/navbarMobile';
+
 import { useDevice } from 'hooks/useDevice';
 
 import { StreamerProvider } from 'stores/streamerStore';
@@ -36,7 +32,7 @@ function App() {
 
   return (
     <div className="App">
-      <GlobalStyle isMobile={isMobile} />
+      <GlobalStyle />
       <StreamerProvider>
         <Router>
           <Routes>
@@ -44,32 +40,13 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/streamersBrowse" element={<StreamersBrowse />} />
             <Route path="/schedule" element={<Schedule />} />
-            <Route path="/rediffs" element={<Rediffs />} />
-            <Route path="/podcast" element={<Podcast />} />
             <Route path="/conditions" element={<Conditions />} />
             {StreamersJson.streamers.map((streamer, index) => (
-              <>
-                <Route
-                  key={streamer + index}
-                  path={'/' + streamer.pseudo}
-                  element={<Streamer />}
-                />
-                <Route
-                  key={streamer + 'twitch' + index}
-                  path={'/' + streamer.pseudo + '/twitch'}
-                  element={<Twitch />}
-                />
-                <Route
-                  key={streamer + 'reseaux' + index}
-                  path={'/' + streamer.pseudo + '/reseaux'}
-                  element={<Networks />}
-                />
-                <Route
-                  key={streamer + 'onlive' + index}
-                  path={'/' + streamer.pseudo + '/onlive'}
-                  element={<OnLive />}
-                />
-              </>
+              <Route
+                key={streamer + index}
+                path={'/' + streamer.pseudo}
+                element={<Streamer />}
+              />
             ))}
             <Route path="*" element={<Navigate to="/home" />} />
           </Routes>
@@ -102,25 +79,22 @@ const GlobalStyle = createGlobalStyle`
 }
 
 :root {
-  background: linear-gradient(
-    90deg,
-    #051439 0.44%,
-    #3b2570 53.85%,
-    #383572 85.16%
-  );
+  background: linear-gradient(270deg, #07143B 0%, #33226D 49.35%, #07143B 100%);
+}
+
+body {
+  overflow: hidden;
 }
 
 section {
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(
-    90deg,
-    #051439 0.44%,
-    #3b2570 53.85%,
-    #383572 85.16%
-  );
+  background: linear-gradient(270deg, #07143B 0%, #33226D 49.35%, #07143B 100%);
   overflow-x: hidden;
   overflow-y: 'scroll';
+  font-family: Montserrat;
+  color: white;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
   h1 {
     font-family: Norwester;
@@ -132,8 +106,13 @@ section {
     animation-iteration-count: infinite;
   }
 
-  padding: ${(p) => (p.isMobile ? '10px 30px' : '20px 100px')};
-  padding-bottom: ${p => p.isMobile ? NAVBAR_MOBILE_HEIGHT + 10 : NAVBAR_HEIGHT + 10}px;
+  padding: 50px 100px;
+  padding-top: ${NAVBAR_HEIGHT + 10}px;
+
+  @media only screen and (max-width: 1024px) {
+    padding: 50px 30px;
+    padding-top: ${NAVBAR_MOBILE_HEIGHT + 10}px;
+  }
 }
 
 ::-webkit-scrollbar {

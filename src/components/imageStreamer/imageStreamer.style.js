@@ -1,13 +1,16 @@
-import { css, keyframes } from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
-export const ImgWrapperStyle = css`
+export const ImgWrapper = styled.div`
   position: fixed;
   bottom: 0px;
-  bottom: ${(p) => (p.isMobile ? 60 : 0)}px;
   right: 0;
   width: 40%;
   height: 80%;
-  z-index: ${(p) => (p.isMobile ? 0 : 1)};
+  z-index: 1;
+
+	@media only screen and (max-width: 1024px) {
+    z-index: 0;
+  }
 `;
 
 const breatheAnimation = keyframes`
@@ -34,7 +37,7 @@ const breatheAnimation = keyframes`
 		}
 `;
 
-export const StreamerImgStyle = css`
+export const StreamerImg = styled.img`
   object-fit: contain;
   object-position: bottom right;
   width: 100%;

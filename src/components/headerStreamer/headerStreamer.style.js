@@ -1,13 +1,17 @@
-import { css } from 'styled-components';
+import styled from 'styled-components';
 
-export const HeaderStyle = css`
+export const Header = styled.header`
   display: flex;
   justify-content: space-between;
-  margin-bottom: ${(p) => (p.isMobile ? 30 : 80)}px;
+  margin-bottom: 30px;
   max-width: 80vw;
+
+  @media only screen and (max-width: 1024px) {
+    margin-bottom: 50px;
+  }
 `;
 
-export const HeaderLeftWrapperStyle = css`
+export const HeaderLeftWrapper = styled.div`
   display: flex;
   align-items: flex-end;
   & > *:not(:last-child) {
@@ -15,27 +19,41 @@ export const HeaderLeftWrapperStyle = css`
   }
 `;
 
-export const TitleLinkStyle = css`
+export const TitleLink = styled.h1`
   cursor: pointer;
-  font-size: ${(p) => (p.isMobile ? 40 : 100)}px;
+  font-size: 100px;
   transition: all 0.3s ease-in-out;
+
   &:hover {
     transform: scale(1.02);
   }
-`;
 
-export const HeaderRightWrapperStyle = css`
-  display: flex;
-  align-items: center;
-`;
-
-export const BackIconStyle = css`
-  width: ${(p) => (p.small ? 50 : 100)}px;
-  height: ${(p) => (p.small ? 50 : 100)}px;
-  &:hover {
-    transform: scale(1.1);
-    transition: all 0.2s ease-in-out;
+  @media only screen and (max-width: 1024px) {
+    font-size: 60px;
   }
-  cursor: pointer;
-  z-index: 0;
+`;
+
+export const AudioText = styled.p`
+  font-family: Montserrat;
+  color: white;
+  font-size: 18px;
+  white-space: nowrap;
+`;
+
+export const P = styled.p`
+  font-size: 25px;
+  white-space: nowrap;
+`;
+
+export const WrapperAudio = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-left: 10vw;
+  height: 100%;
+
+  & > *:not(:last-child) {
+    margin-right: 18px;
+  }
 `;

@@ -1,11 +1,24 @@
 import React, { useState } from 'react'
-import styled from 'styled-components'
 import { generatePath, useNavigate } from 'react-router';
 
-import { getMonthString, getCurrentYear, getCurrentMonth } from 'utils/parseJsonSchedule'
+import { getMonthString } from 'utils/parseJsonSchedule'
+//import { getMonthString, getCurrentYear, getCurrentMonth } from 'utils/parseJsonSchedule'
 import { useDevice } from 'hooks/useDevice';
 
-import { WrapperStyle, ScheduleMainWrapperStyle, MonthLabelStyle, ScheduleWrapperStyle, ArrowDisabledStyle, ArrowStyle, DayWrapperStyle, DayHeaderWrapperStyle, DateLabelStyle, PseudoLabelStyle, MainWrapperStyle, StreamerImageStyle } from 'components/schedule/schedule.style'
+import {
+  Wrapper,
+  ScheduleMainWrapper,
+  MonthLabel,
+  ScheduleWrapper,
+  ArrowDisabled,
+  Arrow,
+  DayWrapper,
+  DayHeaderWrapper,
+  DateLabel,
+  PseudoLabel,
+  MainWrapper,
+  StreamerImage
+} from 'components/schedule/schedule.style'
 
 function ScheduleDay({ day, isMobile }) {
   const navigate = useNavigate();
@@ -19,7 +32,7 @@ function ScheduleDay({ day, isMobile }) {
 
   return (
     <DayWrapper onClick={onClickDay}>
-      <DayHeaderWrapper isMobile={isMobile}>
+      <DayHeaderWrapper>
         <DateLabel>{day?.dateTKT}</DateLabel>
         <PseudoLabel>{day?.pseudo}</PseudoLabel>
       </DayHeaderWrapper>
@@ -34,10 +47,12 @@ function ScheduleDay({ day, isMobile }) {
 
 function Schedule({ scheduleArray }) {
   const { isMobile } = useDevice();
-  const [currentYear, setCurrentYear] = useState(getCurrentYear());
-  const [currentMonth, setCurrentMonth] = useState(getCurrentMonth());
+  const [currentYear, setCurrentYear] = useState(2023); //getCurrentYear()
+  const [currentMonth, setCurrentMonth] = useState(2); //getCurrentMonth()
 
-  scheduleArray[currentYear][currentMonth].sort((a, b) => (a?.dateTKT > b?.dateTKT) ? 1 : -1)
+  if (scheduleArray[currentYear][currentMonth]) {
+    scheduleArray[currentYear][currentMonth].sort((a, b) => (a?.dateTKT > b?.dateTKT) ? 1 : -1)
+  }
 
   const onClickForward = () => {
     if (currentMonth < 12) {
@@ -90,33 +105,33 @@ function Schedule({ scheduleArray }) {
   }
 
   return (
-    <Wrapper isMobile={isMobile}>
-      <MonthLabel isMobile={isMobile}>{getMonthString(currentMonth)} {currentYear}</MonthLabel>
+    <Wrapper>
+      <MonthLabel>{getMonthString(currentMonth)} {currentYear}</MonthLabel>
       {isMobile &&
         <div>
           {canRearward() ?
-            <ArrowRearward
+            <Arrow
               alt="Rearward icon"
               onClick={onClickRearward}
               small
               src={process.env.PUBLIC_URL + '/assets/icons/ArrowLeft.svg'}
             />
             :
-            <ArrowDisabledRearward
+            <ArrowDisabled
               alt="Rearward icon"
               small
               src={process.env.PUBLIC_URL + '/assets/icons/ArrowDisabledLeft.svg'}
             />
           }
           {canForward() ?
-            <ArrowForward
+            <Arrow
               alt="Forward icon"
               onClick={onClickForward}
               small
               src={process.env.PUBLIC_URL + '/assets/icons/ArrowRight.svg'}
             />
             :
-            <ArrowDisabledForward
+            <ArrowDisabled
               alt="Forward icon"
               small
               src={process.env.PUBLIC_URL + '/assets/icons/ArrowDisabledRight.svg'}
@@ -128,20 +143,20 @@ function Schedule({ scheduleArray }) {
         {!isMobile &&
           <div>
             {canRearward() ?
-              <ArrowRearward
+              <Arrow
                 alt="Rearward icon"
                 onClick={onClickRearward}
                 src={process.env.PUBLIC_URL + '/assets/icons/ArrowLeft.svg'}
               />
               :
-              <ArrowDisabledRearward
+              <ArrowDisabled
                 alt="Rearward icon"
                 src={process.env.PUBLIC_URL + '/assets/icons/ArrowDisabledLeft.svg'}
               />
             }
           </div>
         }
-        <ScheduleWrapper isMobile={isMobile}>
+        <ScheduleWrapper>
           {scheduleArray && scheduleArray[currentYear][currentMonth].map((day, index) => (
             <ScheduleDay key={day + index} day={day} isMobile={isMobile} />
           ))}
@@ -149,13 +164,13 @@ function Schedule({ scheduleArray }) {
         {!isMobile &&
           <div>
             {canForward() ?
-              <ArrowForward
+              <Arrow
                 alt="Forward icon"
                 onClick={onClickForward}
                 src={process.env.PUBLIC_URL + '/assets/icons/ArrowRight.svg'}
               />
               :
-              <ArrowDisabledForward
+              <ArrowDisabled
                 alt="Forward icon"
                 src={process.env.PUBLIC_URL + '/assets/icons/ArrowDisabledRight.svg'}
               />
@@ -166,61 +181,5 @@ function Schedule({ scheduleArray }) {
     </Wrapper>
   )
 }
-
-const Wrapper = styled.div`
-  ${WrapperStyle};
-`
-
-const ScheduleMainWrapper = styled.div`
-  ${ScheduleMainWrapperStyle};
-`
-
-const MonthLabel = styled.p`
-  ${MonthLabelStyle};
-`;
-
-const ScheduleWrapper = styled.div`
-  ${ScheduleWrapperStyle};
-`
-
-const ArrowRearward = styled.img`
-  ${ArrowStyle};
-`;
-
-const ArrowForward = styled.img`
-  ${ArrowStyle};
-`;
-
-const ArrowDisabledRearward = styled.img`
-  ${ArrowDisabledStyle};
-`;
-
-const ArrowDisabledForward = styled.img`
-  ${ArrowDisabledStyle};
-`;
-
-const DayWrapper = styled.div`
-  ${DayWrapperStyle};
-`
-
-const DayHeaderWrapper = styled.div`
-  ${DayHeaderWrapperStyle};
-`
-
-const DateLabel = styled.p`
-  ${DateLabelStyle};
-`
-
-const PseudoLabel = styled.p`
-  ${PseudoLabelStyle};
-`
-
-const MainWrapper = styled.div`
-  ${MainWrapperStyle};
-`
-
-const StreamerImage = styled.img`
-  ${StreamerImageStyle};
-`
 
 export default Schedule

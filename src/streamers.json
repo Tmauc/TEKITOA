@@ -430,14 +430,14 @@
       "pseudoHistory": "Générateur de pseudo Dofus !",
       "categories": "VALORANT / Discussion",
       "imgPath": "/streamers/laytho/laytho.png",
-      "ppPath": "https://static-cdn.jtvnw.net/jtv_user_pictures/95961f9f-c152-467b-ba67-9ad75f4b3316-profile_image-300x300.png",
+      "ppPath": "https://static-cdn.jtvnw.net/jtv_user_pictures/f76aee06-27d2-4f06-a59c-1dec01d9ff5a-profile_image-300x300.png",
       "thePhrase": "/streamers/laytho/laythoPhrase.mp3",
       "dateTKT": "12/10/2022",
       "rediffTKT": "https://www.youtube.com/embed/xlG2Ofoeptc",
       "networks": [
         {
           "type": "twitch",
-          "url": "https://www.twitch.tv/laytho"
+          "url": "https://www.twitch.tv/laytho_"
         },
         {
           "type": "youtube",
@@ -685,7 +685,7 @@
       "pseudoHistory": "Générateur de pseudo aléatoire !",
       "categories": "Discussion / MultiGaming",
       "imgPath": "/streamers/reydo/reydo.png",
-      "ppPath": "https://static-cdn.jtvnw.net/jtv_user_pictures/cb4a6af0-1978-4f8f-bf1e-0b8bd9fdcd1e-profile_image-300x300.png",
+      "ppPath": "https://static-cdn.jtvnw.net/jtv_user_pictures/ba0aae51-133c-48c1-80c9-3e212737af5e-profile_image-300x300.png",
       "thePhrase": "/streamers/reydo/reydoPhrase.mp3",
       "dateTKT": "05/10/2022",
       "rediffTKT": "https://www.youtube.com/embed/zRTWPBgfVEg",
@@ -717,19 +717,19 @@
       ]
     },
     {
-      "pseudoTwitch": "ribie14",
+      "pseudoTwitch": "ribie",
       "pseudo": "Ribie",
       "pseudoHistory": "Elle cherchait un pseudo commençant par Ri, puis en testant différentes combinaisons elle est tombée sur Ribie !",
       "categories": "Discussion / MultiGaming",
       "imgPath": "/streamers/ribie/ribie.png",
-      "ppPath": "https://static-cdn.jtvnw.net/jtv_user_pictures/d3f5a493-fa0a-4040-81c0-9d11f99f90b1-profile_image-300x300.png",
+      "ppPath": "https://static-cdn.jtvnw.net/jtv_user_pictures/12e6fb9f-73b4-409f-a72d-fc705b412e36-profile_image-300x300.png",
       "thePhrase": "/streamers/ribie/ribie.mp3",
       "dateTKT": "25/01/2023",
       "rediffTKT": "https://www.youtube.com/embed/lgZLaOtdL5E",
       "networks": [
         {
           "type": "twitch",
-          "url": "https://www.twitch.tv/ribie14"
+          "url": "https://www.twitch.tv/ribie"
         },
         {
           "type": "youtube",
